@@ -55,6 +55,19 @@ a {
 }
 
 /* Born-Digital styles */
+body {
+    background: var(--Near-Black, #0D0D12);
+}
+
+#spiral-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 #born-digital-body {
     height: 100vh;
     border: 2px solid blue;
