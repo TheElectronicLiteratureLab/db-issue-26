@@ -55,6 +55,17 @@ a {
 }
 
 /* Born-Digital styles */
+
+.topbar {
+    border: 2px solid purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 -148px 48px -148px;
+    padding: 0 74px;
+}
+
 body {
     background: var(--Near-Black, #0D0D12);
 }
@@ -99,9 +110,144 @@ body {
     object-fit: cover;
 }
 
+/* Born Digital Artist Page Styles */
+.born-digital-page {
+    border: 2px solid blue;
+    padding: 74px 148px;
+    ;
+}
+
+.born-digital-content {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    border: 2px solid green;
+}
+
+h1, h2, h3, p {
+    color: var(--Off-White, #F5F5F7);
+    ;
+}
+
+h1 {
+    font-family: Michroma;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    /* 67.2px */
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: Michroma;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 45px;
+    /* 125% */
+    text-transform: uppercase;
+}
+
+p {
+    font-family: "IBM Plex Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    /* 28.8px */
+}
+
+.piece-section {
+    border: 2px solid magenta;
+    display: flex;
+    flex-direction: column;
+    gap: 92px;
+    margin-bottom: 92px;
+}
+
+.view-piece-btn {
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--Off-White, #F5F5F7);
+    background: none;
+}
+
+.view-piece-btn a {
+    color: var(--Off-White, #F5F5F7);
+    font-family: "IBM Plex Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+.view-piece-btn svg {
+    fill: #F5F5F7;
+}
+
+/* view piece button hover state */
+
+.view-piece-btn:hover {
+    border: 1px solid var(--Near-Black, #0D0D12);
+    background: var(--Blue, #42A6FC);
+    transition: all 0.3s ease;
+}
+
+.view-piece-btn:hover a {
+    color: var(--Near-Black, #0D0D12);
+    transition: all 0.3s ease;
+}
+
+.view-piece-btn:hover svg {
+    fill: var(--Near-Black, #0D0D12);
+    transition: all 0.3s ease;
+}
+
+.heading-subheading-container {
+    border: 2px solid cyan;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.subheading-container {
+    border: 2px solid orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.artist-section {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+    margin-bottom: 92px;
+}
+
+.artist-section img {
+    height: 100%;
+}
+
+.artist-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
 /* Footer styles */
 footer {
     border: 2px solid green;
-    padding: 20px;
+
     text-align: center;
+    color: #F5F5F7;
+    font-family: "IBM Plex Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

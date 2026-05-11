@@ -8,11 +8,17 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
     <title>Drunken Boat | Issue 26</title>
 </head>
 
-<body>
+<body id="born-digital-body">
     <header>
         <svg id="spiral-bg" xmlns="http://www.w3.org/2000/svg" width="1500" height="1117" viewBox="0 0 1500 1117" fill="none">
             <g opacity="0.4" filter="url(#filter0_dddf_948_2130)">
@@ -46,11 +52,14 @@
             </defs>
         </svg>
         <!-- Back arrow -->
-        <a href="index.html">
-            <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 2.88275L2.561 0L26 22.75L2.561 45.5L0 42.6172L20.4685 22.75L0 2.88275Z" fill="#F5F5F7" />
-            </svg>
-        </a>
+        <div class="topbar">
+            <img src="img/db-logo.svg" alt="DB logo">
+            <a href="index.html">
+                <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 2.88275L2.561 0L26 22.75L2.561 45.5L0 42.6172L20.4685 22.75L0 2.88275Z" fill="#F5F5F7" />
+                </svg>
+            </a>
+        </div>
 
         <nav class="mobileMenu">
             <div class="close-btn-container">
@@ -69,9 +78,9 @@
     </header>
 
     <main>
-        <a class="floatingNav" href="">
+        <a class="floatingNav" href="born-digital/vessel.html">
             <div class="thumbnail-container">
-                <video src="img/a-living-poem.mov" autoplay muted loop></video>
+                <video src="img/vessel.mp4" autoplay muted loop></video>
             </div>
             <h3>Vessel</h3>
         </a>
