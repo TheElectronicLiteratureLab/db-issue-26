@@ -7,12 +7,17 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles2.css">
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
 
     <title>Drunken Boat | Issue 26</title>
 </head>
 
-<body>
+<body id="statelessness">
     <header>
         <!-- Back arrow -->
         <a href="index.html">
@@ -39,153 +44,262 @@
     </header>
 
     <main>
-        <section>
-            <h3>BASQUE</h3>
-            <div class="statelessModal">
-                <a href="">
-                    <h3>Rikardo Arregi</h3>
-                    <h4>Poet</h4>
-                </a>
-            </div>
-        </section>
+        <div id="statelessnessGlobe">
 
-        <section>
-            <h3>ROMA</h3>
-            <div class="statelessModal">
-                <a href="">
-                    <h3>Amaia Gabantxo</h3>
-                </a>
-            </div>
-        </section>
+            <section class="region" id="basque">
+                <h3>BASQUE</h3>
 
-        <section>
-            <h3>KURDS</h3>
-            <div class="statelessModal">
-                <a href="">
-                    <h3>Ebrahim Alipoor</h3>
-                    <h4>Photographer</h4>
-                </a>
-                <a href="">
-                    <h3>Savas Boyraz</h3>
-                    <h4>Photographer</h4>
-                </a>
-                <a href="">
-                    <h3>Shadi Harouni</h3>
-                </a>
-                <a href="">
-                    <h3>Walid Siti</h3>
-                </a>
-            </div>
-        </section>
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
 
-        <section>
-            <h3>PALESTINIANS</h3>
-            <div class="statelessModal">
-                <a href="">
-                    <h3>Ahmed Hmeedat</h3>
-                    <h4>Artist</h4>
-                </a>
-                <a href="">
-                    <h3>Mohamed Harb</h3>
-                    <h4>Filmmaker</h4>
-                </a>
-                <a href="">
-                    <h3>Osama Nazzal</h3>
-                    <h4>Cartoonist</h4>
-                </a>
-                <a href="">
-                    <h3>Rashid Abdelhamed</h3>
-                    <h4>Filmmaker</h4>
-                </a>
-                <a href="">
-                    <h3>Tarzan Nasser</h3>
-                    <h4>Filmmaker</h4>
-                </a>
-                <a href="">
-                    <h3>Yahia Lababidi</h3>
-                    <h4>Poet</h4>
-                </a>
-            </div>
-        </section>
+                <div class="statelessModal" onclick="event.stopPropagation()">
+                    <button onclick="this.parentElement.style.display='none'">✕</button>
+                    <a href="statelessness/rikardo-arregi.html">
+                        <h3>Rikardo Arregi</h3>
+                        <h4>Poet</h4>
+                    </a>
+                </div>
+            </section>
 
-        <section>
-            <h3>BIDOON</h3>
-        </section>
 
-        <section>
-            <h3>BURKINABE</h3>
-        </section>
 
-        <section>
-            <h3>BIHARIS</h3>
-            <div class="statelessModal">
-                <a href="">
-                    <h3>Gaiutra Bahadur</h3>
-                </a>
-                <a href="">
-                    <h3>Tabish Khair</h3>
-                </a>
-            </div>
-        </section>
+            <section class="region" id="roma">
+                <h3>ROMA</h3>
 
-        <section>
-            <h3>TIBETANS</h3>
-            <div class="statelessModal">
-                <a href="">
-                    <h3>Tenzin Gyurmey Dorjee</h3>
-                    <h4>Painter</h4>
-                </a>
-                <a href="">
-                    <h3>Tenzin Tsundue</h3>
-                    <h4>Poet</h4>
-                </a>
-                <a href="">
-                    <h3>Tenzing Sonam</h3>
-                    <h4>Filmmaker</h4>
-                </a>
-                <a href="">
-                    <h3>Rashid Abdelhamed</h3>
-                    <h4>Multimedia Artist - London</h4>
-                </a>
-                <a href="">
-                    <h3>Tsering Wangmo Dhompa</h3>
-                </a>
-            </div>
-        </section>
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
 
-        <section>
-            <h3>MAASAI</h3>
-        </section>
+                <div class="statelessModal" onclick="event.stopPropagation()">
+                    <button onclick="this.parentElement.style.display='none'">✕</button>
+                    <a href="">
+                        <h3>Amaia Gabantxo</h3>
+                    </a>
+                </div>
+            </section>
 
-        <section>
-            <h3>ROHINGYA</h3>
-        </section>
+            <section class="region" id="kurds">
+                <h3>KURDS</h3>
 
-        <section>
-            <h3>UYGHURS</h3>
-            <a href="">
-                <h3>Muyesser Abdulehed</h3>
-            </a>
-            <a href="">
-                <h3>Tahir Izgil and Joshua Freeman</h3>
-            </a>
-        </section>
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
 
-        <section>
-            <h3>HMONG</h3>
-            <div class="statelessModal">
-                <a href="">
-                    <h3>Ka Vang</h3>
-                </a>
-            </div>
-        </section>
+                <div class="statelessModal" onclick="event.stopPropagation()">
+                    <button onclick="this.parentElement.style.display='none'">✕</button>
+                    <a href="">
+                        <h3>Ebrahim Alipoor</h3>
+                        <h4>Photographer</h4>
+                    </a>
+                    <a href="">
+                        <h3>Savas Boyraz</h3>
+                        <h4>Photographer</h4>
+                    </a>
+                    <a href="">
+                        <h3>Shadi Harouni</h3>
+                    </a>
+                    <a href="">
+                        <h3>Walid Siti</h3>
+                    </a>
+                </div>
+            </section>
 
+            <section class="region" id="palestinians">
+                <h3>PALESTINIANS</h3>
+
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
+
+                <div class="statelessModal" onclick="event.stopPropagation()">
+                    <button onclick="this.parentElement.style.display='none'">✕</button>
+                    <a href="">
+                        <h3>Ahmed Hmeedat</h3>
+                        <h4>Artist</h4>
+                    </a>
+                    <a href="">
+                        <h3>Mohamed Harb</h3>
+                        <h4>Filmmaker</h4>
+                    </a>
+                    <a href="">
+                        <h3>Osama Nazzal</h3>
+                        <h4>Cartoonist</h4>
+                    </a>
+                    <a href="">
+                        <h3>Rashid Abdelhamed</h3>
+                        <h4>Filmmaker</h4>
+                    </a>
+                    <a href="">
+                        <h3>Tarzan Nasser</h3>
+                        <h4>Filmmaker</h4>
+                    </a>
+                    <a href="">
+                        <h3>Yahia Lababidi</h3>
+                        <h4>Poet</h4>
+                    </a>
+                </div>
+            </section>
+
+            <section class="region" id="bidoon">
+                <h3>BIDOON</h3>
+
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
+
+            </section>
+
+            <section class="region" id="burkinabe">
+                <h3>BURKINABE</h3>
+
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
+
+            </section>
+
+            <section class="region" id="biharis">
+                <h3>BIHARIS</h3>
+
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
+
+                <div class="statelessModal" onclick="event.stopPropagation()">
+                    <button onclick="this.parentElement.style.display='none'">✕</button>
+                    <a href="">
+                        <h3>Gaiutra Bahadur</h3>
+                    </a>
+                    <a href="">
+                        <h3>Tabish Khair</h3>
+                    </a>
+                </div>
+            </section>
+
+            <section class="region" id="tibetans">
+                <h3>TIBETANS</h3>
+
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
+
+                <div class="statelessModal" onclick="event.stopPropagation()">
+                    <button onclick="this.parentElement.style.display='none'">✕</button>
+                    <a href="">
+                        <h3>Tenzin Gyurmey Dorjee</h3>
+                        <h4>Painter</h4>
+                    </a>
+                    <a href="">
+                        <h3>Tenzin Tsundue</h3>
+                        <h4>Poet</h4>
+                    </a>
+                    <a href="">
+                        <h3>Tenzing Sonam</h3>
+                        <h4>Filmmaker</h4>
+                    </a>
+                    <a href="">
+                        <h3>Rashid Abdelhamed</h3>
+                        <h4>Multimedia Artist - London</h4>
+                    </a>
+                    <a href="">
+                        <h3>Tsering Wangmo Dhompa</h3>
+                    </a>
+                </div>
+            </section>
+
+            <section class="region" id="maasai">
+                <h3>MAASAI</h3>
+
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
+
+            </section>
+
+            <section class="region" id="rohingya">
+                <h3>ROHINGYA</h3>
+
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
+
+            </section>
+
+            <section class="region" id="uyghurs">
+                <h3>UYGHURS</h3>
+
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
+
+                <div class="statelessModal" onclick="event.stopPropagation()">
+                    <button onclick="this.parentElement.style.display='none'">✕</button>
+                    <a href="">
+                        <h3>Muyesser Abdulehed</h3>
+                    </a>
+                    <a href="">
+                        <h3>Tahir Izgil and Joshua Freeman</h3>
+                    </a>
+                </div>
+            </section>
+
+            <section class="region" id="hmong">
+                <h3>HMONG</h3>
+
+                <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z" fill="#42A6FC" />
+                </svg>
+
+                <div class="statelessModal" onclick="event.stopPropagation()">
+                    <button onclick="this.parentElement.style.display='none'">✕</button>
+                    <a href="">
+                        <h3>Ka Vang</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
         &#169; 2026 Drunken Boat | in association with ELL
     </footer>
 
+    <script>
+        function toggleModal(region) {
+            const modal = region.querySelector('.statelessModal');
+
+            // Close ALL modals first
+            document.querySelectorAll('.statelessModal').forEach(m => {
+                m.style.display = 'none';
+            });
+
+            // Open the clicked one (if it exists)
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('click', function (e) {
+            const isRegion = e.target.closest('.region');
+            const isModal = e.target.closest('.statelessModal');
+
+            if (!isRegion && !isModal) {
+                document.querySelectorAll('.statelessModal').forEach(m => {
+                    m.style.display = 'none';
+                });
+            }
+        });
+
+        document.querySelectorAll('.region').forEach(region => {
+            region.addEventListener('click', function (e) {
+                e.stopPropagation();
+                toggleModal(region);
+            });
+        });
+
+
+    </script>
 </body>
 
 </html>
