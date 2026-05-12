@@ -13,6 +13,22 @@ a {
     text-decoration: none;
 }
 
+/* Page Transition Styles */
+.page-section {
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.page-section.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.page-section.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 /* Mobile menu styles */
 .close-btn-container {
     position: absolute;
@@ -264,6 +280,238 @@ p {
     display: flex;
     flex-direction: column;
     gap: 48px;
+}
+
+/* Statelessness styles */
+
+/* .mobileMenu {
+    display: none;
+} */
+
+#statelessness-body {
+    background: var(--statless-landing-grad, linear-gradient(180deg, #0D0D12 0%, #04164F 100%));
+    position: relative;
+    min-height: 100vh;
+}
+
+#statelessness-body header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    padding: 4em;
+}
+
+#statelessnessGlobe {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    width: 100%;
+    aspect-ratio: 1728 / 1117;
+    background-image: url("../img/stateless-globe.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.region {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    transform: translate(-50%, -50%);
+}
+
+.region h3 {
+    color: var(--Blue, #42A6FC);
+    text-align: center;
+
+    /* H3 */
+    font-family: Michroma;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px; /* 121.429% */
+    text-transform: uppercase;
+}
+
+.statelessModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--stateless-modal-bg, rgba(255, 255, 255, 0.9));
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: none;
+}
+
+#basque {
+    left: 15%;
+    top: 42%;
+}
+
+#roma {
+    left: 34%;
+    top: 35%;
+}
+
+#kurds {
+    left: 48%;
+    top: 48%;
+}
+
+#palestinians {
+    left: 12%;
+    top: 63%;
+}
+
+#burkinabe {
+    left: 12%;
+    top: 80%;    
+}
+
+#bidoon {
+    left: 32%;
+    top: 60%;      
+}
+
+#biharis {
+    left: 40%;
+    top: 85%;       
+}
+
+#maasai {
+    left: 65%;
+    top: 92%;       
+}
+
+#tibetans {
+    left: 69%;
+    top: 68%;        
+}
+
+#rohingya {
+    left: 80%;
+    top: 78%;  
+}
+
+#uyghurs {
+    left: 85%;
+    top: 55%;     
+}
+
+#hmong {
+    left: 93%;
+    top: 65%;     
+}
+
+.statelessness-folio {
+    background-color: #0D0D12;
+    color: #F5F5F7;
+}
+
+.statelessness-folio h1 {
+    font-family: Michroma;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+}
+
+.statelessness-folio h2 {
+    font-family: Michroma;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 45px;
+    text-transform: uppercase;
+}
+
+/*
+Source - https://stackoverflow.com/a/72992704
+Posted by Roko C. Buljan, modified by community. See post 'Timeline' for change history
+Retrieved 2026-05-11, License - CC BY-SA 4.0
+*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  font-size: 2.5vmin;
+}
+
+.carousel-slider {
+  display: flex;
+  transition: 0.3s;
+}
+
+.carousel-slide {
+  flex: 1 0 100%;
+}
+
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 36em;
+  object-fit: cover;
+}
+
+.carousel button {
+  font-size: inherit;
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+.carousel-prev {
+  left: 2em;
+}
+
+.carousel-next {
+  right: 2em;
+}
+
+.carousel-navigation {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.carousel-bullet {
+  width: 1em;
+  height: 1em;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel-bullet.is-active {
+  background: #1c69d3;
 }
 
 /* Footer styles */
