@@ -47,15 +47,22 @@
     transform: translate(-50%, -50%);
 }
 
+.region svg {
+    width: clamp(24px, 2.5vw, 48px);
+    height: auto;
+    display: block;
+}
+
 .region h3 {
     color: var(--Blue, #42A6FC);
     text-align: center;
 
     /* H3 */
     font-family: Michroma;
+    font-size: clamp(14px, 2.2vw, 20px);
     font-style: normal;
     font-weight: 400;
-    line-height: 34px; /* 121.429% */
+    line-height: 1.2;
     text-transform: uppercase;
 }
 
