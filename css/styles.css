@@ -103,6 +103,8 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 64px 74px 0 74px;
+
+    background: transparent;
 }
 
 .topbar img {
@@ -309,16 +311,30 @@ p {
 }
 
 #statelessnessGlobe {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%, 50%);
-    width: 100%;
-    aspect-ratio: 1728 / 1117;
+    position: relative;
+
+    width: 1728px;
+    height: 1117px;
+
     background-image: url("../img/stateless-globe.png");
     background-size: contain;
     background-repeat: no-repeat;
-    z-index: 0;
+}
+
+#globe-scroll {
+    width: 100vw;
+    height: 100vh;
+    overflow: auto; /* enables scrolling */
+    position: relative;
+    scroll-behavior: smooth;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#globe-scroll:active {
+    cursor: grabbing;
 }
 
 .region {
@@ -330,13 +346,18 @@ p {
     transform: translate(-50%, -50%);
 }
 
+.region svg {
+    width: clamp(16px, 2vw, 32px);
+    height: auto;
+}
+
 .region h3 {
     color: var(--Blue, #42A6FC);
     text-align: center;
 
     /* H3 */
     font-family: Michroma;
-    font-size: clamp(2rem, 5vw, 5rem);
+    font-size: clamp(16px, 2vw, 24px);
     font-style: normal;
     font-weight: 400;
     line-height: 34px; /* 121.429% */
@@ -601,8 +622,9 @@ footer {
     font-weight: 400;
     line-height: normal;
 
-    position: fixed;
-    bottom: 3%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    background: transparent;
 }
