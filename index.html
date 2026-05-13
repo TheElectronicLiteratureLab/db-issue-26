@@ -13,23 +13,36 @@
 </head>
 
 <body>
+    <!-- Mobile Menu -->
+
+    <nav>
+        <section class="hamburger-menu">
+            <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0.5H22.2222" stroke="#F5F5F7" stroke-miterlimit="20" stroke-linejoin="round" />
+                <path d="M0 6.05554H22.2222" stroke="#F5F5F7" stroke-miterlimit="20" stroke-linejoin="round" />
+                <path d="M0 11.6111H22.2222" stroke="#F5F5F7" stroke-miterlimit="20" stroke-linejoin="round" />
+            </svg>
+        </section>
+
+        <section class="menu-modal">
+            <div class="close-btn-container">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M37.75 6.25H6.25V37.75H37.75V6.25Z" stroke="#F5F5F7" />
+                    <path d="M13.75 13.75L30.25 30.25" stroke="#F5F5F7" />
+                    <path d="M30.25 13.75L13.75 30.25" stroke="#F5F5F7" />
+                </svg>
+            </div>
+            <a href="index.html">Issue 26 Landing</a>
+            <a href="statelessness.html">Statelessness</a>
+            <a href="born-digital.html">Born-Digital</a>
+            <a href="ramanujan.html">A.K. Ramanujan</a>
+            <a href="issue-statement.html">Issue Statement</a>
+        </section>
+    </nav>
+
     <!-- Issue Landing Section -->
     <section id="issue-landing-body">
         <header>
-            <nav class="mobileMenu">
-                <div class="close-btn-container">
-                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M37.75 6.25H6.25V37.75H37.75V6.25Z" stroke="#F5F5F7" />
-                        <path d="M13.75 13.75L30.25 30.25" stroke="#F5F5F7" />
-                        <path d="M30.25 13.75L13.75 30.25" stroke="#F5F5F7" />
-                    </svg>
-                </div>
-                <a href="index.html">Issue 26 Landing</a>
-                <a href="statelessness.html">Statelessness</a>
-                <a href="born-digital.html">Born-Digital</a>
-                <a href="ramanujan.html">A.K. Ramanujan</a>
-                <a href="issue-statement.html">Issue Statement</a>
-            </nav>
             <a href="issue-statement.html">Issue Statement</a>
         </header>
 
@@ -541,6 +554,13 @@
 
     <!-- Page Transition Script -->
     <script src="scripts/page-transition.js"></script>
+
+    <!-- Mobile Menu Script -->
+    <script src="scripts/mobile-menu.js"></script>
+
+    <!-- Stateless Modals Script -->
+    <script src="scripts/stateless-modals.js"></script>
+
 </body>
 
 </html>

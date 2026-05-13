@@ -41,8 +41,18 @@ a {
     border: 2px blue;
 }
 
-.mobileMenu {
+.hamburger-menu {
     display: flex;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    z-index: 999;
+}
+
+.menu-modal {
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -50,7 +60,7 @@ a {
     padding: 20px;
     border: 2px solid green;
     position: absolute;
-    z-index: 1;
+    z-index: 999;
     /* i just made it this color for now so we can see */
     background-color: tomato;
     top: 0px;
@@ -284,10 +294,6 @@ p {
 
 /* Statelessness styles */
 
-/* .mobileMenu {
-    display: none;
-} */
-
 #statelessness-body {
     background: var(--statless-landing-grad, linear-gradient(180deg, #0D0D12 0%, #04164F 100%));
     position: relative;
@@ -348,6 +354,16 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 999;
     display: none;
+    max-width: min(26rem, 90vw);
+}
+
+@media (max-width: 767px) {
+    .statelessModal {
+        width: min(90vw, 24rem);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 #basque {
@@ -451,15 +467,25 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
   position: relative;
   overflow: hidden;
   font-size: 2.5vmin;
+  margin: 4em 0 4em 0;
 }
 
 .carousel-slider {
-  display: flex;
-  transition: 0.3s;
+    display: flex;
+    will-change: transform;
 }
 
 .carousel-slide {
-  flex: 1 0 100%;
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
 }
 
 .carousel-slide img {
@@ -501,7 +527,9 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
   gap: 1em;
 }
 
+/* Can use this for bullets if we want */
 .carousel-bullet {
+  display: none;
   width: 1em;
   height: 1em;
   border: none;
@@ -514,9 +542,19 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
   background: #1c69d3;
 }
 
-/* Footer styles */
-footer {
+.carousel-image {
+    width: 80%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
 
+.carousel-caption {
+    margin-top: 1em;
     text-align: center;
     color: #F5F5F7;
     font-family: "IBM Plex Sans";
@@ -524,4 +562,47 @@ footer {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.carousel-poem {
+    width: 800px;
+    height: 500px;
+    padding: 52px 72px 52px 72px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    overflow-y: scroll;
+    background: linear-gradient(to bottom right, #0D0D12 0%, #1F1F24 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D0D12 0%, #1F1F24 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D0D12 0%, #1F1F24 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D0D12 0%, #1F1F24 50%) top right / 50% 50% no-repeat;
+    box-shadow: 0 0 60px 12px rgba(221, 225, 197, 0.15);
+}
+
+.artist-bio {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+}
+
+.artist-bio img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    margin-right: 2em;
+}
+
+/* Footer styles */
+footer {
+    z-index: 1000;
+    text-align: center;
+    color: #F5F5F7;
+    font-family: "IBM Plex Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    position: fixed;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
 }
