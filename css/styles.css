@@ -336,7 +336,7 @@ p {
 
     /* H3 */
     font-family: Michroma;
-    font-size: 28px;
+    font-size: clamp(2rem, 5vw, 5rem);
     font-style: normal;
     font-weight: 400;
     line-height: 34px; /* 121.429% */

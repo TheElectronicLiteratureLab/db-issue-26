@@ -34,6 +34,10 @@
     z-index: 0;
 }
 
+#statelessnessGlobe {
+    font-size: 1%;
+}
+
 .region {
     position: absolute;
     display: flex;
@@ -49,7 +53,6 @@
 
     /* H3 */
     font-family: Michroma;
-    font-size: 28px;
     font-style: normal;
     font-weight: 400;
     line-height: 34px; /* 121.429% */
