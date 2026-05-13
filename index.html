@@ -9,12 +9,27 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
     <title>Drunken Boat | Issue 26</title>
 </head>
 
-<body id="issue-landing-body">
-    <header>
-        <nav class="mobileMenu">
+<body>
+    <!-- Mobile Menu -->
+
+    <nav>
+        <section class="hamburger-menu">
+            <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0.5H22.2222" stroke="#F5F5F7" stroke-miterlimit="20" stroke-linejoin="round" />
+                <path d="M0 6.05554H22.2222" stroke="#F5F5F7" stroke-miterlimit="20" stroke-linejoin="round" />
+                <path d="M0 11.6111H22.2222" stroke="#F5F5F7" stroke-miterlimit="20" stroke-linejoin="round" />
+            </svg>
+        </section>
+
+        <section class="menu-modal">
             <div class="close-btn-container">
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M37.75 6.25H6.25V37.75H37.75V6.25Z" stroke="#F5F5F7" />
@@ -27,19 +42,567 @@
             <a href="born-digital.html">Born-Digital</a>
             <a href="ramanujan.html">A.K. Ramanujan</a>
             <a href="issue-statement.html">Issue Statement</a>
-        </nav>
-        <a href="issue-statement.html">Issue Statement</a>
-    </header>
+        </section>
+    </nav>
 
-    <div id="main-container">
-        <a href="born-digital.html">Born-Digital</a>
-        <a href="statelessness.html">Statelessness</a>
-        <a href="ramanujan.html">A.K. Ramanujan</a>
-    </div>
+    <!-- Issue Landing Section -->
+    <section id="issue-landing-body">
+        <header>
+            <a href="issue-statement.html">Issue Statement</a>
+        </header>
 
+        <div id="main-container">
+            <a href="born-digital.html">Born-Digital</a>
+            <a href="statelessness.html">Statelessness</a>
+            <a href="ramanujan.html">A.K. Ramanujan</a>
+        </div>
+
+        <footer>
+            &#169; 2026 Drunken Boat | in association with ELL
+        </footer>
+    </section>
+
+    <!-- Statelessness Section -->
+    <section id="statelessness-body">
+        <header>
+            <!-- Back arrow -->
+            <a href="index.html">
+                <svg width="46" height="26" viewBox="0 0 46 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M42.6173 26L45.5 23.439L22.75 0L0 23.439L2.88275 26L22.75 5.5315L42.6173 26Z"
+                        fill="#F5F5F7" />
+                </svg>
+            </a>
+
+            <div id="statelessnessGlobe">
+
+                <section class="region" id="basque">
+                    <h3>BASQUE</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                    <div class="statelessModal" onclick="event.stopPropagation()">
+                        <button onclick="this.parentElement.style.display='none'">✕</button>
+                        <a href="statelessness/rikardo-arregi.html">
+                            <h3>Rikardo Arregi</h3>
+                            <h4>Poet</h4>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="region" id="roma">
+                    <h3>ROMA</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                    <div class="statelessModal" onclick="event.stopPropagation()">
+                        <button onclick="this.parentElement.style.display='none'">✕</button>
+                        <a href="">
+                            <h3>Amaia Gabantxo</h3>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="region" id="kurds">
+                    <h3>KURDS</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                    <div class="statelessModal" onclick="event.stopPropagation()">
+                        <button onclick="this.parentElement.style.display='none'">✕</button>
+                        <a href="">
+                            <h3>Ebrahim Alipoor</h3>
+                            <h4>Photographer</h4>
+                        </a>
+                        <a href="">
+                            <h3>Savas Boyraz</h3>
+                            <h4>Photographer</h4>
+                        </a>
+                        <a href="">
+                            <h3>Shadi Harouni</h3>
+                        </a>
+                        <a href="">
+                            <h3>Walid Siti</h3>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="region" id="palestinians">
+                    <h3>PALESTINIANS</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                    <div class="statelessModal" onclick="event.stopPropagation()">
+                        <button onclick="this.parentElement.style.display='none'">✕</button>
+                        <a href="">
+                            <h3>Ahmed Hmeedat</h3>
+                            <h4>Artist</h4>
+                        </a>
+                        <a href="">
+                            <h3>Mohamed Harb</h3>
+                            <h4>Filmmaker</h4>
+                        </a>
+                        <a href="">
+                            <h3>Osama Nazzal</h3>
+                            <h4>Cartoonist</h4>
+                        </a>
+                        <a href="">
+                            <h3>Rashid Abdelhamed</h3>
+                            <h4>Filmmaker</h4>
+                        </a>
+                        <a href="">
+                            <h3>Tarzan Nasser</h3>
+                            <h4>Filmmaker</h4>
+                        </a>
+                        <a href="">
+                            <h3>Yahia Lababidi</h3>
+                            <h4>Poet</h4>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="region" id="bidoon">
+                    <h3>BIDOON</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                </section>
+
+                <section class="region" id="burkinabe">
+                    <h3>BURKINABE</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                </section>
+
+                <section class="region" id="biharis">
+                    <h3>BIHARIS</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                    <div class="statelessModal" onclick="event.stopPropagation()">
+                        <button onclick="this.parentElement.style.display='none'">✕</button>
+                        <a href="">
+                            <h3>Gaiutra Bahadur</h3>
+                        </a>
+                        <a href="">
+                            <h3>Tabish Khair</h3>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="region" id="tibetans">
+                    <h3>TIBETANS</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                    <div class="statelessModal" onclick="event.stopPropagation()">
+                        <button onclick="this.parentElement.style.display='none'">✕</button>
+                        <a href="">
+                            <h3>Tenzin Gyurmey Dorjee</h3>
+                            <h4>Painter</h4>
+                        </a>
+                        <a href="">
+                            <h3>Tenzin Tsundue</h3>
+                            <h4>Poet</h4>
+                        </a>
+                        <a href="">
+                            <h3>Tenzing Sonam</h3>
+                            <h4>Filmmaker</h4>
+                        </a>
+                        <a href="">
+                            <h3>Rashid Abdelhamed</h3>
+                            <h4>Multimedia Artist - London</h4>
+                        </a>
+                        <a href="">
+                            <h3>Tsering Wangmo Dhompa</h3>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="region" id="maasai">
+                    <h3>MAASAI</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                </section>
+
+                <section class="region" id="rohingya">
+                    <h3>ROHINGYA</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                </section>
+
+                <section class="region" id="uyghurs">
+                    <h3>UYGHURS</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                    <div class="statelessModal" onclick="event.stopPropagation()">
+                        <button onclick="this.parentElement.style.display='none'">✕</button>
+                        <a href="">
+                            <h3>Muyesser Abdulehed</h3>
+                        </a>
+                        <a href="">
+                            <h3>Tahir Izgil and Joshua Freeman</h3>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="region" id="hmong">
+                    <h3>HMONG</h3>
+
+                    <svg width="32" height="92" viewBox="0 0 32 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16ZM16 16H13V109H16H19V16H16Z"
+                            fill="#42A6FC" />
+                    </svg>
+
+                    <div class="statelessModal" onclick="event.stopPropagation()">
+                        <button onclick="this.parentElement.style.display='none'">✕</button>
+                        <a href="">
+                            <h3>Ka Vang</h3>
+                        </a>
+                    </div>
+                </section>
+            </div>
+    </section>
+
+    <!-- Born-Digital Section -->
+    <section id="born-digital-body">
+        <header>
+            <svg id="spiral-bg" xmlns="http://www.w3.org/2000/svg" width="1500" height="1117" viewBox="0 0 1500 1117"
+                fill="none">
+                <g opacity="0.4" filter="url(#filter0_dddf_948_2130)">
+                    <path
+                        d="M1273.35 -347.877C1295.93 -345.968 1318.52 -344.058 1341.1 -342.148C1330.59 -224.731 1316.27 -108.253 1296.13 7.55632C1259.15 214.884 1207.7 421.96 1105.66 611.932C1011.51 795.671 813.99 982.201 581.936 936.36C370.536 903.345 214.123 680.614 257.157 471.806C287.149 280.92 489.71 143.501 676.714 182.216C847.697 208.916 974.203 389.067 939.392 557.944C915.138 712.303 751.335 823.428 600.112 792.119C461.866 770.528 359.587 624.871 387.732 488.336C407.337 363.562 539.75 273.732 661.992 299.043C773.717 316.495 856.37 434.209 833.626 544.545C817.787 645.353 710.802 717.932 612.036 697.479C521.789 683.384 455.029 588.298 473.404 499.183C486.192 417.789 572.578 359.185 652.327 375.702C725.172 387.079 779.053 463.831 764.221 535.754C753.901 601.423 684.201 648.707 619.855 635.38C561.104 626.201 517.653 564.301 529.615 506.301C537.933 453.364 594.122 415.247 645.995 425.992C693.335 433.39 728.343 483.267 718.704 529.995C712.006 572.613 666.765 603.302 625 594.649C586.908 588.695 558.745 548.561 566.5 510.97C571.885 476.707 608.261 452.03 641.843 458.99C646.498 459.833 651.051 461.233 655.364 463.161C679.177 473.407 693.865 500.867 688.831 526.203C684.51 553.697 655.317 573.5 628.367 567.912C603.831 564.074 585.699 538.223 590.695 514.024C594.157 492.015 617.53 476.16 639.109 480.632C658.73 483.7 673.226 504.374 669.228 523.717C669.228 523.717 669.228 523.717 669.228 523.717C673.027 504.324 658.357 484.01 639.01 481.19C617.668 476.995 595.007 492.838 591.872 514.231C587.247 537.857 605.123 562.61 628.696 566.047C654.738 571.167 682.382 551.834 686.2 525.739C690.762 501.533 676.5 475.689 653.991 466.272C649.913 464.496 645.618 463.221 641.228 462.47C609.385 456.211 575.59 479.854 570.925 511.751C564.015 547.05 590.732 584.045 625.966 589.176C664.968 596.839 706.355 567.881 712.064 528.823C720.535 485.559 687.784 440.213 644.595 433.927C596.751 424.526 545.988 460.053 538.989 507.955C528.596 561.045 568.787 616.695 621.792 624.407C680.546 635.949 742.879 592.318 751.471 533.504C764.241 468.276 714.858 399.898 649.728 390.426C577.499 376.236 500.878 429.875 490.322 502.168C474.618 582.384 535.352 666.476 615.452 678.124C704.317 695.58 798.58 629.585 811.562 540.651C830.884 441.939 756.141 338.45 657.567 324.116C548.166 302.627 432.127 383.877 416.148 493.35C392.354 614.902 484.395 742.34 605.783 759.988C740.534 786.453 883.456 686.375 903.133 551.545C932.447 401.8 819.055 244.8 669.506 223.061C503.453 190.449 327.341 313.776 303.098 479.914C266.975 664.464 406.729 857.964 591.043 884.757C790.839 922.523 964.863 760.957 1054.19 584.132C1149.31 403.154 1198.28 200.447 1232.43 -3.2201C1251.09 -117.041 1264.09 -231.9 1273.35 -347.877Z"
+                        fill="url(#paint0_linear_948_2130)" />
+                </g>
+                <defs>
+                    <filter id="filter0_dddf_948_2130" x="0" y="-597.877" width="1591.1" height="1791.26"
+                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                            result="hardAlpha" />
+                        <feOffset />
+                        <feGaussianBlur stdDeviation="34.2" />
+                        <feColorMatrix type="matrix"
+                            values="0 0 0 0 0.254902 0 0 0 0 0.65098 0 0 0 0 0.988235 0 0 0 1 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_948_2130" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                            result="hardAlpha" />
+                        <feOffset />
+                        <feGaussianBlur stdDeviation="125" />
+                        <feColorMatrix type="matrix"
+                            values="0 0 0 0 0.254902 0 0 0 0 0.65098 0 0 0 0 0.988235 0 0 0 0.7 0" />
+                        <feBlend mode="normal" in2="effect1_dropShadow_948_2130" result="effect2_dropShadow_948_2130" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                            result="hardAlpha" />
+                        <feOffset />
+                        <feGaussianBlur stdDeviation="125" />
+                        <feColorMatrix type="matrix"
+                            values="0 0 0 0 0.0156863 0 0 0 0 0.0862745 0 0 0 0 0.309804 0 0 0 1 0" />
+                        <feBlend mode="normal" in2="effect2_dropShadow_948_2130" result="effect3_dropShadow_948_2130" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow_948_2130" result="shape" />
+                        <feGaussianBlur stdDeviation="19" result="effect4_foregroundBlur_948_2130" />
+                    </filter>
+                    <linearGradient id="paint0_linear_948_2130" x1="430.676" y1="840.994" x2="1310.75" y2="-368.752"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#F5F5F7" />
+                        <stop offset="1" stop-color="#F5F5F7" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <!-- Back arrow -->
+            <div class="topbar">
+                <img src="img/db-logo.svg" alt="DB logo">
+                <a href="index.html">
+                    <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 2.88275L2.561 0L26 22.75L2.561 45.5L0 42.6172L20.4685 22.75L0 2.88275Z"
+                            fill="#F5F5F7" />
+                    </svg>
+                </a>
+            </div>
+
+            <nav class="mobileMenu">
+                <div class="close-btn-container">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M37.75 6.25H6.25V37.75H37.75V6.25Z" stroke="#F5F5F7" />
+                        <path d="M13.75 13.75L30.25 30.25" stroke="#F5F5F7" />
+                        <path d="M30.25 13.75L13.75 30.25" stroke="#F5F5F7" />
+                    </svg>
+                </div>
+                <a href="index.html">Issue 26 Landing</a>
+                <a href="statelessness.html">Statelessness</a>
+                <a href="born-digital.html">Born-Digital</a>
+                <a href="ramanujan.html">A.K. Ramanujan</a>
+                <a href="issue-statement.html">Issue Statement</a>
+            </nav>
+        </header>
+
+        <div>
+            <a class="floatingNav" href="born-digital/vessel.html">
+                <div class="thumbnail-container">
+                    <video src="img/vessel.mp4" autoplay muted loop></video>
+                </div>
+                <h3>Vessel</h3>
+            </a>
+
+            <a class="floatingNav" href="">
+                <div class="thumbnail-container">
+                    <video src="img/slot-waste-clip.mp4" autoplay muted loop></video>
+                </div>
+                <h3>Slot Waste</h3>
+            </a>
+
+            <a class="floatingNav" href="">
+                <div class="thumbnail-container">
+                    <img src="img/wanderer.png" alt="wanderer thumbnail">
+                </div>
+                <h3>Wanderer</h3>
+            </a>
+
+            <a class="floatingNav" href="">
+                <div class="thumbnail-container">
+                    <img src="img/my-toxic-trait.jpg" alt="My Toxic Trait thumbnail">
+                </div>
+                <h3>My Toxic Trait is I Believe the Good is Inevitable</h3>
+            </a>
+
+            <a class="floatingNav" href="">
+                <div class="thumbnail-container">
+                    <video src="img/carvello-amber-row.mov" autoplay muted loop></video>
+                </div>
+                <h3>Amber Row</h3>
+            </a>
+
+            <a class="floatingNav" href="">
+                <div class="thumbnail-container">
+                    <img src="img/human-in-the-loop.jpeg" alt="Human in the Loop thumbnail">
+                </div>
+                <h3>Human in the Loop</h3>
+            </a>
+
+            <a class="floatingNav" href="">
+                <div class="thumbnail-container">
+                    <video src="img/burr-count-zero-thumb.mp4" autoplay muted loop></video>
+                </div>
+                <h3>Count Zero</h3>
+            </a>
+
+            <a class="floatingNav" href="">
+                <div class="thumbnail-container">
+                    <img src="img/underwear-shopping-spree.jpg" alt="Underwear Shopping Spree thumbnail">
+                </div>
+                <h3>Underwear Shopping Spree</h3>
+            </a>
+
+            <a class="floatingNav" href="">
+                <div class="thumbnail-container">
+                    <video src="img/a-living-poem.mp4" autoplay muted loop></video>
+                </div>
+                <h3>A Living Poem</h3>
+            </a>
+
+            <a class="floatingNav" href="">
+                <div class="thumbnail-container">
+                    <video src="img/antelope-island.mp4" autoplay muted loop></video>
+                </div>
+                <h3>Sketches</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- A.K. Ramanujan Section -->
+    <section id="ramanujan-body">
+        <header>
+            <!-- Back arrow -->
+            <a href="index.html">
+                <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26 2.88275L23.439 0L0 22.75L23.439 45.5L26 42.6172L5.5315 22.75L26 2.88275Z"
+                        fill="#F5F5F7" />
+                </svg>
+            </a>
+
+            <nav class="mobileMenu">
+                <div class="close-btn-container">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M37.75 6.25H6.25V37.75H37.75V6.25Z" stroke="#F5F5F7" />
+                        <path d="M13.75 13.75L30.25 30.25" stroke="#F5F5F7" />
+                        <path d="M30.25 13.75L13.75 30.25" stroke="#F5F5F7" />
+                    </svg>
+                </div>
+                <a href="index.html">Issue 26 Landing</a>
+                <a href="statelessness.html">Statelessness</a>
+                <a href="born-digital.html">Born-Digital</a>
+                <a href="ramanujan.html">A.K. Ramanujan</a>
+                <a href="issue-statement.html">Issue Statement</a>
+            </nav>
+
+            <h1>A.K. RAMANUJAN</h1>
+            <a href="issue-statement.html">Issue Statement</a>
+        </header>
+
+        <div>
+            <div class="akModal">
+                <h2>Ephemera - A Flowering Tree</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>A.K. Ramanujan - Late 1980s</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>A.K. Ramanujan - Late 1980s</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Ramanujan's Letters</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Letter to Dr. Murty</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Ephemera</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>1978 Interview Letter</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Ephemera - Acacia Tree</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Ephemera</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Ephemera</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Letter to Mr. Stallworthy</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Letter to Mr. Stallworthy</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Ephemera</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Ephemera</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Poem - Self-Portrait</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Ephemera</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Ephemera</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Ephemera - Red Earth</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>Audio</h2>
+                <img src="" alt="">
+            </div>
+
+            <div class="akModal">
+                <h2>A Translation of Akkamahadevy 336 V2</h2>
+                <img src="" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         &#169; 2026 Drunken Boat | in association with ELL
     </footer>
+
+    <!-- Page Transition Script -->
+    <script src="scripts/page-transition.js"></script>
+
+    <!-- Mobile Menu Script -->
+    <script src="scripts/mobile-menu.js"></script>
+
+    <!-- Stateless Modals Script -->
+    <script src="scripts/stateless-modals.js"></script>
 
 </body>
 

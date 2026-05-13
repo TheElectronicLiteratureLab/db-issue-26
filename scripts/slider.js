@@ -1,0 +1,206 @@
+// DOM utility functions:
+const el = (sel, par) => (par || document).querySelector(sel);
+const els = (sel, par) => (par || document).querySelectorAll(sel);
+const elNew = (tag, prop) => Object.assign(document.createElement(tag), prop);
+
+// Helper:
+const mod = (n, m) => (n % m + m) % m;
+
+// Carousel:
+const carousel = (elCarousel) => {
+
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const animation = prefersReduced ? 0 : 500;
+
+    const elCarouselSlider = el(".carousel-slider", elCarousel);
+    const elsSlides = els(".carousel-slide", elCarouselSlider);
+    const elsBtns = [];
+
+    let tot = elsSlides.length;
+    let c = 0;
+
+    if (tot < 2) return;
+
+    // Accessibility setup
+    const carouselLabel = elCarousel.dataset.carouselLabel || "Carousel";
+    const sliderId = elCarouselSlider.id || `carousel-slider-${Math.random().toString(36).slice(2)}`;
+    elCarouselSlider.id = sliderId;
+
+    elCarousel.tabIndex = 0;
+    elCarousel.setAttribute("role", "region");
+    elCarousel.setAttribute("aria-roledescription", "carousel");
+    elCarousel.setAttribute("aria-label", carouselLabel);
+    elCarousel.style.touchAction = "pan-y";
+
+    // Slide roles
+    elsSlides.forEach((slide, i) => {
+        slide.setAttribute("role", "group");
+        slide.setAttribute("aria-roledescription", "slide");
+        slide.setAttribute("aria-label", `Slide ${i + 1} of ${tot}`);
+    });
+
+    // Live region (screen reader announcements)
+    const live = elNew("div", { className: "sr-only" });
+    live.setAttribute("aria-live", "polite");
+    elCarousel.append(live);
+
+    // Methods
+    const anim = (ms = animation) => {
+        const cMod = mod(c, tot);
+
+        // Screen reader update
+        live.textContent = `Slide ${cMod + 1} of ${tot}`;
+
+        // Move slider
+        elCarouselSlider.style.transitionDuration = `${ms}ms`;
+        elCarouselSlider.style.transform = `translateX(${(-c - 1) * 100}%)`;
+
+        // Active states
+        elsSlides.forEach((elSlide, i) =>
+            elSlide.classList.toggle("is-active", cMod === i)
+        );
+
+        elsBtns.forEach((elBtn, i) => {
+            const isActive = cMod === i;
+            elBtn.classList.toggle("is-active", isActive);
+            elBtn.setAttribute("aria-current", isActive ? "true" : "false");
+        });
+    };
+
+    const prev = () => {
+        if (c <= -1) return;
+        c -= 1;
+        anim();
+    };
+
+    const next = () => {
+        if (c >= tot) return;
+        c += 1;
+        anim();
+    };
+
+    const goto = (index) => {
+        c = index;
+        anim();
+    };
+
+    // Buttons
+    const elPrev = elNew("button", {
+        type: "button",
+        className: "carousel-prev",
+        innerHTML: "<span>Prev</span>",
+        onclick: () => prev(),
+    });
+
+    const elNext = elNew("button", {
+        type: "button",
+        className: "carousel-next",
+        innerHTML: "<span>Next</span>",
+        onclick: () => next(),
+    });
+
+    // Accessible labels
+    elPrev.setAttribute("aria-label", "Previous slide");
+    elNext.setAttribute("aria-label", "Next slide");
+
+    // Navigation container
+    const elNavigation = elNew("div", {
+        className: "carousel-navigation",
+    });
+
+    // Bullets
+    for (let i = 0; i < tot; i++) {
+        const elBtn = elNew("button", {
+            type: "button",
+            className: "carousel-bullet",
+            onclick: () => goto(i),
+        });
+
+        elBtn.setAttribute("aria-label", `Go to slide ${i + 1}`);
+        elBtn.setAttribute("aria-controls", sliderId);
+
+        elsBtns.push(elBtn);
+    }
+
+    // Infinite loop handling
+    elCarouselSlider.addEventListener("transitionend", () => {
+        if (c <= -1) c = tot - 1;
+        if (c >= tot) c = 0;
+        anim(0);
+    });
+
+    // Swipe support
+    const swipeThreshold = 50;
+    let pointerStartX = 0;
+    let pointerStartY = 0;
+    let pointerActive = false;
+
+    const onPointerDown = (event) => {
+        if (event.pointerType === "mouse" && event.button !== 0) return;
+        pointerActive = true;
+        pointerStartX = event.clientX;
+        pointerStartY = event.clientY;
+    };
+
+    const onPointerUp = (event) => {
+        if (!pointerActive) return;
+        pointerActive = false;
+
+        const dx = event.clientX - pointerStartX;
+        const dy = event.clientY - pointerStartY;
+
+        if (Math.abs(dx) > swipeThreshold && Math.abs(dx) > Math.abs(dy)) {
+            dx > 0 ? prev() : next();
+        }
+    };
+
+    const onPointerCancel = () => {
+        pointerActive = false;
+    };
+
+    // Keyboard support
+    const onKeydown = (event) => {
+        const tag = event.target.tagName.toLowerCase();
+        if (["input", "textarea", "select"].includes(tag)) return;
+
+        switch (event.key) {
+            case "ArrowLeft":
+            case "PageUp":
+                event.preventDefault();
+                prev();
+                break;
+            case "ArrowRight":
+            case "PageDown":
+                event.preventDefault();
+                next();
+                break;
+            case "Home":
+                event.preventDefault();
+                goto(0);
+                break;
+            case "End":
+                event.preventDefault();
+                goto(tot - 1);
+                break;
+        }
+    };
+
+    elCarousel.addEventListener("keydown", onKeydown);
+    elCarousel.addEventListener("pointerdown", onPointerDown);
+    elCarousel.addEventListener("pointerup", onPointerUp);
+    elCarousel.addEventListener("pointercancel", onPointerCancel);
+
+    // Init UI
+    elNavigation.append(...elsBtns);
+    elCarousel.append(elPrev, elNext, elNavigation);
+
+    // Clone slides for infinite effect
+    elCarouselSlider.prepend(elsSlides[tot - 1].cloneNode(true));
+    elCarouselSlider.append(elsSlides[0].cloneNode(true));
+
+    // Initial render
+    anim(0);
+};
+
+// Init all carousels
+els(".carousel").forEach(carousel);
