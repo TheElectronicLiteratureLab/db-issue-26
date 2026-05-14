@@ -116,6 +116,7 @@ body {
     background: var(--Near-Black, #0D0D12);
 }
 
+
 #spiral-bg {
     position: absolute;
     top: 0;
@@ -324,7 +325,8 @@ p {
 #globe-scroll {
     width: 100vw;
     height: 100vh;
-    overflow: auto; /* enables scrolling */
+    overflow: auto;
+    /* enables scrolling */
     position: relative;
     scroll-behavior: smooth;
     cursor: grab;
@@ -360,7 +362,8 @@ p {
     font-size: clamp(16px, 2vw, 24px);
     font-style: normal;
     font-weight: 400;
-    line-height: 34px; /* 121.429% */
+    line-height: 34px;
+    /* 121.429% */
     text-transform: uppercase;
 }
 
@@ -409,42 +412,42 @@ p {
 
 #burkinabe {
     left: 12%;
-    top: 80%;    
+    top: 80%;
 }
 
 #bidoon {
     left: 32%;
-    top: 60%;      
+    top: 60%;
 }
 
 #biharis {
     left: 40%;
-    top: 85%;       
+    top: 85%;
 }
 
 #maasai {
     left: 65%;
-    top: 92%;       
+    top: 92%;
 }
 
 #tibetans {
     left: 69%;
-    top: 68%;        
+    top: 68%;
 }
 
 #rohingya {
     left: 80%;
-    top: 78%;  
+    top: 78%;
 }
 
 #uyghurs {
     left: 85%;
-    top: 55%;     
+    top: 55%;
 }
 
 #hmong {
     left: 93%;
-    top: 65%;     
+    top: 65%;
 }
 
 .statelessness-folio {
@@ -479,16 +482,16 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .carousel {
-  position: relative;
-  overflow: hidden;
-  font-size: 2.5vmin;
-  margin: 4em 0 4em 0;
+    position: relative;
+    overflow: hidden;
+    font-size: 2.5vmin;
+    margin: 4em 0 4em 0;
 }
 
 .carousel-slider {
@@ -510,57 +513,57 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 }
 
 .carousel-slide img {
-  display: block;
-  width: 100%;
-  height: 36em;
-  object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 36em;
+    object-fit: cover;
 }
 
 .carousel button {
-  font-size: inherit;
+    font-size: inherit;
 }
 
 .carousel-prev,
 .carousel-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 1em;
-  border: none;
-  cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1em;
+    border: none;
+    cursor: pointer;
 }
 
 .carousel-prev {
-  left: 2em;
+    left: 2em;
 }
 
 .carousel-next {
-  right: 2em;
+    right: 2em;
 }
 
 .carousel-navigation {
-  position: absolute;
-  bottom: 1em;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1em;
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
 }
 
 /* Can use this for bullets if we want */
 .carousel-bullet {
-  display: none;
-  width: 1em;
-  height: 1em;
-  border: none;
-  background: #fff;
-  cursor: pointer;
-  border-radius: 50%;
+    display: none;
+    width: 1em;
+    height: 1em;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 .carousel-bullet.is-active {
-  background: #1c69d3;
+    background: #1c69d3;
 }
 
 .carousel-image {

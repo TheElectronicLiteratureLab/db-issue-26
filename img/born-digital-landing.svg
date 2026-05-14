@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f5f5f7;
+        font-family: Michroma-Regular, Michroma;
+        font-size: 22px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        opacity: .35;
+      }
+
+      .cls-4 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.16em;
+      }
+    </style>
+    <pattern id="vessel-img" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="gif/vessel.gif" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <pattern id="slot-waste-img" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="gif/slot-waste-clip.gif" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <pattern id="wanderer-img" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="img/wanderer.png" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <pattern id="amber-row-img" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="gif/carvello-amber-row.gif" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <pattern id="my-toxic-trait-img" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="img/my-toxic-trait.jpg" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <pattern id="human-in-the-loop-img" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="img/human-in-the-loop.jpeg" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <pattern id="count-zero-img" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="gif/burr-count-zero-thumb.gif" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <pattern id="underwear-img" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="img/underwear-shopping-spree.jpg" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <pattern id="a-living-poem-img" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="gif/a-living-poem.gif" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+    <pattern id="sketches-img" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="gif/antelope-island.gif" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+  </defs>
+  <g id="spiral">
+    <g>
+      <image class="cls-3" width="1269" height="1090" transform="translate(488.06 -76.94)" xlink:href="img/spiral.svg"/>
+      <image width="1208" height="1015" transform="translate(532 -45)" xlink:href="img/spiral.svg"/>
+    </g>
+  </g>
+  <g id="vessel">
+    <text class="cls-1" transform="translate(1310.1914 245.3144)">VESSEL</text>
+    <circle fill="url(#vessel-img)" cx="1205.56" cy="238.78" r="71"/>
+  </g>
+  <g id="slot_waste" data-name="slot waste">
+    <text class="cls-1" transform="translate(854.38 53.14)">SLOT WASTE</text>
+    <circle fill="url(#slot-waste-img)" cx="960" cy="148.21" r="71"/>
+  </g>
+  <g id="wanderer">
+    <text class="cls-1" transform="translate(405.31 242.31)">WANDERER</text>
+    <circle fill="url(#wanderer-img)" cx="699.33" cy="235.78" r="71"/>
+  </g>
+  <g id="amber_row" data-name="amber row">
+    <text class="cls-1" transform="translate(284.88 429.45)">AMBER ROW</text>
+    <circle fill="url(#amber-row-img)" cx="592.9" cy="422.92" r="71"/>
+  </g>
+  <g id="my_toxic_trait_is_I_believe_the_good_is_inevitable" data-name="my toxic trait is I believe the good is inevitable">
+    <text class="cls-1" transform="translate(319.14 588.2)"><tspan x="0" y="0">MY TOXIC</tspan><tspan x="0" y="26.4">TRAIT IS I</tspan><tspan x="0" y="52.8">BELIEVE THE</tspan><tspan x="0" y="79.2">GOOD IS</tspan><tspan x="0" y="105.6">INEVITABLE</tspan></text>
+    <circle fill="url(#my-toxic-trait-img)" cx="600.59" cy="634.47" r="71"/>
+  </g>
+  <g id="human_in_the_loop" data-name="human in the loop">
+    <text class="cls-1" transform="translate(464.96 818.28)"><tspan x="0" y="0">HUMAN IN</tspan><tspan x="0" y="26.4">THE LOOP</tspan></text>
+    <circle fill="url(#human-in-the-loop-img)" cx="735.5" cy="824.95" r="71"/>
+  </g>
+  <g id="count_zero_three" data-name="count zero three">
+    <text class="cls-1" transform="translate(807.7361 1010.0297)">COUNT ZERO THREE</text>
+    <circle fill="url(#count-zero-img)" cx="967" cy="894.94" r="71"/>
+  </g>
+  <g id="underwear_shopping_spree" data-name="underwear shopping spree">
+    <text class="cls-1" transform="translate(1374.5653 802.0795)"><tspan x="0" y="0">UNDERWEAR</tspan><tspan x="0" y="26.4">SHOPPING</tspan><tspan x="0" y="52.8">SPREE</tspan></text>
+    <circle fill="url(#underwear-img)" cx="1266.31" cy="821.95" r="71"/>
+  </g>
+  <g id="a_living_poem" data-name="a living poem">
+    <text class="cls-1" transform="translate(1548.194 641.0454)">A LIVING POEM</text>
+    <circle fill="url(#a-living-poem-img)" cx="1434.59" cy="634.51" r="71"/>
+  </g>
+  <g id="sketches">
+    <text class="cls-1" transform="translate(1662.7683 423.4463)">SKETCHES</text>
+    <circle fill="url(#sketches-img)" cx="1555.49" cy="416.92" r="71"/>
+  </g>
+</svg>
