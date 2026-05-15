@@ -213,22 +213,11 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 }
 
 .carousel-prev {
-  left: 2em;
+    left: calc(10% - 1em);
 }
 
 .carousel-next {
-  right: 2em;
-}
-
-.carousel-navigation {
-  position: absolute;
-  bottom: 1em;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-}
+    right: calc(10% - 1em);
 
 .carousel-bullet {
   width: 1em;

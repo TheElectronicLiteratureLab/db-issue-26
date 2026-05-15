@@ -276,14 +276,12 @@ p {
 }
 
 .heading-subheading-container {
-
     display: flex;
     flex-direction: column;
     gap: 48px;
 }
 
 .subheading-container {
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -291,7 +289,6 @@ p {
 }
 
 .artist-section {
-
     display: flex;
     flex-direction: row;
     gap: 64px;
@@ -540,8 +537,8 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 
 .carousel-slide img {
     display: block;
-    width: 100%;
-    height: 36em;
+    width: 80%;
+    height: auto;
     object-fit: cover;
 }
 
@@ -560,11 +557,11 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 }
 
 .carousel-prev {
-    left: 2em;
+    left: calc(10% - 1em);
 }
 
 .carousel-next {
-    right: 2em;
+    right: calc(10% - 1em);
 }
 
 .carousel-navigation {
