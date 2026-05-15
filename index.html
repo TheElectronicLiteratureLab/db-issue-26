@@ -327,27 +327,27 @@
                         <feMergeNode in="SourceGraphic" />
                     </feMerge>
                 </filter>
-                <pattern id="vessel-img" patternUnits="objectBoundingBox" width="1" height="1">
-                    <image href="gif/vessel-small.gif" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice" />
-                </pattern>
-                <pattern id="slot-waste-img" patternUnits="objectBoundingBox" width="1" height="1">
-                    <image href="gif/slot-waste-clip.gif" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice" />
-                </pattern>
+                <clipPath id="vessel-clip">
+                    <circle cx="1205.56" cy="238.78" r="71" />
+                </clipPath>
+                <clipPath id="slot-waste-clip">
+                    <circle cx="960" cy="148.21" r="71" />
+                </clipPath>
                 <pattern id="wanderer-img" patternUnits="objectBoundingBox" width="1" height="1">
                     <image href="img/wanderer.png" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice" />
                 </pattern>
-                <pattern id="amber-row-img" patternUnits="objectBoundingBox" width="1" height="1">
-                    <image href="gif/carvello-amber-row-small.gif" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice" />
-                </pattern>
+                <clipPath id="amber-row-clip">
+                    <circle cx="592.9" cy="422.92" r="71" />
+                </clipPath>
                 <pattern id="my-toxic-trait-img" patternUnits="objectBoundingBox" width="1" height="1">
                     <image href="img/my-toxic-trait.jpg" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice" />
                 </pattern>
                 <pattern id="human-in-the-loop-img" patternUnits="objectBoundingBox" width="1" height="1">
                     <image href="img/human-in-the-loop.jpeg" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice" />
                 </pattern>
-                <pattern id="count-zero-img" patternUnits="objectBoundingBox" width="1" height="1">
-                    <image href="gif/burr-count-zero-thumb-small.gif" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice" />
-                </pattern>
+                <clipPath id="count-zero-clip">
+                    <circle cx="967" cy="894.94" r="71" />
+                </clipPath>
                 <pattern id="underwear-img" patternUnits="objectBoundingBox" width="1" height="1">
                     <image href="img/underwear-shopping-spree.jpg" x="0" y="0" width="142" height="142" preserveAspectRatio="xMidYMid slice" />
                 </pattern>
@@ -366,11 +366,21 @@
             </g>
             <g id="vessel">
                 <text class="cls-1" transform="translate(1310.1914 245.3144)">VESSEL</text>
-                <circle fill="url(#vessel-img)" cx="1205.56" cy="238.78" r="71" />
+                <circle cx="1205.56" cy="238.78" r="71" fill="black" />
+                <g clip-path="url(#vessel-clip)">
+                    <foreignObject x="1134.56" y="167.78" width="142" height="142">
+                        <video xmlns="http://www.w3.org/1999/xhtml" src="vid/vessel.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+                    </foreignObject>
+                </g>
             </g>
             <g id="slot_waste" data-name="slot waste">
                 <text class="cls-1" transform="translate(854.38 53.14)">SLOT WASTE</text>
-                <circle fill="url(#slot-waste-img)" cx="960" cy="148.21" r="71" />
+                <circle cx="960" cy="148.21" r="71" fill="black" />
+                <g clip-path="url(#slot-waste-clip)">
+                    <foreignObject x="889" y="77.21" width="142" height="142">
+                        <video xmlns="http://www.w3.org/1999/xhtml" src="vid/slot-waste-clip.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+                    </foreignObject>
+                </g>
             </g>
             <g id="wanderer">
                 <text class="cls-1" transform="translate(405.31 242.31)">WANDERER</text>
@@ -378,7 +388,12 @@
             </g>
             <g id="amber_row" data-name="amber row">
                 <text class="cls-1" transform="translate(284.88 429.45)">AMBER ROW</text>
-                <circle fill="url(#amber-row-img)" cx="592.9" cy="422.92" r="71" />
+                <circle cx="592.9" cy="422.92" r="71" fill="black" />
+                <g clip-path="url(#amber-row-clip)">
+                    <foreignObject x="521.9" y="351.92" width="142" height="142">
+                        <video xmlns="http://www.w3.org/1999/xhtml" src="vid/carvello-amber-row.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+                    </foreignObject>
+                </g>
             </g>
             <g id="my_toxic_trait_is_I_believe_the_good_is_inevitable" data-name="my toxic trait is I believe the good is inevitable">
                 <text class="cls-1" text-anchor="middle" transform="translate(390 588.2)">
@@ -399,7 +414,12 @@
             </g>
             <g id="count_zero_three" data-name="count zero three">
                 <text class="cls-1" transform="translate(807.7361 1010.0297)">COUNT ZERO THREE</text>
-                <circle fill="url(#count-zero-img)" cx="967" cy="894.94" r="71" />
+                <circle cx="967" cy="894.94" r="71" fill="black" />
+                <g clip-path="url(#count-zero-clip)">
+                    <foreignObject x="896" y="823.94" width="142" height="142">
+                        <video xmlns="http://www.w3.org/1999/xhtml" src="vid/burr-count-zero-thumb.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+                    </foreignObject>
+                </g>
             </g>
             <g id="underwear_shopping_spree" data-name="underwear shopping spree">
                 <text class="cls-1" text-anchor="middle" transform="translate(1482 802.0795)">
@@ -667,8 +687,6 @@
                 <img src="img/ak/radio-thumb.webp" alt="">
                 <audio src="audio/A.K. Ramanujan - Ayyappa Paniker Interview - Chicago 1982 - Clean Master.wav"></audio>
                 <audio src="audio/A.K. Ramanujan Reading Tirumankai Alvar Translations.wav"></audio>
-                <!-- this needs to be sized down still! -->
-                <audio src="audio/A.K. Ramanujan Reading Adiga Poem.avi"></audio>
             </div>
 
             <div class="akModal">
