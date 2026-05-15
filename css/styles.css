@@ -312,27 +312,32 @@ p {
 }
 
 #statelessnessGlobe {
-    position: relative;
-
-    width: 1728px;
-    height: 1117px;
+    width: 100%;
+    aspect-ratio: 1728 / 1117;
+    margin: 0 auto; /* center it */
 
     background-image: url("../img/stateless-globe.png");
     background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
 }
-
-#globe-scroll {
+/* #globe-scroll {
     width: 100vw;
     height: 100vh;
     overflow: auto;
-    /* enables scrolling */
+
     position: relative;
     scroll-behavior: smooth;
     cursor: grab;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+} */
+
+#globe-scroll {
+    width: 100%;
+    height: auto;
+    overflow: visible;
 }
 
 #globe-scroll:active {
@@ -473,6 +478,12 @@ p {
     text-transform: uppercase;
 }
 
+.statelessness-header {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 4em;
+}
+
 /*
 Source - https://stackoverflow.com/a/72992704
 Posted by Roko C. Buljan, modified by community. See post 'Timeline' for change history
@@ -598,6 +609,46 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     overflow-y: scroll;
     background: linear-gradient(to bottom right, #0D0D12 0%, #1F1F24 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D0D12 0%, #1F1F24 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D0D12 0%, #1F1F24 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D0D12 0%, #1F1F24 50%) top right / 50% 50% no-repeat;
     box-shadow: 0 0 60px 12px rgba(221, 225, 197, 0.15);
+}
+
+.table-of-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.poem-container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 4em;
+    justify-content: space-between;
+}
+
+.poem-slider {
+    width: 800px;
+    height: 500px;
+    padding: 52px 72px 52px 72px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    background: linear-gradient(to bottom right, #0D0D12 0%, #1F1F24 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D0D12 0%, #1F1F24 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D0D12 0%, #1F1F24 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D0D12 0%, #1F1F24 50%) top right / 50% 50% no-repeat;
+    box-shadow: 0 0 60px 12px rgba(221, 225, 197, 0.15);
+}
+
+.poem-content {
+    display: none;
+}
+
+.poem-content.active {
+    display: block;
+}
+
+/* Users can see which poem is active */
+.poemBtn.active {
+    background: #42A6FC;
+    color: #0D0D12;
 }
 
 .artist-bio {
