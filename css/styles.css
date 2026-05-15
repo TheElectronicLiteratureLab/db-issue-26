@@ -30,6 +30,16 @@ a {
 }
 
 /* Mobile menu styles */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.masthead-logo {
+    width: 50px;
+}
+
 .close-btn-container {
     position: absolute;
     top: 10px;
@@ -180,7 +190,10 @@ body {
 
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
     color: var(--Off-White, #F5F5F7);
     ;
 }
@@ -314,13 +327,15 @@ p {
 #statelessnessGlobe {
     width: 100%;
     aspect-ratio: 1728 / 1117;
-    margin: 0 auto; /* center it */
+    margin: 0 auto;
+    /* center it */
 
     background-image: url("../img/stateless-globe.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 /* #globe-scroll {
     width: 100vw;
     height: 100vh;
