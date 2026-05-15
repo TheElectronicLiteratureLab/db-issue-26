@@ -24,14 +24,43 @@
     <canvas id="orb-bg"></canvas>
     <canvas id="cursor-trail"></canvas>
 
-    <div class="topbar">
-        <a href="../born-digital.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 26 46" fill="none">
+    <!-- Masthead -->
+    <header>
+
+        <!-- Back arrow -->
+        <a href="../index.html">
+            <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M26 2.88275L23.439 0L0 22.75L23.439 45.5L26 42.6172L5.5315 22.75L26 2.88275Z" fill="#F5F5F7" />
             </svg>
         </a>
-        <img src="../img/db-logo.svg" alt="Drunken Boat logo">
-    </div>
+
+        <a href="../index.html"><img src="../img/db-logo.svg" class="masthead-logo"></a>
+
+        <nav>
+            <section class="hamburger-menu">
+                <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0.5H22.2222" stroke="#F5F5F7" stroke-miterlimit="20" stroke-linejoin="round" />
+                    <path d="M0 6.05554H22.2222" stroke="#F5F5F7" stroke-miterlimit="20" stroke-linejoin="round" />
+                    <path d="M0 11.6111H22.2222" stroke="#F5F5F7" stroke-miterlimit="20" stroke-linejoin="round" />
+                </svg>
+            </section>
+
+            <section class="menu-modal">
+                <div class="close-btn-container">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M37.75 6.25H6.25V37.75H37.75V6.25Z" stroke="#F5F5F7" />
+                        <path d="M13.75 13.75L30.25 30.25" stroke="#F5F5F7" />
+                        <path d="M30.25 13.75L13.75 30.25" stroke="#F5F5F7" />
+                    </svg>
+                </div>
+                <a href="../index.html">Issue 26 Landing</a>
+                <a href="../statelessness.html">Statelessness</a>
+                <a href="../born-digital.html">Born-Digital</a>
+                <a href="../ramanujan.html">A.K. Ramanujan</a>
+                <a href="../issue-statement.html">Issue Statement</a>
+            </section>
+        </nav>
+    </header>
 
     <section class="piece-section">
         <div class="heading-subheading-container">
@@ -74,6 +103,7 @@
     </footer>
     <script src="../scripts/orb-particles.js"></script>
     <script src="../scripts/cursor-trail.js"></script>
+    <script src="../scripts/mobile-menu.js"></script>
 </body>
 
 </html>
