@@ -112,7 +112,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 54px 74px 0 74px;
+    padding: 32px 74px 0 74px;
 
     background: transparent;
 }
@@ -247,7 +247,8 @@ h3 {
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
-    line-height: 34px; /* 121.429% */
+    line-height: 34px;
+    /* 121.429% */
     text-transform: uppercase;
 }
 
@@ -275,7 +276,7 @@ p {
     gap: 8px;
     border: 1px solid var(--Off-White, #F5F5F7);
     background: none;
-    
+
     color: var(--Off-White, #F5F5F7);
     font-family: "IBM Plex Sans";
     font-size: 18px;
@@ -516,7 +517,7 @@ p {
 
 #ak-scroll-canvas {
     position: relative;
-    width: 3600px;
+    width: 5000px;
     height: 100%;
 }
 
@@ -581,7 +582,7 @@ p {
 
 #ak-letters {
     top: 15%;
-    left: 19%;
+    left: 16%;
     position: absolute;
     width: 250px;
     height: 350px;
@@ -767,7 +768,7 @@ p {
 #picture-frame {
     position: absolute;
     top: 7%;
-    left: 26%;
+    left: 22%;
     width: 400px;
     height: 400px;
     display: flex;
@@ -891,7 +892,7 @@ p {
 
 #photo6 {
     top: 36%;
-    left: 12%;
+    left: 10%;
 }
 
 #photo1 img, #photo2 img, #photo3 img,
@@ -1065,7 +1066,7 @@ p {
 
 #ephemera3 {
     top: 4%;
-    right: 82%;
+    right: 86%;
 }
 
 #ephemera5 {
@@ -1737,7 +1738,8 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
-    line-height: 34px; /* 154.545% */
+    line-height: 34px;
+    /* 154.545% */
     text-align: left;
 }
 
