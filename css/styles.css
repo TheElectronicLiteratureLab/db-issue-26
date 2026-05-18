@@ -1441,6 +1441,8 @@ p {
     align-items: center;
     gap: 1em;
     transform: translate(-50%, -50%);
+
+    z-index: 1;
 }
 
 .region svg {
@@ -1467,14 +1469,70 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: var(--stateless-modal-bg, rgba(255, 255, 255, 0.9));
-    padding: 2em;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    display: none;
+
+    padding: 0 48px 48px 48px;
+    z-index: 1002;
     max-width: min(26rem, 90vw);
+    width: 601px;
+    height: auto;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    background: #0D0D12;
+    box-shadow: 0 0 40px 0 rgba(65, 166, 252, 0.40);
 }
+
+.statelessModal button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+.statelessModal a {
+    width: 320px;
+}
+
+.statelessModal h2 {
+    margin-top: 32px;
+    margin-bottom: 44px;
+}
+
+.statelessModal p {
+    padding-bottom: 44px;
+    border-bottom: 1px solid #F5F5F7;
+}
+
+.statelessModal h3 {
+    color: var(--Off-White, #F5F5F7);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 140%; /* 30.8px */
+    text-transform: uppercase;
+    text-align: left;
+
+    margin-top: 30px;
+}
+
+.statelessModal h4 {
+    color: #A1A1AA;
+    /* H4 */
+    font-family: Michroma;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px; /* 154.545% */
+    text-align: left;
+
+    margin-bottom: 30px;
+}
+
 
 @media (max-width: 767px) {
     .statelessModal {
@@ -1506,11 +1564,13 @@ p {
 }
 
 #burkinabe {
+    display: none;
     left: 12%;
     top: 80%;
 }
 
 #bidoon {
+    display: none;
     left: 32%;
     top: 60%;
 }

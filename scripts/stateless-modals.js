@@ -8,7 +8,7 @@ function toggleModal(region) {
 
     // Open the clicked one (if it exists)
     if (modal) {
-        modal.style.display = 'block';
+        modal.style.display = 'flex';
     }
 }
 
