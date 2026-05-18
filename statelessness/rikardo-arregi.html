@@ -9,9 +9,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/reset.css">
@@ -71,16 +69,20 @@
 
             <section class="poem-slider">
                 <div class="poem-content">
-                    <div>
+                    <div class="poem-header">
                         <h2>I DO NOT KNOW WHO 'I' IS</h2>
-                        <button class="autoplayBtn">Autoplay</button>
-
-                        <button class="audioBtn">Listen Now</button>
-                        <audio src="../audio/statelessness/amodiozko-poema-edo.m4a"></audio>
-
-                        <button class="translateBtn">Translate</button>
+                        <div>
+                            <button class="autoplayBtn view-piece-btn">Autoscroll
+                                <svg width="20" height="20" viewBox="0 0 20 23" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C10.6904 0 11.25 0.572087 11.25 1.27778V18.6374L17.8662 11.8743C18.3543 11.3753 19.1458 11.3753 19.6339 11.8743C20.122 12.3733 20.122 13.1823 19.6339 13.6813L10.8839 22.6258C10.3958 23.1247 9.60427 23.1247 9.11614 22.6258L0.366113 13.6813C-0.122038 13.1823 -0.122038 12.3733 0.366113 11.8743C0.854276 11.3753 1.64573 11.3753 2.13389 11.8743L8.75001 18.6374V1.27778C8.75001 0.572087 9.30964 0 10 0Z" />
+                                </svg>
+                            </button>
+                            <button class="audioBtn view-piece-btn">Listen Now</button>
+                            <audio src="../audio/statelessness/amodiozko-poema-edo.m4a"></audio>
+                            <button class="translateBtn view-piece-btn">Translate</button>
+                        </div>
                     </div>
-                    <p>- Again
+                    <p class="poem-scroll">- Again
 
 
                         It’s noon on Sunday and I’m leaving home to go to my mother’s. The cold wind forces me to pull
@@ -566,9 +568,9 @@
 
             <section class="table-of-contents">
                 <h3>CONTENTS</h3>
-                <button class="poemBtn">01. I DO NOT KNOW WHO 'I' IS</button>
-                <button class="poemBtn">02. 66 LINES FROM THE CITY UNDER SIEGE</button>
-                <button class="poemBtn">03. LOVE POEM OR SOMETHING XVIII (THE BASQUE EXAMPLE)</button>
+                <button class="poemBtn"><span>01</span> I DO NOT KNOW WHO 'I' IS</button>
+                <button class="poemBtn"><span>02</span> 66 LINES FROM THE CITY UNDER SIEGE</button>
+                <button class="poemBtn"><span>03</span> LOVE POEM OR SOMETHING XVIII (THE BASQUE EXAMPLE)</button>
             </section>
 
         </div>

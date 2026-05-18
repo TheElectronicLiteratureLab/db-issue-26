@@ -102,7 +102,7 @@ function stopAutoplay() {
     }
 
     if (activeAutoplayButton) {
-        activeAutoplayButton.textContent = "Autoplay";
+        activeAutoplayButton.textContent = "Autoscroll";
         activeAutoplayButton = null;
     }
 }
@@ -111,7 +111,7 @@ autoplayButtons.forEach(button => {
     button.addEventListener('click', () => {
 
         const poem = button.closest('.poem-content');
-        const scrollContainer = poem ? poem.closest('.poem-slider') : null;
+        const scrollContainer = poem ? poem.querySelector('.poem-scroll') : null;
         if (!scrollContainer) return;
 
         // Toggle autoplay on/off
@@ -120,7 +120,7 @@ autoplayButtons.forEach(button => {
             return;
         }
 
-        button.textContent = "Stop";
+        button.textContent = "Autoscrolling...";
         activeAutoplayButton = button;
 
         scrollInterval = setInterval(() => {
