@@ -242,6 +242,15 @@ h2 {
     text-transform: uppercase;
 }
 
+h3 {
+    font-family: Michroma;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px; /* 121.429% */
+    text-transform: uppercase;
+}
+
 p {
     font-family: "IBM Plex Sans";
     font-size: 18px;
@@ -266,6 +275,13 @@ p {
     gap: 8px;
     border: 1px solid var(--Off-White, #F5F5F7);
     background: none;
+    
+    color: var(--Off-White, #F5F5F7);
+    font-family: "IBM Plex Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
 }
 
 .view-piece-btn a {
@@ -287,6 +303,8 @@ p {
     border: 1px solid var(--Near-Black, #0D0D12);
     background: var(--Blue, #42A6FC);
     transition: all 0.3s ease;
+
+    color: var(--Near-Black, #0D0D12);
 }
 
 .view-piece-btn:hover a {
@@ -298,6 +316,12 @@ p {
     fill: var(--Near-Black, #0D0D12);
     transition: all 0.3s ease;
 }
+
+/* view piece button focus state */
+/* .view-piece-btn:focus {
+    border: 2px solid var(--Blue, #42A6FC);
+    color: var(--Blue, #42A6FC);
+} */
 
 .heading-subheading-container {
     display: flex;
@@ -1700,6 +1724,37 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     display: flex;
     flex-direction: column;
     gap: 1em;
+
+}
+
+.table-of-contents button {
+    color: var(--Off-White, #F5F5F7);
+    background-color: transparent;
+    border: none;
+
+    /* H4 */
+    font-family: Michroma;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px; /* 154.545% */
+    text-align: left;
+}
+
+.table-of-contents button span {
+    color: var(--Blue, #42A6FC);
+}
+
+.table-of-contents button.active span {
+    color: #0D0D12;
+}
+
+.table-of-contents button:hover {
+    color: #42A6FC;
+}
+
+.table-of-contents button:active {
+    background-color: transparent;
 }
 
 .poem-container {
@@ -1713,13 +1768,31 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 
 .poem-slider {
     width: 800px;
-    height: 500px;
+    height: 540px;
     padding: 52px 72px 52px 72px;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
     background: linear-gradient(to bottom right, #0D0D12 0%, #1F1F24 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D0D12 0%, #1F1F24 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D0D12 0%, #1F1F24 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D0D12 0%, #1F1F24 50%) top right / 50% 50% no-repeat;
     box-shadow: 0 0 60px 12px rgba(221, 225, 197, 0.15);
+}
+
+.poem-scroll {
+    height: 300px;
+    overflow-y: scroll;
+    padding-top: 2em;
+}
+
+.poem-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.poem-header div {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
 }
 
 .poem-content {
