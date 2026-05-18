@@ -16,12 +16,15 @@ class PageTransition {
     }
 
     init() {
-        // Hide all sections except the first one
-        this.sections.forEach((section, index) => {
+        const hashSection = window.location.hash.slice(1);
+        const initialSection = this.sections.includes(hashSection) ? hashSection : this.sections[0];
+        this.currentSection = initialSection;
+
+        this.sections.forEach((section) => {
             const element = document.getElementById(section);
             if (element) {
                 element.classList.add('page-section');
-                if (index !== 0) {
+                if (section !== initialSection) {
                     element.style.display = 'none';
                     element.classList.add('hidden');
                 } else {
