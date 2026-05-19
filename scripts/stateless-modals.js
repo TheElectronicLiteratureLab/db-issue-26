@@ -1,14 +1,20 @@
-function toggleModal(region) {
-    const modal = region.querySelector('.statelessModal');
-
-    // Close ALL modals first
+function resetRegions() {
     document.querySelectorAll('.statelessModal').forEach(m => {
         m.style.display = 'none';
     });
+    document.querySelectorAll('.region').forEach(r => {
+        r.style.zIndex = '';
+    });
+}
 
-    // Open the clicked one (if it exists)
+function toggleModal(region) {
+    const modal = region.querySelector('.statelessModal');
+
+    resetRegions();
+
     if (modal) {
         modal.style.display = 'flex';
+        region.style.zIndex = '100';
     }
 }
 
@@ -17,9 +23,7 @@ document.addEventListener('click', function (e) {
     const isModal = e.target.closest('.statelessModal');
 
     if (!isRegion && !isModal) {
-        document.querySelectorAll('.statelessModal').forEach(m => {
-            m.style.display = 'none';
-        });
+        resetRegions();
     }
 });
 

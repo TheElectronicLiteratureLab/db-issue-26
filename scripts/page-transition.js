@@ -93,7 +93,7 @@ class PageTransition {
         // After fade out, switch sections and fade in
         setTimeout(() => {
             currentElement.style.display = 'none';
-            nextElement.style.display = 'block';
+            nextElement.style.display = '';
 
             // Trigger reflow to ensure CSS transition happens
             void nextElement.offsetWidth;
