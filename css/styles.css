@@ -252,6 +252,18 @@ h3 {
     text-transform: uppercase;
 }
 
+h4 {
+    color: var(--Off-White, #F5F5F7);
+
+    /* H4 */
+    font-family: Michroma;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px; /* 154.545% */
+    text-transform: uppercase;
+}
+
 p {
     font-family: "IBM Plex Sans";
     font-size: 18px;
@@ -316,6 +328,37 @@ p {
 .view-piece-btn:hover svg {
     fill: var(--Near-Black, #0D0D12);
     transition: all 0.3s ease;
+}
+
+.audioBtn .audioWave {
+    display: none;
+}
+
+.audioBtn .audioMuted {
+    display: inline;
+}
+
+.audioBtn.is-playing .audioWave {
+    display: inline;
+}
+
+.audioBtn.is-playing .audioMuted {
+    display: none;
+}
+
+.audioBtn:hover,
+.audioBtn.is-playing {
+    border: 1px solid var(--Near-Black, #0D0D12);
+    background: var(--Blue, #42A6FC);
+    color: var(--Near-Black, #0D0D12);
+}
+
+.audioBtn:hover svg path,
+.audioBtn:hover svg line,
+.audioBtn.is-playing svg path,
+.audioBtn.is-playing svg line {
+    stroke: currentColor;
+    fill: currentColor;
 }
 
 /* view piece button focus state */
@@ -1876,7 +1919,11 @@ p {
 .statelessness-header {
     width: 80%;
     margin: auto;
-    margin-bottom: 4em;
+    margin-top: 200px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 /*
@@ -2031,6 +2078,26 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     flex-direction: column;
     gap: 1em;
 
+    margin-left: 42px;
+
+        /* H4 */
+    font-family: Michroma;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    /* 154.545% */
+    text-align: left;
+}
+
+.table-of-contents div {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+}
+
+.table-of-contents h3 {
+    margin-bottom: 24px;
 }
 
 .table-of-contents button {
@@ -2046,14 +2113,13 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     line-height: 34px;
     /* 154.545% */
     text-align: left;
+
+    width: 600px;
+    padding-left: 28px;
 }
 
-.table-of-contents button span {
+.table-of-contents span {
     color: var(--Blue, #42A6FC);
-}
-
-.table-of-contents button.active span {
-    color: #0D0D12;
 }
 
 .table-of-contents button:hover {
@@ -2069,7 +2135,8 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     flex-direction: row;
     width: 80%;
     margin: auto;
-    margin-bottom: 4em;
+    margin-top: 145px;
+    margin-bottom: 253px;
     justify-content: space-between;
 }
 
@@ -2112,8 +2179,8 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 
 /* Users can see which poem is active */
 .poemBtn.active {
-    background: #42A6FC;
-    color: #0D0D12;
+
+    color: #42A6FC;
 }
 
 .artist-bio {
@@ -2123,11 +2190,18 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     margin: auto;
 }
 
+.artist-bio div {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 92px;
+}
+
 .artist-bio img {
     width: 400px;
     height: 400px;
     object-fit: cover;
-    margin-right: 2em;
+    margin-right: 264px;
 }
 
 /* Footer styles */

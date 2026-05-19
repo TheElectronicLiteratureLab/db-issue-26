@@ -32,38 +32,64 @@ const audioButtons = document.querySelectorAll('.audioBtn');
 
 let currentlyPlaying = null;
 
+function setButtonLabel(button, selector, label) {
+    const labelSpan = button.querySelector(selector);
+    if (labelSpan) {
+        labelSpan.textContent = label;
+        return;
+    }
+
+    for (const node of button.childNodes) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            node.textContent = label;
+            return;
+        }
+    }
+
+    button.insertAdjacentText('afterbegin', label);
+}
+
+function setAudioButtonState(button, isPlaying) {
+    setButtonLabel(button, '.audioLabel', isPlaying ? 'Listening...' : 'Listen Now');
+    button.classList.toggle('is-playing', isPlaying);
+}
+
+function resetAudioButtons() {
+    audioButtons.forEach(btn => setAudioButtonState(btn, false));
+}
+
 audioButtons.forEach((button) => {
+    const poem = button.closest('.poem-content');
+    const audio = poem.querySelector('audio');
+
+    audio.addEventListener('ended', () => {
+        setAudioButtonState(button, false);
+        if (currentlyPlaying === audio) {
+            currentlyPlaying = null;
+        }
+    });
+
     button.addEventListener('click', () => {
-
-        const poem = button.closest('.poem-content');
-        const audio = poem.querySelector('audio');
-
-        // If clicking the same audio → toggle
         if (currentlyPlaying === audio) {
             if (!audio.paused) {
                 audio.pause();
-                button.textContent = "Listen Now";
+                setAudioButtonState(button, false);
             } else {
                 audio.play();
-                button.textContent = "Listening...";
+                setAudioButtonState(button, true);
             }
-        } else {
-            // Stop any other audio
-            if (currentlyPlaying) {
-                currentlyPlaying.pause();
-                currentlyPlaying.currentTime = 0;
-
-                // reset other buttons
-                document.querySelectorAll('.audioBtn').forEach(btn => {
-                    btn.textContent = "Listen Now";
-                });
-            }
-
-            // Play new audio
-            audio.play();
-            button.textContent = "Listening...";
-            currentlyPlaying = audio;
+            return;
         }
+
+        if (currentlyPlaying) {
+            currentlyPlaying.pause();
+            currentlyPlaying.currentTime = 0;
+            resetAudioButtons();
+        }
+
+        audio.play();
+        setAudioButtonState(button, true);
+        currentlyPlaying = audio;
     });
 });
 
@@ -76,9 +102,7 @@ poemButtons.forEach((button, index) => {
             currentlyPlaying.currentTime = 0;
             currentlyPlaying = null;
 
-            document.querySelectorAll('.audioBtn').forEach(btn => {
-                btn.textContent = "Listen Now";
-            });
+            resetAudioButtons();
         }
 
         poems.forEach(poem => poem.classList.remove('active'));
@@ -95,6 +119,23 @@ const autoplayButtons = document.querySelectorAll('.autoplayBtn');
 let scrollInterval = null;
 let activeAutoplayButton = null;
 
+function setAutoplayButtonLabel(button, label) {
+    const labelSpan = button.querySelector('.autoplayLabel');
+    if (labelSpan) {
+        labelSpan.textContent = label;
+        return;
+    }
+
+    for (const node of button.childNodes) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            node.textContent = label;
+            return;
+        }
+    }
+
+    button.insertAdjacentText('afterbegin', label);
+}
+
 function stopAutoplay() {
     if (scrollInterval) {
         clearInterval(scrollInterval);
@@ -102,7 +143,7 @@ function stopAutoplay() {
     }
 
     if (activeAutoplayButton) {
-        activeAutoplayButton.textContent = "Autoscroll";
+        setAutoplayButtonLabel(activeAutoplayButton, "Autoscroll");
         activeAutoplayButton = null;
     }
 }
@@ -120,7 +161,7 @@ autoplayButtons.forEach(button => {
             return;
         }
 
-        button.textContent = "Autoscrolling...";
+        setAutoplayButtonLabel(button, "Autoscrolling...");
         activeAutoplayButton = button;
 
         scrollInterval = setInterval(() => {
