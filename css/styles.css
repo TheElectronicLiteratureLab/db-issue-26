@@ -1452,7 +1452,7 @@ p {
 }
 
 #photo1 {
-    bottom: 2%;
+    top: 70%;
     left: 19%;
 }
 
@@ -2339,7 +2339,7 @@ footer {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
+    background: transparent;
     position: relative;
     bottom: auto;
     left: auto;
