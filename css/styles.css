@@ -120,6 +120,31 @@ header {
 /* Issue landing styles */
 #issue-landing-body {
     height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#issue-landing-body::before,
+#issue-landing-body::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320vw;
+    height: 320vw;
+    border-radius: 50%;
+    background: #0D0D12;
+    filter: blur(30px);
+    pointer-events: none;
+    z-index: 3;
+}
+
+#issue-landing-body::before {
+    top: calc(-320vw + 18vh);
+}
+
+#issue-landing-body::after {
+    bottom: calc(-320vw + 18vh);
 }
 
 #main-container {
@@ -127,12 +152,46 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    gap: 4px;
+    box-sizing: border-box;
 }
 
 #main-container a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    font-size: 1.5em;
+    /* height: 70%; */
+}
+
+#main-container a span {
+    font-family: 'Michroma', sans-serif;
+    font-size: 3vw;
+    line-height: 1;
+    letter-spacing: -0.08em;
+    color: #f5f5f7;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: block;
+    transform: scaleY(30);
+    transform-origin: center center;
+    will-change: transform;
+    transition: transform 0.6s ease-in-out,
+        color 0.4s ease-in-out,
+        text-shadow 0.4s ease-in-out;
+}
+
+#main-container a:hover span {
+    transform: scaleY(1);
+    color: #42A6FC;
+    text-shadow: 0 0 10px #42A6FC,
+        0 0 25px #42A6FC,
+        0 0 50px rgba(66, 166, 252, 0.5);
 }
 
 /* Born-Digital styles */
@@ -158,7 +217,24 @@ body {
 
 #born-digital-body {
     height: 100vh;
-    border: 2px solid blue;
+    overflow: hidden;
+}
+
+#born-digital-body svg {
+    overflow: visible;
+}
+
+#born-digital-body svg>g:not(#spiral) {
+    cursor: pointer;
+}
+
+#born-digital-body svg>g:not(#spiral) text {
+    transition: filter 0.35s ease, font-size 0.35s ease;
+}
+
+#born-digital-body svg>g:not(#spiral):hover text {
+    font-size: 21px;
+    filter: drop-shadow(0 0 8px #f5f5f7);
 }
 
 .floatingNav {
@@ -1997,9 +2073,16 @@ footer {
     position: relative;
 }
 
+#globe-scroll:active {
+    cursor: grabbing;
+}
+
 #statelessnessGlobe {
+    /* Scale the globe to fit viewport height exactly, but never wider than needed */
+    height: 100vh;
     width: 100vw;
-    min-height: 80vh;
+    /* maintain 1728:1117 aspect ratio */
+    flex-shrink: 0;
 
     background-image: url("../img/stateless-globe.png");
     background-size: cover;
@@ -2007,7 +2090,7 @@ footer {
     background-repeat: no-repeat;
 
     position: relative;
-    flex-shrink: 0;
+    /* pins still need this */
 }
 
 .region {
@@ -2052,7 +2135,8 @@ footer {
     /* scale up to compensate: actual pin is ~43/406 of the viewBox width */
     width: calc(clamp(16px, 2vw, 32px) * (406 / 43));
     height: auto;
-    transform: translate(-50%, -46%); /* -46% instead of -50% to align pin top */
+    transform: translate(-50%, -46%);
+    /* -46% instead of -50% to align pin top */
     opacity: 0;
     pointer-events: none;
     overflow: visible;
@@ -2230,7 +2314,7 @@ footer {
 
 #maasai {
     left: 65%;
-    top: 92%;
+    top: 90%;
 }
 
 #tibetans {

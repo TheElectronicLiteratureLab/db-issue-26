@@ -41,6 +41,16 @@ const sorted = GROUPS
 gsap.set(GROUPS.map(g => '#' + g.id), { opacity: 0 });
 gsap.set(GROUPS.map(g => `#${g.id} text`), { opacity: 0 });
 
+function drift(el) {
+    gsap.to(el, {
+        x: `+=${(Math.random() - 0.5) * 14}`,
+        y: `+=${(Math.random() - 0.5) * 12}`,
+        duration: 3 + Math.random() * 4,
+        ease: 'sine.inOut',
+        onComplete() { drift(el); },
+    });
+}
+
 function resetGroups() {
     sorted.forEach(g => {
         const el = document.getElementById(g.id);
@@ -78,6 +88,7 @@ function runIntro() {
             ease: 'power2.inOut',
             onComplete() {
                 tempPath.remove();
+                drift(el);
                 completedCount++;
                 if (completedCount === sorted.length) {
                     gsap.to(GROUPS.map(g => `#${g.id} text`), { opacity: 1, duration: 0.6 });
