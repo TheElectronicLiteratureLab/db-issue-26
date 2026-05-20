@@ -96,7 +96,7 @@ header {
     display: flex;
     cursor: pointer;
     position: absolute;
-    top: 20px;
+    top: 32px;
     right: 20px;
 
     z-index: 999;
@@ -221,6 +221,16 @@ header {
 .topbar img {
     height: 64px;
     width: 64px;
+}
+
+.topbar > a > svg {
+    width: 20px;
+    height: auto;
+}
+
+.hamburger-menu svg {
+    width: 28px;
+    height: auto;
 }
 
 body {
@@ -366,6 +376,28 @@ p {
     font-weight: 400;
     line-height: 160%;
     /* 28.8px */
+}
+
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .topbar {
+        padding: 16px 20px 0 20px;
+        align-items: center;
+    }
+
+    .topbar img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hamburger-menu {
+        top: 16px;
+        right: 20px;
+    }
 }
 
 .piece-section {
@@ -802,7 +834,6 @@ p {
 }
 
 #ak-scroll-hint {
-    border: 2px solid blue;
     position: absolute;
     right: 18px;
     top: 50%;
@@ -2403,140 +2434,31 @@ footer {
         width: 5000px;
     }
 
-    #a-flowering-tree {
-        width: 150px;
-        height: 200px;
-    }
-
-    #passport {
-        width: 75px;
-        height: 100px;
-    }
-
-    #ak-letters {
-        width: 125px;
-        height: 175px;
-    }
-
-    #ak-tv-container {
-        width: 175px;
-        height: 175px;
-    }
-
-    #picture-frame {
-        width: 200px;
-        height: 200px;
-    }
-
-    #radio {
-        width: 160px;
-        height: 160px;
-    }
-
-    #interview-letter-1978 {
-        width: 125px;
-        height: 175px;
-    }
-
-    #photo1,
-    #photo2,
-    #photo3,
-    #photo4,
-    #photo5,
-    #photo6 {
-        width: 100px;
-        height: 130px;
-    }
-
-    #dr-murty {
-        width: 125px;
-        height: 175px;
-    }
-
-    #mysore {
-        width: 100px;
-        height: 150px;
-    }
-
-    #stallworthy {
-        width: 160px;
-        height: 200px;
-    }
-
-    #ephemera,
-    #ephemera2,
-    #ephemera3,
-    #ephemera5,
-    #ephemera6,
-    #ephemera-safe-unsafe {
-        width: 100px;
-        height: 130px;
-    }
-
-    #acacia-tree {
-        width: 100px;
-        height: 100px;
-    }
-
-    #poem-self-portrait {
-        width: 100px;
-        height: 130px;
-    }
-
-    #red-earth {
-        width: 100px;
-        height: 130px;
-    }
-
-    #translation {
-        width: 150px;
-        height: 180px;
-    }
-
-    #doodles-1 {
-        width: 130px;
-        height: 180px;
-    }
-
-    #biography-note {
-        width: 110px;
-        height: 155px;
-    }
-
-    #ak-essays {
-        width: 90px;
-        height: 133px;
-    }
-
-    #doodles-2 {
-        width: 130px;
-        height: 180px;
-    }
-
-    #first-visa {
-        width: 100px;
-        height: 130px;
-    }
-
-    #foreign-country {
-        width: 130px;
-        height: 160px;
-    }
-
-    #of-mothers {
-        width: 130px;
-        height: 160px;
-    }
-
-    #striders {
-        width: 130px;
-        height: 160px;
-    }
-
-    #truants {
-        width: 130px;
-        height: 160px;
-    }
+    #a-flowering-tree           { width: 199px; height: 265px; }
+    #passport                   { width:  99px; height: 132px; }
+    #ak-letters                 { width: 166px; height: 231px; }
+    #ak-tv-container            { width: 231px; height: 231px; }
+    #picture-frame              { width: 265px; height: 265px; }
+    #radio                      { width: 212px; height: 212px; }
+    #interview-letter-1978      { width: 166px; height: 231px; }
+    #photo1, #photo2, #photo3, #photo4, #photo5, #photo6 { width: 132px; height: 173px; }
+    #dr-murty                   { width: 166px; height: 231px; }
+    #mysore                     { width: 132px; height: 199px; }
+    #stallworthy                { width: 212px; height: 265px; }
+    #ephemera, #ephemera2, #ephemera3, #ephemera5, #ephemera6, #ephemera-safe-unsafe { width: 132px; height: 173px; }
+    #acacia-tree                { width: 132px; height: 132px; }
+    #poem-self-portrait         { width: 132px; height: 173px; }
+    #red-earth                  { width: 132px; height: 173px; }
+    #translation                { width: 199px; height: 238px; }
+    #doodles-1                  { width: 173px; height: 238px; }
+    #biography-note             { width: 146px; height: 205px; }
+    #ak-essays                  { width: 120px; height: 176px; }
+    #doodles-2                  { width: 173px; height: 238px; }
+    #first-visa                 { width: 132px; height: 173px; }
+    #foreign-country            { width: 173px; height: 212px; }
+    #of-mothers                 { width: 173px; height: 212px; }
+    #striders                   { width: 173px; height: 212px; }
+    #truants                    { width: 173px; height: 212px; }
 
     /* Scroll hint — fixed to viewport right edge */
     #ak-scroll-hint {
