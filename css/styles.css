@@ -2499,6 +2499,7 @@ footer {
     align-items: flex-start;
 
     position: relative;
+    z-index: 2;
 }
 
 #globe-scroll:active {
@@ -2516,6 +2517,7 @@ footer {
     /* SVG viewBox maintains aspect ratio */
 
     margin-top: auto;
+    z-index: 1;
 }
 
 #globe {
@@ -3146,4 +3148,25 @@ footer {
     .statement-page .statelessness-header h1 {
         font-size: 7vw;
     }
+}
+
+.prism-bg {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 1;
+    pointer-events: none;
+
+    background: #02030a;
+}
+
+#transition-overlay {
+    position: fixed;
+    inset: 0;
+    background: #0D0D12;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 98;
 }

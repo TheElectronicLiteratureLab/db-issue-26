@@ -22,10 +22,10 @@ class PageTransition {
 
     // Spatial coordinates (in viewport units) for each section
     static POSITIONS = {
-        'issue-landing-body': { x: 0,  y: 0 },
-        'born-digital-body':  { x: -1, y: 0 },
-        'statelessness-body': { x: 0,  y: 1 },
-        'ramanujan-body':     { x: 1,  y: 0 },
+        'issue-landing-body': { x: 0, y: 0 },
+        'born-digital-body': { x: -1, y: 0 },
+        'statelessness-body': { x: 0, y: 1 },
+        'ramanujan-body': { x: 1, y: 0 },
     };
 
     init() {
@@ -66,10 +66,10 @@ class PageTransition {
 
     getTargetSection(href) {
         const map = {
-            'index.html':        'issue-landing-body',
+            'index.html': 'issue-landing-body',
             'statelessness.html': 'statelessness-body',
-            'born-digital.html':  'born-digital-body',
-            'ramanujan.html':     'ramanujan-body',
+            'born-digital.html': 'born-digital-body',
+            'ramanujan.html': 'ramanujan-body',
         };
         return map[href.split('/').pop()] ?? null;
     }
@@ -81,7 +81,7 @@ class PageTransition {
         const W = window.innerWidth;
         const H = window.innerHeight;
         const from = PageTransition.POSITIONS[fromId] ?? { x: 0, y: 0 };
-        const to   = PageTransition.POSITIONS[toId]   ?? { x: 0, y: 0 };
+        const to = PageTransition.POSITIONS[toId] ?? { x: 0, y: 0 };
 
         let dx = to.x - from.x;
         let dy = to.y - from.y;
@@ -94,8 +94,8 @@ class PageTransition {
         }
 
         return {
-            enterFrom: { x: dx * W,  y: dy * H  },
-            exitTo:    { x: -dx * W, y: -dy * H },
+            enterFrom: { x: dx * W, y: dy * H },
+            exitTo: { x: -dx * W, y: -dy * H },
         };
     }
 
@@ -104,7 +104,7 @@ class PageTransition {
         if (!this.sections.includes(sectionId)) return;
 
         const currentEl = document.getElementById(this.currentSection);
-        const nextEl    = document.getElementById(sectionId);
+        const nextEl = document.getElementById(sectionId);
         if (!currentEl || !nextEl) return;
 
         // Instant swap for users who prefer reduced motion
@@ -118,6 +118,7 @@ class PageTransition {
             this.onSectionEnter(sectionId);
             return;
         }
+
 
         this.isTransitioning = true;
         document.body.style.overflow = 'hidden';
@@ -149,7 +150,7 @@ class PageTransition {
                 // Restore both sections to normal document flow
                 currentEl.style.display = 'none';
                 gsap.set(currentEl, { clearProps: 'position,top,left,width,height,x,y,zIndex' });
-                gsap.set(nextEl,    { clearProps: 'all' });
+                gsap.set(nextEl, { clearProps: 'all' });
 
                 document.body.style.overflow = '';
                 window.scrollTo(0, 0);
@@ -164,8 +165,8 @@ class PageTransition {
                 this.onSectionEnter(sectionId);
             },
         })
-        .to(currentEl, { x: exitTo.x,    y: exitTo.y    }, 0)
-        .to(nextEl,    { x: 0,           y: 0           }, 0);
+            .to(currentEl, { x: exitTo.x, y: exitTo.y }, 0)
+            .to(nextEl, { x: 0, y: 0 }, 0);
     }
 
     onSectionEnter(sectionId) {
@@ -175,7 +176,7 @@ class PageTransition {
         }
 
         if (sectionId === 'ramanujan-body') {
-            const hint      = document.getElementById('ak-scroll-hint');
+            const hint = document.getElementById('ak-scroll-hint');
             const container = document.getElementById('ak-horizontal-scroll-container');
             if (hint && container) {
                 container.scrollLeft = 0;
@@ -189,9 +190,9 @@ class PageTransition {
         }
     }
 
-    goTo(sectionId)    { this.transitionTo(sectionId); }
-    goToIndex(index)   { if (index >= 0 && index < this.sections.length) this.transitionTo(this.sections[index]); }
-    getCurrentSection(){ return this.currentSection; }
+    goTo(sectionId) { this.transitionTo(sectionId); }
+    goToIndex(index) { if (index >= 0 && index < this.sections.length) this.transitionTo(this.sections[index]); }
+    getCurrentSection() { return this.currentSection; }
 }
 
 if (document.readyState === 'loading') {
