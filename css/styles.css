@@ -149,13 +149,11 @@ header {
     gap: 28px;
 
     background:
-        linear-gradient(
-            180deg,
+        linear-gradient(180deg,
             rgba(13, 13, 18, 0.98) 0%,
-            rgba(25, 25, 35, 0.98) 100%
-        );
+            rgba(25, 25, 35, 0.98) 100%);
 
-    border-left: 1px solid rgba(255,255,255,0.08);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
 
     box-shadow:
         0 0 60px rgba(65, 166, 252, 0.18),
@@ -167,7 +165,7 @@ header {
     pointer-events: none;
 
     transition:
-        transform 0.5s cubic-bezier(.77,0,.18,1),
+        transform 0.5s cubic-bezier(.77, 0, .18, 1),
         opacity 0.4s ease,
         visibility 0s linear 0.5s;
 
@@ -248,11 +246,9 @@ header {
     height: 2px;
 
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             #42A6FC,
-            #826EB2
-        );
+            #826EB2);
 
     transition: width 0.35s ease;
 }
@@ -2178,11 +2174,9 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
         0 0 60px rgba(63, 70, 131, 0.25);
 
     background:
-        linear-gradient(
-            180deg,
+        linear-gradient(180deg,
             rgba(83, 92, 180, 0.75) 0%,
-            rgba(157, 132, 214, 0.75) 100%
-        );
+            rgba(157, 132, 214, 0.75) 100%);
 }
 
 /* Slight press animation */
@@ -2417,10 +2411,10 @@ footer {
     padding-left: 18px;
 
     transition:
-    color 0.3s ease,
-    transform 0.3s ease,
-    letter-spacing 0.3s ease,
-    opacity 0.3s ease;
+        color 0.3s ease,
+        transform 0.3s ease,
+        letter-spacing 0.3s ease,
+        opacity 0.3s ease;
 }
 
 /* glowing underline */
@@ -2432,11 +2426,9 @@ footer {
     width: 0%;
     height: 2px;
 
-    background: linear-gradient(
-        90deg,
-        rgb(245, 245, 247) 0%,
-        rgb(66, 166, 252) 100%
-    );
+    background: linear-gradient(90deg,
+            rgb(245, 245, 247) 0%,
+            rgb(66, 166, 252) 100%);
 
     transition: width 0.35s ease;
 }
@@ -3183,6 +3175,7 @@ footer {
 }
 
 @media (max-width: 767px) {
+
     .carousel-prev,
     .carousel-next {
         width: 44px;
@@ -3324,4 +3317,29 @@ footer {
     pointer-events: none;
     opacity: 0;
     z-index: 98;
+}
+
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(245, 245, 247, 0.2);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 245, 247, 0.4);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(245, 245, 247, 0.2) transparent;
 }
