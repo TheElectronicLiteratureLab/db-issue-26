@@ -88,16 +88,30 @@ const carousel = (elCarousel) => {
     const elPrev = elNew("button", {
         type: "button",
         className: "carousel-prev",
-        innerHTML: "<span>Prev</span>",
-        onclick: () => prev(),
+        innerHTML: `
+        <span>
+            <svg width="18" height="32" viewBox="0 0 18 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2.02743L16.227 0L0 16L16.227 32L18 29.9726L3.8295 16L18 2.02743Z" fill="#F5F5F7"/>
+            </svg>
+        </span>
+    `,
     });
+
+    elPrev.onclick = prev;
 
     const elNext = elNew("button", {
         type: "button",
         className: "carousel-next",
-        innerHTML: "<span>Next</span>",
-        onclick: () => next(),
+        innerHTML: `
+        <span>
+            <svg width="18" height="32" viewBox="0 0 18 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 2.02743L1.773 0L18 16L1.773 32L0 29.9726L14.1705 16L0 2.02743Z" fill="#F5F5F7"/>
+            </svg>
+        </span>
+    `,
     });
+
+    elNext.onclick = next;
 
     // Accessible labels
     elPrev.setAttribute("aria-label", "Previous slide");
