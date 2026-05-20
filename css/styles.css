@@ -166,7 +166,7 @@ header {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    /* height: 70%; */
+    height: 100%;
 }
 
 #main-container a span {
@@ -178,17 +178,19 @@ header {
     text-transform: uppercase;
     white-space: nowrap;
     display: block;
-    transform: scaleY(30);
+    backface-visibility: hidden;
+    transform: translateZ(0) scaleY(30);
+    perspective: 1000px;
     transform-origin: center center;
     will-change: transform;
-    transition: transform 0.6s ease-in-out,
-        color 0.4s ease-in-out,
-        text-shadow 0.4s ease-in-out;
+    transition: transform 0.6s ease,
+        color 0.6s ease,
+        text-shadow 0.6s ease;
 }
 
 #main-container a:hover span {
-    transform: scaleY(1);
-    color: #42A6FC;
+    transform: translateZ(0) scaleY(1);
+    color: #f5f5f7;
     text-shadow: 0 0 10px #42A6FC,
         0 0 25px #42A6FC,
         0 0 50px rgba(66, 166, 252, 0.5);
@@ -2117,20 +2119,20 @@ footer {
 }
 
 .region-pin-default {
-    display: block;
+    /* display: block; */
     width: 100%;
     height: 100%;
     transition: opacity 0.3s ease;
 }
 
 .region-pin-hover {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
-    left: 50%;
+    left: 50%; */
     /* scale up to compensate: actual pin is ~43/406 of the viewBox width */
-    width: calc(clamp(16px, 2vw, 32px) * (406 / 43));
+    /* width: calc(clamp(16px, 2vw, 32px) * (406 / 43)); */
     height: auto;
-    transform: translate(-50%, -46%);
+    /* transform: translate(-50%, -46%); */
     /* -46% instead of -50% to align pin top */
     opacity: 0;
     pointer-events: none;
@@ -2271,6 +2273,7 @@ footer {
 }
 
 #basque {
+    border: 2px solid red;
     left: 15%;
     top: 42%;
 }
