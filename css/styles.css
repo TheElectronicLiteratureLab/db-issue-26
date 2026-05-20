@@ -3,11 +3,14 @@
     position: fixed;
     inset: 0;
     z-index: 10000;
-    background: #000;
+    background: #0D0D12;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: opacity 0.6s ease;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #splash-screen.fade-out {
@@ -15,8 +18,24 @@
     pointer-events: none;
 }
 
+#splash-screen h1 {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#splash-screen h1 span {
+    display: block;
+    position: absolute;
+    top: 0;
+    margin-top: 275px;
+}
+
 #splash-screen video {
-    width: 80px;
+    width: 200px;
     height: auto;
 }
 
@@ -1121,7 +1140,12 @@ p {
     transform: rotate(18deg);
 }
 
-#photo1, #photo2, #photo3, #photo4, #photo5, #photo6 {
+#photo1,
+#photo2,
+#photo3,
+#photo4,
+#photo5,
+#photo6 {
     position: absolute;
     width: 200px;
     height: 260px;
@@ -1158,8 +1182,12 @@ p {
     left: 10%;
 }
 
-#photo1 img, #photo2 img, #photo3 img,
-#photo4 img, #photo5 img, #photo6 img {
+#photo1 img,
+#photo2 img,
+#photo3 img,
+#photo4 img,
+#photo5 img,
+#photo6 img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -1309,8 +1337,12 @@ p {
     transform: rotate(-6deg) scale(0.9);
 }
 
-#ephemera, #ephemera2, #ephemera3,
-#ephemera5, #ephemera6, #ephemera-safe-unsafe {
+#ephemera,
+#ephemera2,
+#ephemera3,
+#ephemera5,
+#ephemera6,
+#ephemera-safe-unsafe {
     position: absolute;
     width: 200px;
     height: 260px;
@@ -1347,8 +1379,12 @@ p {
     right: 28%;
 }
 
-#ephemera img, #ephemera2 img, #ephemera3 img,
-#ephemera5 img, #ephemera6 img, #ephemera-safe-unsafe img {
+#ephemera img,
+#ephemera2 img,
+#ephemera3 img,
+#ephemera5 img,
+#ephemera6 img,
+#ephemera-safe-unsafe img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -2054,7 +2090,8 @@ footer {
     background: linear-gradient(180deg, #0D0D12 0%, #04164F 100%);
     position: relative;
 
-    min-height: 100vh;   /* allow page to grow */
+    min-height: 100vh;
+    /* allow page to grow */
     overflow-x: hidden;
     overflow-y: auto;
 
