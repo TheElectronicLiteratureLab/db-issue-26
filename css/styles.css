@@ -81,42 +81,203 @@ header {
     width: 50px;
 }
 
-.close-btn-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    align-items: right;
-    border: 2px blue;
-}
+
 
 .hamburger-menu {
     display: flex;
     cursor: pointer;
-    position: absolute;
+
+    position: fixed;
     top: 20px;
     right: 20px;
+
+    z-index: 1001;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.hamburger-menu.hidden {
+    opacity: 0;
+    transform: scale(0.85);
+    pointer-events: none;
+}
+
+.hamburger-menu:hover {
+    transform: scale(1.08) rotate(2deg);
+}
+
+/* Fullscreen backdrop */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+
+    z-index: 998;
+}
+
+/* Active overlay */
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Menu panel */
+.menu-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: min(420px, 90vw);
+    height: 100vh;
+
+    padding: 80px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(13, 13, 18, 0.98) 0%,
+            rgba(25, 25, 35, 0.98) 100%
+        );
+
+    border-left: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 0 60px rgba(65, 166, 252, 0.18),
+        0 0 140px rgba(130, 110, 178, 0.12);
+
+    transform: translateX(110%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        transform 0.5s cubic-bezier(.77,0,.18,1),
+        opacity 0.4s ease,
+        visibility 0s linear 0.5s;
 
     z-index: 999;
 }
 
-.menu-modal {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    border: 2px solid green;
+/* Open state */
+.menu-modal.active {
+    transform: translateX(0%);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+}
+
+/* Navigation links */
+.menu-modal a {
+    color: var(--Off-White, #F5F5F7);
+    text-align: left;
+    text-decoration: none;
+
+    font-family: Michroma;
+    font-size: clamp(18px, 2vw, 26px);
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+
+    position: relative;
+
+    opacity: 0;
+    transform: translateX(30px);
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease,
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+/* Stagger reveal */
+.menu-modal.active a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menu-modal.active a:nth-child(1) {
+    transition-delay: 0.08s;
+}
+
+.menu-modal.active a:nth-child(2) {
+    transition-delay: 0.14s;
+}
+
+.menu-modal.active a:nth-child(3) {
+    transition-delay: 0.20s;
+}
+
+.menu-modal.active a:nth-child(4) {
+    transition-delay: 0.26s;
+}
+
+/* Hover effects */
+.menu-modal a:hover {
+    color: #42A6FC;
+    letter-spacing: 2px;
+    transform: translateX(10px);
+}
+
+/* Animated underline */
+.menu-modal a::after {
+    content: "";
     position: absolute;
-    z-index: 999;
-    /* i just made it this color for now so we can see */
-    background-color: tomato;
-    top: 0px;
-    right: 0px;
-    width: 30vh;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #42A6FC,
+            #826EB2
+        );
+
+    transition: width 0.35s ease;
+}
+
+.menu-modal a:hover::after {
+    width: 100%;
+}
+
+/* Close button */
+.close-btn-container {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.close-btn-container:hover {
+    transform: rotate(90deg) scale(1.1);
 }
 
 /* Topbar Styles */
@@ -2710,6 +2871,7 @@ footer {
 
     .poem-container .view-piece-btn {
         width: 300px;
+        text-align: center;
     }
 
     .table-of-contents {
