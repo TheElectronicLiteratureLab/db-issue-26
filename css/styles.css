@@ -2049,6 +2049,22 @@ footer {
     display: block;
 }
 
+.poem-content .translated-poem {
+    display: none;
+}
+
+.poem-content .translated-poem h2 {
+    display: none;
+}
+
+.poem-content.translation-active > .poem-scroll {
+    display: none;
+}
+
+.poem-content.translation-active > .translated-poem {
+    display: block;
+}
+
 /* Users can see which poem is active */
 .poemBtn.active {
 
