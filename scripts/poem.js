@@ -214,6 +214,18 @@ translateButtons.forEach(button => {
         const visibleScroll = Array.from(poem.querySelectorAll('.poem-scroll')).find(el => el.offsetParent !== null);
         if (visibleScroll) {
             visibleScroll.scrollTop = 0;
+            updateScrollBlur(visibleScroll);
         }
     });
+});
+
+const scrollContainers = document.querySelectorAll('.poem-scroll');
+
+function updateScrollBlur(container) {
+    container.classList.toggle('scrolled', container.scrollTop > 0);
+}
+
+scrollContainers.forEach(scrollContainer => {
+    scrollContainer.addEventListener('scroll', () => updateScrollBlur(scrollContainer));
+    updateScrollBlur(scrollContainer);
 });
