@@ -2849,11 +2849,11 @@ footer {
         display: none;
     }
 
-    #main-container {
+    #issue-landing-body #main-container {
         flex-direction: column;
     }
 
-    #main-container a span {
+    #issue-landing-body #main-container a span {
         font-size: 7vw;
         transform: translateZ(0) scaleY(1);
         text-shadow: 0 0 10px #42A6FC,

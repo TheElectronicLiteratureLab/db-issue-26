@@ -1,5 +1,11 @@
-// Page Transition System
-// Manages smooth transitions between body sections
+// Spatial page transition system
+// Each section occupies a fixed position in a virtual 2-D map:
+//
+//   [Born-Digital] ← [Landing] → [A.K. Ramanujan]
+//                        ↓
+//                  [Statelessness]
+//
+// Navigating slides both sections simultaneously along their shared axis.
 
 class PageTransition {
     constructor() {
@@ -8,115 +14,168 @@ class PageTransition {
             'issue-landing-body',
             'statelessness-body',
             'born-digital-body',
-            'ramanujan-body'
-            // Add more section IDs as needed
+            'ramanujan-body',
         ];
-        this.transitionDuration = 500; // milliseconds
+        this.isTransitioning = false;
         this.init();
     }
 
+    // Spatial coordinates (in viewport units) for each section
+    static POSITIONS = {
+        'issue-landing-body': { x: 0,  y: 0 },
+        'born-digital-body':  { x: -1, y: 0 },
+        'statelessness-body': { x: 0,  y: 1 },
+        'ramanujan-body':     { x: 1,  y: 0 },
+    };
+
     init() {
         const hashSection = window.location.hash.slice(1);
-        const initialSection = this.sections.includes(hashSection) ? hashSection : this.sections[0];
-        this.currentSection = initialSection;
+        const initial = this.sections.includes(hashSection) ? hashSection : this.sections[0];
+        this.currentSection = initial;
 
-        this.sections.forEach((section) => {
-            const element = document.getElementById(section);
-            if (element) {
-                element.classList.add('page-section');
-                if (section !== initialSection) {
-                    element.style.display = 'none';
-                    element.classList.add('hidden');
-                } else {
-                    element.classList.add('active');
-                }
-            }
+        this.sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && id !== initial) el.style.display = 'none';
         });
 
-        // Set up navigation listeners
         this.setupNavigation();
     }
 
     setupNavigation() {
-        // Handle internal navigation links
-        document.addEventListener('click', (e) => {
+        document.addEventListener('click', e => {
             const link = e.target.closest('a');
             if (!link) return;
-
             const href = link.getAttribute('href');
             if (!href || href.startsWith('http')) return;
-
-            // Check if link points to a known section
-            const targetSection = this.getTargetSection(href);
-            if (targetSection && this.sections.includes(targetSection)) {
+            const target = this.getTargetSection(href);
+            if (target) {
                 e.preventDefault();
-                this.transitionTo(targetSection);
+                this.transitionTo(target);
             }
         });
 
-        // Handle back navigation in browser
         window.addEventListener('popstate', () => {
             const hash = window.location.hash.slice(1) || this.sections[0];
             if (this.sections.includes(hash)) {
+                this._poppingState = true;
                 this.transitionTo(hash);
+                this._poppingState = false;
             }
         });
     }
 
     getTargetSection(href) {
-        // Map URLs to section IDs
-        const urlMap = {
-            'index.html': 'issue-landing-body',
+        const map = {
+            'index.html':        'issue-landing-body',
             'statelessness.html': 'statelessness-body',
-            'born-digital.html': 'born-digital-body',
-            'ramanujan.html': 'ramanujan-body'
+            'born-digital.html':  'born-digital-body',
+            'ramanujan.html':     'ramanujan-body',
         };
+        return map[href.split('/').pop()] ?? null;
+    }
 
-        // Extract filename from href
-        const filename = href.split('/').pop();
-        return urlMap[filename] || null;
+    // Returns pixel offsets for the enter and exit positions of each section.
+    // Uses the dominant axis between source and destination so there are no
+    // diagonal slides for cross-section jumps.
+    getVectors(fromId, toId) {
+        const W = window.innerWidth;
+        const H = window.innerHeight;
+        const from = PageTransition.POSITIONS[fromId] ?? { x: 0, y: 0 };
+        const to   = PageTransition.POSITIONS[toId]   ?? { x: 0, y: 0 };
+
+        let dx = to.x - from.x;
+        let dy = to.y - from.y;
+
+        // Collapse to a single axis — use whichever has larger magnitude
+        if (Math.abs(dx) >= Math.abs(dy)) {
+            dx = Math.sign(dx); dy = 0;
+        } else {
+            dx = 0; dy = Math.sign(dy);
+        }
+
+        return {
+            enterFrom: { x: dx * W,  y: dy * H  },
+            exitTo:    { x: -dx * W, y: -dy * H },
+        };
     }
 
     transitionTo(sectionId) {
-        if (sectionId === this.currentSection) return;
+        if (sectionId === this.currentSection || this.isTransitioning) return;
         if (!this.sections.includes(sectionId)) return;
 
-        const currentElement = document.getElementById(this.currentSection);
-        const nextElement = document.getElementById(sectionId);
+        const currentEl = document.getElementById(this.currentSection);
+        const nextEl    = document.getElementById(sectionId);
+        if (!currentEl || !nextEl) return;
 
-        if (!currentElement || !nextElement) return;
-
-        // Start fade out of current section
-        currentElement.classList.remove('active');
-        currentElement.classList.add('hidden');
-
-        // After fade out, switch sections and fade in
-        setTimeout(() => {
-            currentElement.style.display = 'none';
-            nextElement.style.display = '';
-
-            // Trigger reflow to ensure CSS transition happens
-            void nextElement.offsetWidth;
-
-            nextElement.classList.remove('hidden');
-            nextElement.classList.add('active');
-
+        // Instant swap for users who prefer reduced motion
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            currentEl.style.display = 'none';
+            nextEl.style.display = '';
             this.currentSection = sectionId;
+            if (!this._poppingState) {
+                window.history.pushState({ section: sectionId }, '', `#${sectionId}`);
+            }
             this.onSectionEnter(sectionId);
+            return;
+        }
 
-            // Update browser history
-            window.history.pushState({ section: sectionId }, '', `#${sectionId}`);
+        this.isTransitioning = true;
+        document.body.style.overflow = 'hidden';
 
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }, this.transitionDuration);
+        const { enterFrom, exitTo } = this.getVectors(this.currentSection, sectionId);
+
+        // Place incoming section off-screen in a fixed layer before revealing it
+        gsap.set(nextEl, {
+            display: 'block',
+            position: 'fixed',
+            top: 0, left: 0,
+            width: '100%', height: '100%',
+            x: enterFrom.x,
+            y: enterFrom.y,
+            zIndex: 100,
+        });
+
+        // Fix current section so it can slide out cleanly
+        gsap.set(currentEl, {
+            position: 'fixed',
+            top: 0, left: 0,
+            width: '100%', height: '100%',
+            zIndex: 99,
+        });
+
+        gsap.timeline({
+            defaults: { duration: 0.75, ease: 'power3.inOut' },
+            onComplete: () => {
+                // Restore both sections to normal document flow
+                currentEl.style.display = 'none';
+                gsap.set(currentEl, { clearProps: 'position,top,left,width,height,x,y,zIndex' });
+                gsap.set(nextEl,    { clearProps: 'all' });
+
+                document.body.style.overflow = '';
+                window.scrollTo(0, 0);
+
+                this.currentSection = sectionId;
+                this.isTransitioning = false;
+
+                if (!this._poppingState) {
+                    window.history.pushState({ section: sectionId }, '', `#${sectionId}`);
+                }
+
+                this.onSectionEnter(sectionId);
+            },
+        })
+        .to(currentEl, { x: exitTo.x,    y: exitTo.y    }, 0)
+        .to(nextEl,    { x: 0,           y: 0           }, 0);
     }
 
     onSectionEnter(sectionId) {
+        if (sectionId === 'born-digital-body') {
+            const el = document.getElementById('born-digital-body');
+            if (el) el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+        }
 
-        // RAMANUJAN SECTION
         if (sectionId === 'ramanujan-body') {
-            const hint = document.getElementById('ak-scroll-hint');
+            const hint      = document.getElementById('ak-scroll-hint');
             const container = document.getElementById('ak-horizontal-scroll-container');
             if (hint && container) {
                 container.scrollLeft = 0;
@@ -124,53 +183,19 @@ class PageTransition {
             }
         }
 
-        // STATELESSNESS SECTION
         if (sectionId === 'statelessness-body') {
-
             const globe = document.getElementById('statelessnessGlobe');
-            const globeScroll = document.getElementById('globe-scroll');
-
-            gsap.killTweensOf(globe);
-
-            gsap.set(globe, {
-                y: window.innerHeight,
-                opacity: 0,
-                scale: 0.96
-            });
-
-            gsap.to(globe, {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1.8,
-                ease: "power4.out"
-            });
+            if (globe) gsap.set(globe, { clearProps: 'all' });
         }
     }
 
-    // Convenience method to go to a specific section
-    goTo(sectionId) {
-        this.transitionTo(sectionId);
-    }
-
-    // Method to navigate by index
-    goToIndex(index) {
-        if (index >= 0 && index < this.sections.length) {
-            this.transitionTo(this.sections[index]);
-        }
-    }
-
-    // Get current section name
-    getCurrentSection() {
-        return this.currentSection;
-    }
+    goTo(sectionId)    { this.transitionTo(sectionId); }
+    goToIndex(index)   { if (index >= 0 && index < this.sections.length) this.transitionTo(this.sections[index]); }
+    getCurrentSection(){ return this.currentSection; }
 }
 
-// Initialize when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        window.pageTransition = new PageTransition();
-    });
+    document.addEventListener('DOMContentLoaded', () => { window.pageTransition = new PageTransition(); });
 } else {
     window.pageTransition = new PageTransition();
 }
