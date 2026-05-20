@@ -81,8 +81,6 @@ header {
     width: 50px;
 }
 
-
-
 .hamburger-menu {
     cursor: pointer;
     z-index: 999;
@@ -94,6 +92,10 @@ header {
 .hamburger-menu svg {
     align-items: center;
     width: 70%;
+}
+
+.topbar svg {
+    /* border: 2px solid orange; */
 }
 
 .hamburger-menu.hidden {
