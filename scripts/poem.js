@@ -152,8 +152,7 @@ autoplayButtons.forEach(button => {
     button.addEventListener('click', () => {
 
         const poem = button.closest('.poem-content');
-        const scrollContainers = poem ? poem.querySelectorAll('.poem-scroll') : [];
-        const scrollContainer = Array.from(scrollContainers).find(el => el.offsetParent !== null) || scrollContainers[0];
+        const scrollContainer = poem ? poem.querySelector('.poem-scroll') : null;
         if (!scrollContainer) return;
 
         // Toggle autoplay on/off
@@ -179,41 +178,5 @@ autoplayButtons.forEach(button => {
 poemButtons.forEach((button) => {
     button.addEventListener('click', () => {
         stopAutoplay();
-    });
-});
-
-const translateButtons = document.querySelectorAll('.translateBtn');
-
-translateButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const poem = button.closest('.poem-content');
-        if (!poem) return;
-
-        const translated = poem.querySelector('.translated-poem');
-        if (!translated) return;
-
-        const originalHeading = poem.querySelector('.poem-header h2');
-        const translatedHeadingElement = translated.querySelector('h2');
-        if (!originalHeading || !translatedHeadingElement) return;
-
-        if (!poem.dataset.originalHeading) {
-            poem.dataset.originalHeading = originalHeading.textContent.trim();
-        }
-
-        const isTranslated = poem.classList.toggle('translation-active');
-        button.textContent = isTranslated ? 'Original' : 'Translate';
-        button.classList.toggle('translation-active', isTranslated);
-        button.setAttribute('aria-pressed', String(isTranslated));
-
-        originalHeading.textContent = isTranslated ? translatedHeadingElement.textContent.trim() : poem.dataset.originalHeading;
-
-        if (scrollInterval) {
-            stopAutoplay();
-        }
-
-        const visibleScroll = Array.from(poem.querySelectorAll('.poem-scroll')).find(el => el.offsetParent !== null);
-        if (visibleScroll) {
-            visibleScroll.scrollTop = 0;
-        }
     });
 });

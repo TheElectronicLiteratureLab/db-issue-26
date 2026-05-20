@@ -2049,22 +2049,6 @@ footer {
     display: block;
 }
 
-.poem-content .translated-poem {
-    display: none;
-}
-
-.poem-content .translated-poem h2 {
-    display: none;
-}
-
-.poem-content.translation-active > .poem-scroll {
-    display: none;
-}
-
-.poem-content.translation-active > .translated-poem {
-    display: block;
-}
-
 /* Users can see which poem is active */
 .poemBtn.active {
 
@@ -2109,7 +2093,7 @@ footer {
     min-height: 100vh;
     /* allow page to grow */
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
 
     display: flex;
     flex-direction: column;
@@ -2118,8 +2102,8 @@ footer {
 #globe-scroll {
     flex: 1;
 
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-x: auto;
+    overflow-y: visible;
 
     display: flex;
     justify-content: center;
@@ -2134,9 +2118,10 @@ footer {
 
 #statelessnessGlobe {
     /* Scale the globe to fit viewport height exactly, but never wider than needed */
-    height: 120vh;
+    height: 100vh;
     width: 100vw;
-
+    /* maintain 1728:1117 aspect ratio */
+    flex-shrink: 0;
 
     background-image: url("../img/stateless-globe.png");
     background-size: cover;
@@ -2144,8 +2129,6 @@ footer {
     background-repeat: no-repeat;
 
     position: relative;
-    top: -20vh;
-    flex-shrink: 0 ;
     /* pins still need this */
 }
 
