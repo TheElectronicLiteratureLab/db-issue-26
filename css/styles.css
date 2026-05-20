@@ -3094,3 +3094,56 @@ footer {
     flex-direction: column;
     gap: 1em;
 }
+
+/* Statement pages */
+.statement-page .statelessness-header {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.statement-box {
+    width: 100%;
+    margin: 0 auto 6em auto;
+    background: rgba(245, 245, 247, 0.04);
+    padding: 52px 72px;
+    box-sizing: border-box;
+}
+
+.statement-box h2 {
+    margin-bottom: 2em;
+}
+
+.statement-box h3 {
+    margin-top: 2.5em;
+    margin-bottom: 0.75em;
+}
+
+.statement-box p {
+    margin-bottom: 1.5em;
+}
+
+.statement-box p.statement-credit {
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid rgba(245, 245, 247, 0.15);
+    color: rgba(245, 245, 247, 0.6);
+    font-size: 15px;
+}
+
+.statement-box p.section-break {
+    text-align: center;
+    color: rgba(245, 245, 247, 0.5);
+    letter-spacing: 0.2em;
+    margin: 2em 0;
+}
+
+@media (max-width: 767px) {
+    .statement-box {
+        padding: 32px 20px;
+        overflow-wrap: break-word;
+    }
+
+    .statement-page .statelessness-header h1 {
+        font-size: 7vw;
+    }
+}
