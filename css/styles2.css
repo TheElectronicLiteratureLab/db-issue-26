@@ -2103,16 +2103,16 @@ footer {
 
 .region:hover svg {
     filter:
-        drop-shadow(0 0 1px white)
-        drop-shadow(0 0 2px white)
-        drop-shadow(0 0 6px white)
-        drop-shadow(0 0 12px white)
-        drop-shadow(0 0 20px white)
-        drop-shadow(0 0 35px white);
+        drop-shadow(0 0 1.9px white)
+        drop-shadow(0 0 3.7px white)
+        drop-shadow(0 0 13px white)
+        drop-shadow(0 0 26px white)
+        drop-shadow(0 0 45px white)
+        drop-shadow(0 0 78px white);
 }
 
 .region:hover svg path {
-    fill: url(#hover-pin-gradient);
+    fill: url(#pin-hover-grad);
 }
 
 .region-pin {
