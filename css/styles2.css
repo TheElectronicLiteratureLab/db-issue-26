@@ -136,7 +136,8 @@ header {
     background: transparent;
 }
 
-/* Issue landing styles */
+/* 
+ landing styles */
 #issue-landing-body {
     height: 100vh;
     overflow: hidden;
@@ -789,6 +790,7 @@ p {
 }
 
 #ak-scroll-hint {
+    border: 2px solid blue;
     position: absolute;
     right: 18px;
     top: 50%;
@@ -2378,6 +2380,185 @@ footer {
         height: 100vh;
         width: calc(100vh * 16 / 9);
         flex-shrink: 0;
+    }
+
+    /* AK Ramanujan — scale items to ~65% for mobile */
+    #ramanujan-header {
+        padding: 12px 24px;
+    }
+
+    #ak-scroll-canvas {
+        width: 5000px;
+    }
+
+    #a-flowering-tree {
+        width: 150px;
+        height: 200px;
+    }
+
+    #passport {
+        width: 75px;
+        height: 100px;
+    }
+
+    #ak-letters {
+        width: 125px;
+        height: 175px;
+    }
+
+    #ak-tv-container {
+        width: 175px;
+        height: 175px;
+    }
+
+    #picture-frame {
+        width: 200px;
+        height: 200px;
+    }
+
+    #radio {
+        width: 160px;
+        height: 160px;
+    }
+
+    #interview-letter-1978 {
+        width: 125px;
+        height: 175px;
+    }
+
+    #photo1,
+    #photo2,
+    #photo3,
+    #photo4,
+    #photo5,
+    #photo6 {
+        width: 100px;
+        height: 130px;
+    }
+
+    #dr-murty {
+        width: 125px;
+        height: 175px;
+    }
+
+    #mysore {
+        width: 100px;
+        height: 150px;
+    }
+
+    #stallworthy {
+        width: 160px;
+        height: 200px;
+    }
+
+    #ephemera,
+    #ephemera2,
+    #ephemera3,
+    #ephemera5,
+    #ephemera6,
+    #ephemera-safe-unsafe {
+        width: 100px;
+        height: 130px;
+    }
+
+    #acacia-tree {
+        width: 100px;
+        height: 100px;
+    }
+
+    #poem-self-portrait {
+        width: 100px;
+        height: 130px;
+    }
+
+    #red-earth {
+        width: 100px;
+        height: 130px;
+    }
+
+    #translation {
+        width: 150px;
+        height: 180px;
+    }
+
+    #doodles-1 {
+        width: 130px;
+        height: 180px;
+    }
+
+    #biography-note {
+        width: 110px;
+        height: 155px;
+    }
+
+    #ak-essays {
+        width: 90px;
+        height: 133px;
+    }
+
+    #doodles-2 {
+        width: 130px;
+        height: 180px;
+    }
+
+    #first-visa {
+        width: 100px;
+        height: 130px;
+    }
+
+    #foreign-country {
+        width: 130px;
+        height: 160px;
+    }
+
+    #of-mothers {
+        width: 130px;
+        height: 160px;
+    }
+
+    #striders {
+        width: 130px;
+        height: 160px;
+    }
+
+    #truants {
+        width: 130px;
+        height: 160px;
+    }
+
+    /* Scroll hint — fixed to viewport right edge */
+    #ak-scroll-hint {
+        position: fixed;
+        right: 18px;
+        top: 50%;
+        z-index: 1001;
+    }
+
+    /* Modals — max-width on the container is the key constraint */
+    .akModal {
+        max-width: 95vw;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    .akModal h2 {
+        font-size: 18px;
+    }
+
+    /* flip-card needs explicit height since children use height:100% */
+    .flip-card {
+        width: 100%;
+        height: calc((95vw - 40px) * 640 / 440);
+    }
+
+    .modal-img,
+    .modal-video {
+        max-width: calc(95vw - 40px);
+    }
+
+    .ak-scroll-container {
+        width: 100%;
+        max-width: calc(95vw - 40px);
     }
 }
 

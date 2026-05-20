@@ -1110,6 +1110,23 @@
     <!-- AK Drift Script -->
     <script src="scripts/ak-drift.js"></script>
 
+    <script>
+        (function () {
+            var hint = document.getElementById('ak-scroll-hint');
+            var container = document.getElementById('ak-horizontal-scroll-container');
+            if (!hint || !container) return;
+            container.addEventListener('scroll', function () {
+                if (container.scrollLeft > 20) hint.classList.add('hidden');
+            }, { passive: true });
+            container.addEventListener('wheel', function (e) {
+                if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                    e.preventDefault();
+                    container.scrollLeft += e.deltaY;
+                }
+            }, { passive: false });
+        })();
+    </script>
+
 </body>
 
 </html>
