@@ -201,7 +201,7 @@ translateButtons.forEach(button => {
         }
 
         const isTranslated = poem.classList.toggle('translation-active');
-        button.textContent = isTranslated ? 'Original' : 'Translate';
+        button.textContent = isTranslated ? 'Translate' : 'Translate';
         button.classList.toggle('translation-active', isTranslated);
         button.setAttribute('aria-pressed', String(isTranslated));
 

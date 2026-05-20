@@ -1970,6 +1970,7 @@ footer {
 
 .table-of-contents h3 {
     margin-bottom: 24px;
+    font-size: 24px;
 }
 
 .table-of-contents button {
@@ -2005,10 +2006,10 @@ footer {
 .poem-container {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 100%;
     margin: auto;
-    margin-top: 145px;
-    margin-bottom: 253px;
+    margin-top: 92px;
+    margin-bottom:  92px;
     justify-content: space-between;
 }
 
@@ -2074,8 +2075,11 @@ footer {
 .artist-bio {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 100%;
     margin: auto;
+    gap: 92px;
+
+    justify-content: center;
 }
 
 .artist-bio div {
@@ -2085,11 +2089,14 @@ footer {
     margin-bottom: 92px;
 }
 
+.artist-bio p {
+    max-width: 900px;
+}
+
 .artist-bio img {
     width: 400px;
     height: 400px;
     object-fit: cover;
-    margin-right: 264px;
 }
 
 /* Statelessness styles */
@@ -2152,10 +2159,25 @@ footer {
 .region {
     cursor: pointer;
     z-index: 1;
+
+    transform-origin: center;
+    transform-box: fill-box;
+    transition: transform 0.2s ease, filter 0.25s ease;
+}
+
+.region path {
+    transition: filter 0.25s ease, fill 0.25s ease, opacity 0.25s ease;
 }
 
 .region:hover path {
-    opacity: 0.8;
+    fill: #F5F5F7;
+    filter: drop-shadow(0 0 2px #fff)
+            drop-shadow(0 0 10px #42A6FC)
+            drop-shadow(0 0 22px #42A6FC);
+}
+
+.region:hover {
+    transform: scale(1.05);
 }
 
 .region svg {
@@ -2290,11 +2312,13 @@ footer {
 .statelessness-folio {
     background-color: #0D0D12;
     color: #F5F5F7;
+
+    padding: 74px 148px;
 }
 
 .statelessness-folio h1 {
     font-family: Michroma;
-    font-size: 48px;
+    font-size: 38px;
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
@@ -2303,7 +2327,7 @@ footer {
 
 .statelessness-folio h2 {
     font-family: Michroma;
-    font-size: 36px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: 45px;
@@ -2311,9 +2335,8 @@ footer {
 }
 
 .statelessness-header {
-    width: 80%;
+    width: 100%;
     margin: auto;
-    margin-top: 200px;
 
     display: flex;
     flex-direction: column;
