@@ -1,5 +1,7 @@
 (function () {
     var ITEMS = [];
+    var rafId = null;
+    var visible = false;
 
     function rand(min, max) {
         return min + Math.random() * (max - min);
@@ -29,10 +31,23 @@
             });
         });
 
-        requestAnimationFrame(tick);
+        var section = document.getElementById('ramanujan-body');
+        if (!section) return;
+
+        var observer = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+                start();
+            } else {
+                stop();
+            }
+        }, { threshold: 0.01 });
+
+        observer.observe(section);
     }
 
     function tick(t) {
+        if (!visible) { rafId = null; return; }
+        rafId = requestAnimationFrame(tick);
         for (var i = 0; i < ITEMS.length; i++) {
             var item = ITEMS[i];
             var x = item.ampX * Math.sin(item.freqX * t + item.phaseX);
@@ -41,7 +56,17 @@
             var s = 1 + item.ampS * Math.sin(item.freqS * t + item.phaseS);
             item.el.style.transform = 'translate3d(' + x.toFixed(2) + 'px, ' + y.toFixed(2) + 'px, 0) rotate(' + r.toFixed(3) + 'deg) scale(' + s.toFixed(4) + ')';
         }
-        requestAnimationFrame(tick);
+    }
+
+    function start() {
+        if (rafId) return;
+        visible = true;
+        rafId = requestAnimationFrame(tick);
+    }
+
+    function stop() {
+        visible = false;
+        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
     }
 
     if (document.readyState === 'loading') {

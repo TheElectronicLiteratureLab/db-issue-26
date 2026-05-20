@@ -175,8 +175,14 @@
 
     // ---------- ANIMATION ----------
     let last = 0;
+    let rafId = null;
+    let visible = false;
 
     function animate(ts) {
+        if (!visible) { rafId = null; return; }
+
+        rafId = requestAnimationFrame(animate);
+
         const dt = Math.min((ts - last) / 16.67, 2);
         last = ts;
 
@@ -265,9 +271,24 @@
             ctx.fillStyle = grad;
             ctx.fill();
         }
-
-        requestAnimationFrame(animate);
     }
 
-    requestAnimationFrame(animate);
+    function start() {
+        if (rafId) return;
+        last = performance.now();
+        visible = true;
+        rafId = requestAnimationFrame(animate);
+    }
+
+    function stop() {
+        visible = false;
+        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    }
+
+    // Only run the animation loop when the canvas is on screen
+    const observer = new IntersectionObserver(
+        (entries) => { entries[0].isIntersecting ? start() : stop(); },
+        { threshold: 0.01 }
+    );
+    observer.observe(canvas);
 })();

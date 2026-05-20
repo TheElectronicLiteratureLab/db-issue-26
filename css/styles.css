@@ -363,14 +363,11 @@ header {
     perspective: 1000px;
     transform-origin: center center;
     will-change: transform;
-    transition: transform 0.6s ease,
-        color 0.6s ease,
-        text-shadow 0.6s ease;
+    transition: transform 0.6s ease;
 }
 
 #main-container a:hover span {
     transform: translateZ(0) scaleY(1);
-    color: #f5f5f7;
     text-shadow: 0 0 10px #42A6FC,
         0 0 25px #42A6FC,
         0 0 50px rgba(66, 166, 252, 0.5);

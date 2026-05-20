@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="css/scrollbar.css">
     <!-- <link rel="stylesheet" href="css/styles2.css"> -->
 
+    <!-- Preload splash video -->
+    <link rel="preload" as="video" href="vid/drunken-boat-logo-monochrome.mp4">
+
     <!-- SEO and Page Information -->
     <title>Drunken Boat | Issue 26</title>
     <meta name="description" content="Drunken Boat Issue 26 — three folios on statelessness, A.K. Ramanujan, and born-digital works, featuring poets, visual artists, and filmmakers from across the world.">
@@ -82,7 +85,7 @@
     <!-- Splash Screen -->
     <div id="splash-screen">
         <h1>Drunken Boat <span>Issue 26</span></h1>
-        <video src="vid/drunken-boat-logo-monochrome.mp4" autoplay muted playsinline></video>
+        <video src="vid/drunken-boat-logo-monochrome.mp4" autoplay muted playsinline preload="auto" fetchpriority="high"></video>
     </div>
 
     <!-- Transition Overlay -->
@@ -504,11 +507,11 @@
 
                 <!-- IMAGE PATTERNS -->
                 <pattern id="wanderer-img" patternUnits="objectBoundingBox" width="1" height="1">
-                    <image href="img/wanderer.png" x="0" y="0" width="123.36" height="123.36" preserveAspectRatio="xMidYMid slice" />
+                    <image href="img/wanderer.webp" x="0" y="0" width="123.36" height="123.36" preserveAspectRatio="xMidYMid slice" />
                 </pattern>
 
                 <pattern id="my-toxic-trait-img" patternUnits="objectBoundingBox" width="1" height="1">
-                    <image href="img/my-toxic-trait.jpg" x="0" y="0" width="123.36" height="123.36" preserveAspectRatio="xMidYMid slice" />
+                    <image href="img/my-toxic-trait.webp" x="0" y="0" width="123.36" height="123.36" preserveAspectRatio="xMidYMid slice" />
                 </pattern>
 
                 <pattern id="human-in-the-loop-img" patternUnits="objectBoundingBox" width="1" height="1">

@@ -14,32 +14,35 @@ const GROUPS = [
     { id: 'sketches',                                           cx: 1455.17, cy: 478.55 },
 ];
 
-function findProgress(pathEl, cx, cy) {
-    const totalLen = pathEl.getTotalLength();
-    const SAMPLES  = 1000;
-    let bestProgress = 0;
-    let bestDist     = Infinity;
-    for (let i = 0; i <= SAMPLES; i++) {
-        const pt   = pathEl.getPointAtLength((i / SAMPLES) * totalLen);
-        const dist = Math.hypot(pt.x - cx, pt.y - cy);
-        if (dist < bestDist) { bestDist = dist; bestProgress = i / SAMPLES; }
-    }
-    return bestProgress;
-}
-
-// ── Pre-compute at load time so runIntro() fires with zero delay ──────────────
-const pathEl  = document.getElementById('spiral-motion-path');
-const svgEl   = pathEl.closest('svg');
-const startPt = pathEl.getPointAtLength(0);
-const relPart = pathEl.getAttribute('d').replace(/^M[\d.,\s-]+/, '').trim();
-
-const sorted = GROUPS
-    .map(g => ({ ...g, endProgress: findProgress(pathEl, g.cx, g.cy) }))
-    .sort((a, b) => a.endProgress - b.endProgress);
-// ─────────────────────────────────────────────────────────────────────────────
-
 gsap.set(GROUPS.map(g => '#' + g.id), { opacity: 0 });
 gsap.set(GROUPS.map(g => `#${g.id} text`), { opacity: 0 });
+
+// Path data is computed lazily on first entry to avoid blocking load
+let pathData = null;
+
+function getPathData() {
+    if (pathData) return pathData;
+    const pathEl = document.getElementById('spiral-motion-path');
+    if (!pathEl) return null;
+    const svgEl = pathEl.closest('svg');
+    const startPt = pathEl.getPointAtLength(0);
+    const relPart = pathEl.getAttribute('d').replace(/^M[\d.,\s-]+/, '').trim();
+    const totalLen = pathEl.getTotalLength();
+    const SAMPLES = 1000;
+
+    const sorted = GROUPS.map(g => {
+        let bestProgress = 0, bestDist = Infinity;
+        for (let i = 0; i <= SAMPLES; i++) {
+            const pt = pathEl.getPointAtLength((i / SAMPLES) * totalLen);
+            const dist = Math.hypot(pt.x - g.cx, pt.y - g.cy);
+            if (dist < bestDist) { bestDist = dist; bestProgress = i / SAMPLES; }
+        }
+        return { ...g, endProgress: bestProgress };
+    }).sort((a, b) => a.endProgress - b.endProgress);
+
+    pathData = { pathEl, svgEl, startPt, relPart, sorted };
+    return pathData;
+}
 
 function drift(el) {
     gsap.to(el, {
@@ -52,7 +55,7 @@ function drift(el) {
 }
 
 function resetGroups() {
-    sorted.forEach(g => {
+    GROUPS.forEach(g => {
         const el = document.getElementById(g.id);
         if (!el) return;
         gsap.killTweensOf(el);
@@ -63,6 +66,9 @@ function resetGroups() {
 }
 
 function runIntro() {
+    const data = getPathData();
+    if (!data) return;
+    const { svgEl, startPt, relPart, sorted } = data;
     let completedCount = 0;
 
     sorted.forEach((g, i) => {
