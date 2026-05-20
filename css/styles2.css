@@ -465,7 +465,7 @@ p {
 .heading-subheading-container {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 1em;
 }
 
 .subheading-container {
@@ -516,6 +516,18 @@ p {
     padding: 48px;
     overflow-y: auto;
     box-sizing: border-box;
+    position: relative;
+}
+
+.akModal .close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 0;
+    line-height: 0;
 }
 
 .akModal.active {
@@ -2551,13 +2563,24 @@ footer {
         height: calc((95vw - 40px) * 640 / 440);
     }
 
+    #modal-a-flowering-tree .flip-card {
+        width: 232px;
+        height: calc(232px * 640 / 440);
+    }
+
+    .flip-btn {
+        width: 41px;
+        height: 41px;
+    }
+
     .modal-img,
     .modal-video {
+        width: 232px;
         max-width: calc(95vw - 40px);
     }
 
     .ak-scroll-container {
-        width: 100%;
+        width: 232px;
         max-width: calc(95vw - 40px);
     }
 }
