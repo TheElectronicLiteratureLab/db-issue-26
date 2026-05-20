@@ -84,18 +84,16 @@ header {
 
 
 .hamburger-menu {
-    display: flex;
     cursor: pointer;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    position: fixed;
-    top: 20px;
-    right: 20px;
-
-    z-index: 1001;
-
-    transition:
-        transform 0.3s ease,
-        opacity 0.3s ease;
+.hamburger-menu svg {
+    align-items: center;
+    width: 70%;
 }
 
 .hamburger-menu.hidden {
@@ -270,6 +268,8 @@ header {
     right: 24px;
 
     cursor: pointer;
+    display: flex;
+    align-items: center;
 
     transition:
         transform 0.3s ease,
@@ -278,6 +278,19 @@ header {
 
 .close-btn-container:hover {
     transform: rotate(90deg) scale(1.1);
+}
+
+#additional-links {
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#additional-links>a {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 
 /* Topbar Styles */
@@ -293,6 +306,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     padding: 32px 74px 0 74px;
+    align-items: center;
 
     background: transparent;
 }
@@ -363,11 +377,14 @@ header {
     perspective: 1000px;
     transform-origin: center center;
     will-change: transform;
-    transition: transform 0.6s ease;
+    transition: transform 0.6s ease,
+        color 0.6s ease,
+        text-shadow 0.6s ease;
 }
 
 #main-container a:hover span {
     transform: translateZ(0) scaleY(1);
+    color: #f5f5f7;
     text-shadow: 0 0 10px #42A6FC,
         0 0 25px #42A6FC,
         0 0 50px rgba(66, 166, 252, 0.5);
@@ -525,6 +542,32 @@ p {
     /* 28.8px */
 }
 
+@media (max-width: 767px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .topbar {
+        padding: 16px 20px 0 20px;
+        align-items: center;
+    }
+
+    .topbar img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .topbar svg {
+        width: 70%;
+        height: 70%;
+    }
+}
+
 .piece-section {
 
     display: flex;
@@ -605,15 +648,11 @@ p {
     color: var(--Near-Black, #0D0D12);
 }
 
-/* ONLY strokes for wave lines */
 .audioBtn:hover svg path,
-.audioBtn.is-playing svg path {
+.audioBtn:hover svg line,
+.audioBtn.is-playing svg path,
+.audioBtn.is-playing svg line {
     stroke: currentColor;
-}
-
-/* ONLY fill the speaker */
-.audioBtn:hover svg .speaker,
-.audioBtn.is-playing svg .speaker {
     fill: currentColor;
 }
 
@@ -626,7 +665,8 @@ p {
 .heading-subheading-container {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 1em;
+    padding-top: 32px;
 }
 
 .subheading-container {
@@ -639,18 +679,69 @@ p {
 .artist-section {
     display: flex;
     flex-direction: row;
-    gap: 64px;
+    gap: 92px;
     margin-bottom: 92px;
 }
 
 .artist-section img {
-    height: 100%;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .artist-copy {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 32px;
+}
+
+/* Born Digital artist page — mobile */
+@media (max-width: 767px) {
+    .born-digital-page {
+        padding: 28px;
+    }
+
+    .heading-subheading-container {
+        text-align: center;
+        gap: 24px;
+        padding-top: 42px;
+    }
+
+    .subheading-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .piece-section {
+        gap: 32px;
+        margin-bottom: 32px;
+    }
+
+    .born-digital-content.carousel .carousel-image {
+        height: 45vh;
+    }
+
+    .artist-section {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    .artist-section img {
+        width: min(360px, 100%);
+        height: auto;
+    }
+
+    .artist-copy {
+        gap: 24px;
+    }
+
+    .artist-copy h2 {
+        text-align: center;
+    }
 }
 
 /* AK Modal Styles */
@@ -658,8 +749,8 @@ p {
 #modal-overlay {
     position: fixed;
     inset: 0;
-    z-index: 500;
-    background: rgba(0, 0, 0, 0.75);
+    z-index: 1100;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -677,6 +768,18 @@ p {
     padding: 48px;
     overflow-y: auto;
     box-sizing: border-box;
+    position: relative;
+}
+
+.akModal .close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 0;
+    line-height: 0;
 }
 
 .akModal.active {
@@ -762,6 +865,12 @@ p {
     flex-direction: column;
     gap: 24px;
     width: 500px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.ak-scroll-container::-webkit-scrollbar {
+    display: none;
 }
 
 .ak-scroll-container img {
@@ -805,6 +914,7 @@ p {
 
 .ak-audio-track audio {
     width: 100%;
+    opacity: 0.8;
 }
 
 .ak-audio-nav {
@@ -817,17 +927,16 @@ p {
 
 .ak-audio-nav-btn {
     background: none;
-    border: 1px solid rgba(245, 245, 247, 0.3);
-    color: var(--Off-White, #F5F5F7);
-    padding: 6px 18px;
+    border: none;
+    padding: 4px 8px;
     cursor: pointer;
-    font-family: Michroma;
-    font-size: 14px;
-    transition: border-color 0.2s, color 0.2s;
+    color: rgba(245, 245, 247, 0.55);
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
 }
 
 .ak-audio-nav-btn:hover {
-    border-color: #42A6FC;
     color: #42A6FC;
 }
 
@@ -954,11 +1063,11 @@ p {
 }
 
 #ak-scroll-hint {
-    position: fixed;
+    position: absolute;
     right: 18px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1001;
+    z-index: 10;
     opacity: 0.55;
     pointer-events: none;
     animation: ak-hint-nudge 1.6s ease-in-out infinite;
@@ -988,6 +1097,10 @@ p {
 #ak-scroll-canvas>section,
 #ak-scroll-canvas>a>section {
     filter: drop-shadow(0 0 32px rgba(221, 225, 197, 0.24));
+}
+
+.ak-item {
+    z-index: 1;
 }
 
 #a-flowering-tree {
@@ -1218,8 +1331,8 @@ p {
 }
 
 #ak-tv-container {
+    z-index: 0;
     position: absolute;
-    z-index: 10;
     top: 40%;
     left: 77%;
     width: 350px;
@@ -1230,9 +1343,11 @@ p {
 }
 
 #ak-tv-container video {
+    z-index: 0;
     width: 170%;
     height: 170%;
     object-fit: contain;
+    cursor: pointer;
 }
 
 #picture-frame {
@@ -1346,8 +1461,8 @@ p {
 }
 
 #photo2 {
-    top: 33%;
-    right: 23%;
+    top: 70%;
+    right: 12%;
 }
 
 #photo3 {
@@ -1361,7 +1476,7 @@ p {
 }
 
 #photo5 {
-    top: 3%;
+    top: 1%;
     right: 18%;
 }
 
@@ -1400,7 +1515,7 @@ p {
 }
 
 #photo5 img {
-    transform: rotate(90deg) rotate(6deg) scale(0.85);
+    transform: rotate(90deg) rotate(-6deg) scale(0.75);
 }
 
 #photo6 img {
@@ -2217,6 +2332,11 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 
 /* Footer styles */
 footer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
     z-index: 1000;
     text-align: center;
     color: #F5F5F7;
@@ -2231,6 +2351,17 @@ footer {
     left: auto;
     transform: none;
     background: transparent;
+}
+
+#social-media {
+    width: 148px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#social-media>a>img {
+    width: 24px;
 }
 
 
@@ -2347,10 +2478,10 @@ footer {
 .poem-container {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
     margin: auto;
-    margin-top: 92px;
-    margin-bottom: 92px;
+    margin-top: 145px;
+    margin-bottom: 253px;
     justify-content: space-between;
 }
 
@@ -2438,11 +2569,8 @@ footer {
 .artist-bio {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
     margin: auto;
-    gap: 92px;
-
-    justify-content: center;
 }
 
 .artist-bio div {
@@ -2460,6 +2588,7 @@ footer {
     width: 400px;
     height: 400px;
     object-fit: cover;
+    margin-right: 264px;
 }
 
 /* Statelessness styles */
@@ -2684,138 +2813,154 @@ footer {
         flex-shrink: 0;
     }
 
-    /* AK Ramanujan — scale items to ~70% for mobile */
+    /* AK Ramanujan — scale items to ~65% for mobile */
     #ramanujan-header {
-        padding: 12px 24px;
+        padding: 56px 24px;
+        justify-content: center;
     }
 
     #ak-scroll-canvas {
-        width: 10000px;
+        width: 5000px;
     }
 
     #a-flowering-tree {
-        width: 210px;
-        height: 280px;
+        width: 199px;
+        height: 265px;
     }
 
     #passport {
-        width: 105px;
-        height: 140px;
+        width: 99px;
+        height: 132px;
     }
 
     #ak-letters {
-        width: 175px;
-        height: 245px;
+        width: 166px;
+        height: 231px;
     }
 
     #ak-tv-container {
-        width: 245px;
-        height: 245px;
+        width: 231px;
+        height: 231px;
+        background-color: var(--Near-Black, #0D0D12);
+    }
+
+    #ak-book {
+        background-color: var(--Near-Black, #0D0D12);
     }
 
     #picture-frame {
-        width: 280px;
-        height: 280px;
+        width: 265px;
+        height: 265px;
+        background-color: var(--Near-Black, #0D0D12);
     }
 
     #radio {
-        width: 224px;
-        height: 224px;
+        width: 212px;
+        height: 212px;
+        background-color: var(--Near-Black, #0D0D12);
     }
 
     #interview-letter-1978 {
-        width: 175px;
-        height: 245px;
+        width: 166px;
+        height: 231px;
     }
 
     #photo1, #photo2, #photo3, #photo4, #photo5, #photo6 {
-        width: 140px;
-        height: 182px;
+        width: 132px;
+        height: 173px;
     }
 
     #dr-murty {
-        width: 175px;
-        height: 245px;
+        width: 166px;
+        height: 231px;
     }
 
     #mysore {
-        width: 140px;
-        height: 210px;
+        width: 132px;
+        height: 199px;
     }
 
     #stallworthy {
-        width: 224px;
-        height: 280px;
+        width: 212px;
+        height: 265px;
     }
 
     #ephemera, #ephemera2, #ephemera3, #ephemera5, #ephemera6, #ephemera-safe-unsafe {
-        width: 140px;
-        height: 182px;
+        width: 132px;
+        height: 173px;
     }
 
     #acacia-tree {
-        width: 140px;
-        height: 140px;
+        width: 132px;
+        height: 132px;
     }
 
     #poem-self-portrait {
-        width: 140px;
-        height: 182px;
+        width: 132px;
+        height: 173px;
     }
 
     #red-earth {
-        width: 140px;
-        height: 182px;
+        width: 132px;
+        height: 173px;
     }
 
     #translation {
-        width: 210px;
-        height: 252px;
+        width: 199px;
+        height: 238px;
     }
 
     #doodles-1 {
-        width: 182px;
-        height: 252px;
+        width: 173px;
+        height: 238px;
     }
 
     #biography-note {
-        width: 154px;
-        height: 217px;
+        width: 146px;
+        height: 205px;
     }
 
     #ak-essays {
-        width: 126px;
-        height: 186px;
+        width: 120px;
+        height: 176px;
     }
 
     #doodles-2 {
-        width: 182px;
-        height: 252px;
+        width: 173px;
+        height: 238px;
     }
 
     #first-visa {
-        width: 140px;
-        height: 182px;
+        width: 132px;
+        height: 173px;
     }
 
     #foreign-country {
-        width: 182px;
-        height: 224px;
+        width: 173px;
+        height: 212px;
     }
 
     #of-mothers {
-        width: 182px;
-        height: 224px;
+        width: 173px;
+        height: 212px;
     }
 
     #striders {
-        width: 182px;
-        height: 224px;
+        width: 173px;
+        height: 212px;
     }
 
     #truants {
-        width: 182px;
-        height: 224px;
+        width: 173px;
+        height: 212px;
+    }
+
+    /* Scroll hint — fixed to viewport right edge */
+    #ak-scroll-hint {
+        position: fixed;
+        right: 18px;
+        top: 50%;
+        z-index: 1001;
     }
 
     /* Modals */
@@ -2829,17 +2974,30 @@ footer {
         font-size: 18px;
     }
 
+    /* flip-card needs explicit height since children use height:100% */
     .flip-card {
         width: 100%;
         height: calc((95vw - 40px) * 640 / 440);
     }
 
-    .modal-img, .modal-video {
+    #modal-a-flowering-tree .flip-card {
+        width: 232px;
+        height: calc(232px * 640 / 440);
+    }
+
+    .flip-btn {
+        width: 41px;
+        height: 41px;
+    }
+
+    .modal-img,
+    .modal-video {
+        width: 232px;
         max-width: calc(95vw - 40px);
     }
 
     .ak-scroll-container {
-        width: 100%;
+        width: 232px;
         max-width: calc(95vw - 40px);
     }
 

@@ -2055,6 +2055,10 @@ footer {
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
     text-align: center;
     color: #F5F5F7;
     font-family: "IBM Plex Sans";
@@ -2071,10 +2075,14 @@ footer {
 }
 
 #social-media {
-    width: 200px;
+    width: 148px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+#social-media>a>img {
+    width: 24px;
 }
 
 
