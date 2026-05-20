@@ -1450,7 +1450,7 @@ p {
 }
 
 #photo1 {
-    top: 70%;
+    top: 60%;
     left: 19%;
 }
 
@@ -1761,7 +1761,7 @@ p {
 
 #poem-self-portrait {
     position: absolute;
-    bottom: 0;
+    bottom: 5%;
     left: 11%;
     width: 200px;
     height: 260px;
@@ -1783,7 +1783,7 @@ p {
 
 #red-earth {
     position: absolute;
-    top: 68%;
+    top: 65%;
     left: 15%;
     width: 200px;
     height: 260px;
@@ -2326,14 +2326,14 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 footer {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 16px;
     align-items: center;
     justify-content: center;
     z-index: 1000;
     text-align: center;
     color: #F5F5F7;
     font-family: "IBM Plex Sans";
-    font-size: 16px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -2347,7 +2347,6 @@ footer {
     width: 100%;
     bottom: 0;
     left: 0;
-    border: 2px solid coral;
 }
 
 #social-media {
