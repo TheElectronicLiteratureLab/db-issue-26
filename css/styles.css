@@ -1994,9 +1994,13 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 
 .carousel-slide {
     min-width: 100%;
+    max-width: 100%;
     flex-shrink: 0;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 92px 0px 92px 0px;
+    overflow: hidden;
 }
 
 .sr-only {
@@ -2010,8 +2014,9 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 .carousel-slide img {
     display: block;
     width: 80%;
+    max-height: 80vh;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .carousel button {
@@ -2113,6 +2118,15 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     box-shadow: 0 0 60px 12px rgba(221, 225, 197, 0.15);
 }
 
+.artist-statement {
+    width: 80%;
+    max-width: 1000px;
+    padding: 52px 72px;
+    margin: 0 auto 7em;
+    background: linear-gradient(to bottom right, #0D0D12 0%, #1F1F24 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D0D12 0%, #1F1F24 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D0D12 0%, #1F1F24 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D0D12 0%, #1F1F24 50%) top right / 50% 50% no-repeat;
+    box-shadow: 0 0 60px 12px rgba(221, 225, 197, 0.15);
+}
+
 .carousel-navigation {
     position: absolute;
     bottom: 1em;
@@ -2138,8 +2152,26 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     background: #1c69d3;
 }
 
+.single-image {
+    width: 80%;
+    max-height: 80vh;
+    margin: 92px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-image img {
+    display: block;
+    width: 100%;
+    max-height: 80vh;
+    height: auto;
+    object-fit: contain;
+}
+
 .carousel-image {
     width: 80%;
+    max-height: 80vh;
     height: auto;
     background-size: cover;
     background-position: center;
@@ -2152,6 +2184,31 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 .born-digital-content.carousel .carousel-image {
     height: 65vh;
     overflow: hidden;
+}
+
+.carousel-image a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.carousel-image iframe {
+    display: block;
+    max-width: calc(100% - 5em);
+    margin: 0 auto;
+}
+
+.video-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
 }
 
 .born-digital-content.carousel .carousel-slide img,
@@ -2787,6 +2844,23 @@ footer {
         max-width: calc(95vw - 40px);
     }
 
+    #issue-landing-body::before,
+    #issue-landing-body::after {
+        display: none;
+    }
+
+    #main-container {
+        flex-direction: column;
+    }
+
+    #main-container a span {
+        font-size: 7vw;
+        transform: translateZ(0) scaleY(1);
+        text-shadow: 0 0 10px #42A6FC,
+            0 0 25px #42A6FC,
+            0 0 50px rgba(66, 166, 252, 0.5);
+    }
+
     .statelessness-folio {
         padding: 28px !important;
     }
@@ -2798,7 +2872,7 @@ footer {
     }
 
     .poem-container {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: stretch;
         gap: 32px;
         margin-top: 64px;
@@ -2846,14 +2920,50 @@ footer {
         max-width: 100%;
         height: auto;
         margin: 0;
+        order: 2;
     }
 
     .artist-bio div {
+        display: contents;
+    }
+
+    .artist-bio div h2 {
+        order: 1;
+        width: 95%;
+        text-align: center;
+    }
+
+    .artist-bio div p {
+        order: 3;
+        width: 95%;
+    }
+
+    .artist-statement {
+        padding: 32px 20px;
         width: 95%;
     }
 
     .table-of-contents {
         width: 95%;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        width: 44px;
+        height: 44px;
+    }
+
+    .carousel-prev {
+        left: 6px;
+    }
+
+    .carousel-next {
+        right: 6px;
+    }
+
+    .carousel-image {
+        width: calc(100% - 100px);
+        margin: 0 auto;
     }
 
 }
@@ -2912,6 +3022,42 @@ footer {
 
     .carousel-slide img {
         width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel-prev,
+    .carousel-next {
+        width: 44px;
+        height: 44px;
+    }
+
+    .carousel-prev {
+        left: 6px;
+    }
+
+    .carousel-next {
+        right: 6px;
+    }
+
+    .carousel-image {
+        width: 80%;
+        max-height: none;
+    }
+
+    .carousel-slide img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+    }
+
+    .single-image {
+        width: 80%;
+        max-height: none;
+    }
+
+    .single-image img {
+        max-height: none;
     }
 }
 
