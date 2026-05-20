@@ -447,11 +447,15 @@ p {
     color: var(--Near-Black, #0D0D12);
 }
 
+/* ONLY strokes for wave lines */
 .audioBtn:hover svg path,
-.audioBtn:hover svg line,
-.audioBtn.is-playing svg path,
-.audioBtn.is-playing svg line {
+.audioBtn.is-playing svg path {
     stroke: currentColor;
+}
+
+/* ONLY fill the speaker */
+.audioBtn:hover svg .speaker,
+.audioBtn.is-playing svg .speaker {
     fill: currentColor;
 }
 
@@ -2050,7 +2054,7 @@ footer {
 }
 
 .table-of-contents button {
-    color: var(--Off-White, #F5F5F7);
+    color: var(--Off-White, #f5f5f7);
     background-color: transparent;
     border: none;
 
@@ -2065,15 +2069,60 @@ footer {
 
     width: 400px;
     padding-left: 18px;
+
+    transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    letter-spacing 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* glowing underline */
+.table-of-contents button::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        rgb(245, 245, 247) 0%,
+        rgb(66, 166, 252) 100%
+    );
+
+    transition: width 0.35s ease;
+}
+
+/* hover animation */
+.table-of-contents button:hover {
+    color: rgb(66, 166, 252);
+
+    transform: translateX(10px);
+
+    letter-spacing: 1px;
+}
+
+/* animate underline */
+.table-of-contents button:hover::after {
+    width: calc(100% - 18px);
+}
+
+/* click feedback */
+.table-of-contents button:active {
+    transform: translateX(6px) scale(0.98);
+}
+
+/* keyboard accessibility */
+.table-of-contents button:focus-visible {
+    outline: 2px solid #42A6FC;
+    outline-offset: 4px;
 }
 
 .table-of-contents span {
     color: var(--Blue, #42A6FC);
     font-size: 18px;
-}
-
-.table-of-contents button:hover {
-    color: #42A6FC;
 }
 
 .table-of-contents button:active {
@@ -2657,6 +2706,10 @@ footer {
         margin-bottom: 72px;
 
         justify-content: center;
+    }
+
+    .poem-container .view-piece-btn {
+        width: 300px;
     }
 
     .table-of-contents {
