@@ -1964,12 +1964,6 @@ footer {
 
 /* Statelessness styles */
 
-#statelessness-body {
-    background: var(--statless-landing-grad, linear-gradient(180deg, #0D0D12 0%, #04164F 100%));
-    position: relative;
-    min-height: 100vh;
-}
-
 #statelessness-body header {
     display: flex;
     flex-direction: column;
@@ -1978,39 +1972,35 @@ footer {
     padding: 4em;
 }
 
-#statelessnessGlobe {
-    width: 100%;
-    aspect-ratio: 1728 / 1117;
-    margin: 0 auto;
-    /* center it */
-
-    background-image: url("../img/stateless-globe.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* #globe-scroll {
-    width: 100vw;
-    height: 100vh;
-    overflow: auto;
-
+#statelessness-body {
+    background: var(--statless-landing-grad, linear-gradient(180deg, #0D0D12 0%, #04164F 100%));
     position: relative;
-    scroll-behavior: smooth;
-    cursor: grab;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-} */
+    height: 100vh;          /* contain to viewport */
+    overflow: hidden;       /* no vertical scroll */
+    display: flex;
+    flex-direction: column;
+}
 
 #globe-scroll {
-    width: 100%;
-    height: auto;
-    overflow: visible;
+    flex: 1;
+    overflow-x: auto;       /* horizontal scroll on mobile */
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
 }
 
-#globe-scroll:active {
-    cursor: grabbing;
+#statelessnessGlobe {
+    /* Scale the globe to fit viewport height exactly, but never wider than needed */
+    height: 100vh;
+    width: 100vw;   /* maintain 1728:1117 aspect ratio */
+    flex-shrink: 0;
+
+    background-image: url("../img/stateless-globe.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;     /* pins still need this */
 }
 
 .region {
@@ -2034,6 +2024,42 @@ footer {
     z-index: 2;
 }
 
+.region-pin-wrapper {
+    position: relative;
+    width: clamp(16px, 2vw, 32px);
+    /* height matches the default pin's aspect ratio: 32×92 ≈ 1:2.875 */
+    height: calc(clamp(16px, 2vw, 32px) * 2.875);
+}
+
+.region-pin-default {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.region-pin-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* scale up to compensate: actual pin is ~43/406 of the viewBox width */
+    width: calc(clamp(16px, 2vw, 32px) * (406 / 43));
+    height: auto;
+    transform: translate(-50%, -46%); /* -46% instead of -50% to align pin top */
+    opacity: 0;
+    pointer-events: none;
+    overflow: visible;
+    transition: opacity 0.3s ease;
+}
+
+.region:hover .region-pin-default {
+    opacity: 0;
+}
+
+.region:hover .region-pin-hover {
+    opacity: 1;
+}
+
 .region h3 {
     color: var(--Blue, #42A6FC);
     text-align: center;
@@ -2048,6 +2074,20 @@ footer {
     text-transform: uppercase;
 }
 
+#stateless-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#stateless-overlay.hidden {
+    display: none;
+}
+
 .statelessModal {
     position: fixed;
     top: 50%;
@@ -2056,9 +2096,10 @@ footer {
 
     padding: 0 48px 48px 48px;
     z-index: 1002;
-    max-width: min(26rem, 90vw);
-    width: 601px;
+    width: 400px;
+    max-height: 90vh;
     height: auto;
+    overflow: hidden;
 
     display: none;
     flex-direction: column;
@@ -2067,6 +2108,22 @@ footer {
 
     background: #0D0D12;
     box-shadow: 0 0 40px 0 rgba(65, 166, 252, 0.40);
+}
+
+.smodal-scroll {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: calc(90vh - 240px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+    overscroll-behavior: contain;
+}
+
+.smodal-scroll a {
+    display: block;
 }
 
 .statelessModal button {
@@ -2085,11 +2142,10 @@ footer {
 
 .statelessModal h2 {
     margin-top: 32px;
-    margin-bottom: 44px;
 }
 
 .statelessModal p {
-    padding-bottom: 44px;
+    padding-bottom: 32px;
     border-bottom: 1px solid #F5F5F7;
 }
 
@@ -2118,7 +2174,6 @@ footer {
 
     margin-bottom: 30px;
 }
-
 
 @media (max-width: 767px) {
     .statelessModal {
