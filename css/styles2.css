@@ -3,11 +3,14 @@
     position: fixed;
     inset: 0;
     z-index: 10000;
-    background: #000;
+    background: #0D0D12;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: opacity 0.6s ease;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #splash-screen.fade-out {
@@ -15,8 +18,24 @@
     pointer-events: none;
 }
 
+#splash-screen h1 {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#splash-screen h1 span {
+    display: block;
+    position: absolute;
+    top: 0;
+    margin-top: 264px;
+}
+
 #splash-screen video {
-    width: 80px;
+    width: 200px;
     height: auto;
 }
 
@@ -156,7 +175,7 @@ header {
     height: 100%;
     position: relative;
     z-index: 2;
-    gap: 12px;
+    gap: 4px;
     box-sizing: border-box;
 }
 
@@ -166,7 +185,7 @@ header {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    /* height: 70%; */
+    height: 100%;
 }
 
 #main-container a span {
@@ -178,17 +197,19 @@ header {
     text-transform: uppercase;
     white-space: nowrap;
     display: block;
-    transform: scaleY(30);
+    backface-visibility: hidden;
+    transform: translateZ(0) scaleY(30);
+    perspective: 1000px;
     transform-origin: center center;
     will-change: transform;
-    transition: transform 0.6s ease-in-out,
-        color 0.4s ease-in-out,
-        text-shadow 0.4s ease-in-out;
+    transition: transform 0.6s ease,
+        color 0.6s ease,
+        text-shadow 0.6s ease;
 }
 
 #main-container a:hover span {
-    transform: scaleY(1);
-    color: #42A6FC;
+    transform: translateZ(0) scaleY(1);
+    color: #f5f5f7;
     text-shadow: 0 0 10px #42A6FC,
         0 0 25px #42A6FC,
         0 0 50px rgba(66, 166, 252, 0.5);
@@ -475,8 +496,8 @@ p {
 #modal-overlay {
     position: fixed;
     inset: 0;
-    z-index: 500;
-    background: rgba(0, 0, 0, 0.75);
+    z-index: 1100;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -579,6 +600,12 @@ p {
     flex-direction: column;
     gap: 24px;
     width: 500px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.ak-scroll-container::-webkit-scrollbar {
+    display: none;
 }
 
 .ak-scroll-container img {
@@ -622,6 +649,7 @@ p {
 
 .ak-audio-track audio {
     width: 100%;
+    opacity: 0.8;
 }
 
 .ak-audio-nav {
@@ -634,17 +662,16 @@ p {
 
 .ak-audio-nav-btn {
     background: none;
-    border: 1px solid rgba(245, 245, 247, 0.3);
-    color: var(--Off-White, #F5F5F7);
-    padding: 6px 18px;
+    border: none;
+    padding: 4px 8px;
     cursor: pointer;
-    font-family: Michroma;
-    font-size: 14px;
-    transition: border-color 0.2s, color 0.2s;
+    color: rgba(245, 245, 247, 0.55);
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
 }
 
 .ak-audio-nav-btn:hover {
-    border-color: #42A6FC;
     color: #42A6FC;
 }
 
@@ -761,6 +788,32 @@ p {
     z-index: 1;
 }
 
+#ak-scroll-hint {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    opacity: 0.55;
+    pointer-events: none;
+    animation: ak-hint-nudge 1.6s ease-in-out infinite;
+    transition: opacity 0.5s ease;
+}
+
+#ak-scroll-hint.hidden {
+    opacity: 0;
+}
+
+@keyframes ak-hint-nudge {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-50%) translateX(7px);
+    }
+}
+
 #ak-horizontal-scroll-container {
     position: relative;
     width: 100%;
@@ -779,6 +832,10 @@ p {
 #ak-scroll-canvas>section,
 #ak-scroll-canvas>a>section {
     filter: drop-shadow(0 0 32px rgba(221, 225, 197, 0.24));
+}
+
+.ak-item {
+    z-index: 1;
 }
 
 #a-flowering-tree {
@@ -1009,8 +1066,9 @@ p {
 }
 
 #ak-tv-container {
+    border: 2px solid red;
+    z-index: 0;
     position: absolute;
-    z-index: 10;
     top: 40%;
     left: 77%;
     width: 350px;
@@ -1021,9 +1079,12 @@ p {
 }
 
 #ak-tv-container video {
+    z-index: 0;
+    border: 2px solid blue;
     width: 170%;
     height: 170%;
     object-fit: contain;
+    cursor: pointer;
 }
 
 #picture-frame {
@@ -1119,7 +1180,12 @@ p {
     transform: rotate(18deg);
 }
 
-#photo1, #photo2, #photo3, #photo4, #photo5, #photo6 {
+#photo1,
+#photo2,
+#photo3,
+#photo4,
+#photo5,
+#photo6 {
     position: absolute;
     width: 200px;
     height: 260px;
@@ -1156,8 +1222,12 @@ p {
     left: 10%;
 }
 
-#photo1 img, #photo2 img, #photo3 img,
-#photo4 img, #photo5 img, #photo6 img {
+#photo1 img,
+#photo2 img,
+#photo3 img,
+#photo4 img,
+#photo5 img,
+#photo6 img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -1307,8 +1377,12 @@ p {
     transform: rotate(-6deg) scale(0.9);
 }
 
-#ephemera, #ephemera2, #ephemera3,
-#ephemera5, #ephemera6, #ephemera-safe-unsafe {
+#ephemera,
+#ephemera2,
+#ephemera3,
+#ephemera5,
+#ephemera6,
+#ephemera-safe-unsafe {
     position: absolute;
     width: 200px;
     height: 260px;
@@ -1345,8 +1419,12 @@ p {
     right: 28%;
 }
 
-#ephemera img, #ephemera2 img, #ephemera3 img,
-#ephemera5 img, #ephemera6 img, #ephemera-safe-unsafe img {
+#ephemera img,
+#ephemera2 img,
+#ephemera3 img,
+#ephemera5 img,
+#ephemera6 img,
+#ephemera-safe-unsafe img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -2011,6 +2089,22 @@ footer {
     display: block;
 }
 
+.poem-content .translated-poem {
+    display: none;
+}
+
+.poem-content .translated-poem h2 {
+    display: none;
+}
+
+.poem-content.translation-active>.poem-scroll {
+    display: none;
+}
+
+.poem-content.translation-active>.translated-poem {
+    display: block;
+}
+
 /* Users can see which poem is active */
 .poemBtn.active {
 
@@ -2049,20 +2143,29 @@ footer {
 }
 
 #statelessness-body {
-    background: var(--statless-landing-grad, linear-gradient(180deg, #0D0D12 0%, #04164F 100%));
+    background: linear-gradient(180deg, #0D0D12 0%, #04164F 100%);
     position: relative;
-    height: 100vh;          /* contain to viewport */
-    overflow: hidden;       /* no vertical scroll */
+
+    min-height: 100vh;
+    /* allow page to grow */
+    overflow-x: hidden;
+    overflow-y: auto;
+
     display: flex;
     flex-direction: column;
 }
 
 #globe-scroll {
     flex: 1;
-    overflow-x: auto;       /* horizontal scroll on mobile */
-    overflow-y: hidden;
+
+    overflow-x: auto;
+    overflow-y: visible;
+
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+
+    position: relative;
 }
 
 #globe-scroll:active {
@@ -2072,15 +2175,17 @@ footer {
 #statelessnessGlobe {
     /* Scale the globe to fit viewport height exactly, but never wider than needed */
     height: 100vh;
-    width: 100vw;   /* maintain 1728:1117 aspect ratio */
+    width: 100vw;
+    /* maintain 1728:1117 aspect ratio */
     flex-shrink: 0;
 
     background-image: url("../img/stateless-globe.png");
-    background-size: 100% 100%;
-    background-position: center;
+    background-size: cover;
+    background-position: center top;
     background-repeat: no-repeat;
 
-    position: relative;     /* pins still need this */
+    position: relative;
+    /* pins still need this */
 }
 
 .region {
@@ -2097,22 +2202,6 @@ footer {
 .region svg {
     width: clamp(16px, 2vw, 32px);
     height: auto;
-    overflow: visible;
-    transition: filter 0.3s ease;
-}
-
-.region:hover svg {
-    filter:
-        drop-shadow(0 0 1.9px white)
-        drop-shadow(0 0 3.7px white)
-        drop-shadow(0 0 13px white)
-        drop-shadow(0 0 26px white)
-        drop-shadow(0 0 45px white)
-        drop-shadow(0 0 78px white);
-}
-
-.region:hover svg path {
-    fill: url(#pin-hover-grad);
 }
 
 .region-pin {
@@ -2128,20 +2217,21 @@ footer {
 }
 
 .region-pin-default {
-    display: block;
+    /* display: block; */
     width: 100%;
     height: 100%;
     transition: opacity 0.3s ease;
 }
 
 .region-pin-hover {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
-    left: 50%;
+    left: 50%; */
     /* scale up to compensate: actual pin is ~43/406 of the viewBox width */
-    width: calc(clamp(16px, 2vw, 32px) * (406 / 43));
+    /* width: calc(clamp(16px, 2vw, 32px) * (406 / 43)); */
     height: auto;
-    transform: translate(-50%, -46%); /* -46% instead of -50% to align pin top */
+    /* transform: translate(-50%, -46%); */
+    /* -46% instead of -50% to align pin top */
     opacity: 0;
     pointer-events: none;
     overflow: visible;
@@ -2281,6 +2371,7 @@ footer {
 }
 
 #basque {
+    border: 2px solid red;
     left: 15%;
     top: 42%;
 }
@@ -2319,7 +2410,7 @@ footer {
 
 #maasai {
     left: 65%;
-    top: calc(92% - 24px);
+    top: 90%;
 }
 
 #tibetans {

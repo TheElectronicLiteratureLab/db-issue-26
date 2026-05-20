@@ -114,6 +114,16 @@ class PageTransition {
 
     onSectionEnter(sectionId) {
 
+        // RAMANUJAN SECTION
+        if (sectionId === 'ramanujan-body') {
+            const hint = document.getElementById('ak-scroll-hint');
+            const container = document.getElementById('ak-horizontal-scroll-container');
+            if (hint && container) {
+                container.scrollLeft = 0;
+                hint.classList.remove('hidden');
+            }
+        }
+
         // STATELESSNESS SECTION
         if (sectionId === 'statelessness-body') {
 

@@ -18,9 +18,11 @@
         var nav = document.createElement('div');
         nav.className = 'ak-audio-nav';
 
+        var arrowSvg = '<svg width="13" height="23" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26 2.88275L23.439 0L0 22.75L23.439 45.5L26 42.6172L5.5315 22.75L26 2.88275Z" fill="currentColor"/></svg>';
+
         var prevBtn = document.createElement('button');
         prevBtn.className = 'ak-audio-nav-btn';
-        prevBtn.textContent = '←';
+        prevBtn.innerHTML = arrowSvg;
         prevBtn.setAttribute('aria-label', 'Previous recording');
 
         var bulletsDiv = document.createElement('div');
@@ -37,7 +39,7 @@
 
         var nextBtn = document.createElement('button');
         nextBtn.className = 'ak-audio-nav-btn';
-        nextBtn.textContent = '→';
+        nextBtn.innerHTML = '<svg width="13" height="23" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26 2.88275L23.439 0L0 22.75L23.439 45.5L26 42.6172L5.5315 22.75L26 2.88275Z" fill="currentColor" transform="rotate(180 13 23)"/></svg>';
         nextBtn.setAttribute('aria-label', 'Next recording');
 
         nav.append(prevBtn, bulletsDiv, nextBtn);
