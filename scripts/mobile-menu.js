@@ -1,20 +1,20 @@
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const menuModal = document.querySelector('.menu-modal');
+const menuOverlay = document.querySelector('.menu-overlay');
 const closeBtn = document.querySelector('.close-btn-container');
 
-hamburgerMenu.addEventListener('click', () => {
+function openMenu() {
     menuModal.classList.add('active');
+    menuOverlay.classList.add('active');
     hamburgerMenu.classList.add('hidden');
-});
+}
 
-closeBtn.addEventListener('click', () => {
+function closeMenu() {
     menuModal.classList.remove('active');
+    menuOverlay.classList.remove('active');
     hamburgerMenu.classList.remove('hidden');
-});
+}
 
-// Optional: Close menu when clicking outside of it
-window.addEventListener('click', (e) => {
-    if (e.target === menuModal) {
-        menuModal.classList.remove('active');
-    }
-});
+hamburgerMenu.addEventListener('click', openMenu);
+closeBtn.addEventListener('click', closeMenu);
+menuOverlay.addEventListener('click', closeMenu);

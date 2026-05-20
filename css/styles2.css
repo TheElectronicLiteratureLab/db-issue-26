@@ -93,30 +93,13 @@ header {
 }
 
 .hamburger-menu {
-    position: absolute;
-    top: 52px;
-    right: 64px;
-    display: flex;
+    border: 2px solid red;
     cursor: pointer;
     z-index: 999;
+    display: flex;
+    align-items: center;
 }
 
-.menu-modal {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    border: 2px solid green;
-    position: absolute;
-    z-index: 999;
-    /* i just made it this color for now so we can see */
-    background-color: tomato;
-    top: 0px;
-    right: 0px;
-    width: 30vh;
-}
 
 /* Topbar Styles */
 
@@ -133,7 +116,6 @@ header {
     justify-content: space-between;
     padding: 32px 74px 0 74px;
     align-items: center;
-
     background: transparent;
 }
 
