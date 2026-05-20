@@ -791,6 +791,27 @@ p {
     overflow-y: hidden;
 }
 
+#ak-scroll-hint {
+    position: fixed;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    opacity: 0.55;
+    pointer-events: none;
+    animation: ak-hint-nudge 1.6s ease-in-out infinite;
+    transition: opacity 0.5s ease;
+}
+
+#ak-scroll-hint.hidden {
+    opacity: 0;
+}
+
+@keyframes ak-hint-nudge {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50%       { transform: translateY(-50%) translateX(7px); }
+}
+
 #ak-scroll-canvas {
     position: relative;
     width: 5000px;
@@ -2307,6 +2328,56 @@ footer {
         top: 50%;
         transform: translate(-50%, -50%);
     }
+
+    #born-digital-body {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #born-digital-body svg {
+        display: block;
+        height: 100vh;
+        width: calc(100vh * 16 / 9);
+        flex-shrink: 0;
+    }
+
+    /* AK Ramanujan — scale items to ~70% for mobile */
+    #ramanujan-header { padding: 12px 24px; }
+    #ak-scroll-canvas { width: 10000px; }
+
+    #a-flowering-tree           { width: 210px; height: 280px; }
+    #passport                   { width: 105px; height: 140px; }
+    #ak-letters                 { width: 175px; height: 245px; }
+    #ak-tv-container            { width: 245px; height: 245px; }
+    #picture-frame              { width: 280px; height: 280px; }
+    #radio                      { width: 224px; height: 224px; }
+    #interview-letter-1978      { width: 175px; height: 245px; }
+    #photo1, #photo2, #photo3, #photo4, #photo5, #photo6 { width: 140px; height: 182px; }
+    #dr-murty                   { width: 175px; height: 245px; }
+    #mysore                     { width: 140px; height: 210px; }
+    #stallworthy                { width: 224px; height: 280px; }
+    #ephemera, #ephemera2, #ephemera3, #ephemera5, #ephemera6, #ephemera-safe-unsafe { width: 140px; height: 182px; }
+    #acacia-tree                { width: 140px; height: 140px; }
+    #poem-self-portrait         { width: 140px; height: 182px; }
+    #red-earth                  { width: 140px; height: 182px; }
+    #translation                { width: 210px; height: 252px; }
+    #doodles-1                  { width: 182px; height: 252px; }
+    #biography-note             { width: 154px; height: 217px; }
+    #ak-essays                  { width: 126px; height: 186px; }
+    #doodles-2                  { width: 182px; height: 252px; }
+    #first-visa                 { width: 140px; height: 182px; }
+    #foreign-country            { width: 182px; height: 224px; }
+    #of-mothers                 { width: 182px; height: 224px; }
+    #striders                   { width: 182px; height: 224px; }
+    #truants                    { width: 182px; height: 224px; }
+
+    /* Modals */
+    .akModal { max-width: 95vw; box-sizing: border-box; padding: 20px; }
+    .akModal h2 { font-size: 18px; }
+    .flip-card { width: 100%; height: calc((95vw - 40px) * 640 / 440); }
+    .modal-img, .modal-video { max-width: calc(95vw - 40px); }
+    .ak-scroll-container { width: 100%; max-width: calc(95vw - 40px); }
 }
 
 .statelessness-folio {
