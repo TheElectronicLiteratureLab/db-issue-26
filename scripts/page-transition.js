@@ -102,6 +102,7 @@ class PageTransition {
             nextElement.classList.add('active');
 
             this.currentSection = sectionId;
+            this.onSectionEnter(sectionId);
 
             // Update browser history
             window.history.pushState({ section: sectionId }, '', `#${sectionId}`);
@@ -109,6 +110,32 @@ class PageTransition {
             // Scroll to top
             window.scrollTo(0, 0);
         }, this.transitionDuration);
+    }
+
+    onSectionEnter(sectionId) {
+
+        // STATELESSNESS SECTION
+        if (sectionId === 'statelessness-body') {
+
+            const globe = document.getElementById('statelessnessGlobe');
+            const globeScroll = document.getElementById('globe-scroll');
+
+            gsap.killTweensOf(globe);
+
+            gsap.set(globe, {
+                y: window.innerHeight,
+                opacity: 0,
+                scale: 0.96
+            });
+
+            gsap.to(globe, {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 1.8,
+                ease: "power4.out"
+            });
+        }
     }
 
     // Convenience method to go to a specific section

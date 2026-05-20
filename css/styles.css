@@ -2051,23 +2051,28 @@ footer {
 }
 
 #statelessness-body {
-    background: var(--statless-landing-grad, linear-gradient(180deg, #0D0D12 0%, #04164F 100%));
+    background: linear-gradient(180deg, #0D0D12 0%, #04164F 100%);
     position: relative;
-    height: 100vh;
-    /* contain to viewport */
-    overflow: hidden;
-    /* no vertical scroll */
+
+    min-height: 100vh;   /* allow page to grow */
+    overflow-x: hidden;
+    overflow-y: auto;
+
     display: flex;
     flex-direction: column;
 }
 
 #globe-scroll {
     flex: 1;
+
     overflow-x: auto;
-    /* horizontal scroll on mobile */
-    overflow-y: hidden;
+    overflow-y: visible;
+
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+
+    position: relative;
 }
 
 #globe-scroll:active {
@@ -2082,8 +2087,8 @@ footer {
     flex-shrink: 0;
 
     background-image: url("../img/stateless-globe.png");
-    background-size: 100% 100%;
-    background-position: center;
+    background-size: cover;
+    background-position: center top;
     background-repeat: no-repeat;
 
     position: relative;
