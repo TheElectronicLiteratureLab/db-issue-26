@@ -89,22 +89,33 @@ header {
     display: flex;
     flex-direction: row;
     align-items: right;
-    border: 2px blue;
 }
 
 .hamburger-menu {
-    border: 2px solid red;
     cursor: pointer;
     z-index: 999;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+#additional-links {
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#additional-links>a {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 
 
 /* Topbar Styles */
 
 .topbar {
-    border: 2px solid green;
     box-sizing: border-box;
     position: fixed;
     width: 100%;
@@ -206,14 +217,9 @@ header {
     width: 64px;
 }
 
-.topbar>a>svg {
-    width: 20px;
-    height: auto;
-}
-
 .hamburger-menu svg {
-    width: 28px;
-    height: auto;
+    align-items: center;
+    width: 70%;
 }
 
 body {
@@ -382,6 +388,11 @@ p {
         height: 40px;
     }
 
+    .topbar svg {
+        width: 70%;
+        height: 70%;
+    }
+
 }
 
 .piece-section {
@@ -482,6 +493,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    padding-top: 32px;
 }
 
 .subheading-container {
@@ -2037,6 +2049,11 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 
 /* Footer styles */
 footer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
     z-index: 1000;
     text-align: center;
     color: #F5F5F7;
@@ -2051,6 +2068,13 @@ footer {
     left: auto;
     transform: none;
     background: transparent;
+}
+
+#social-media {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 
@@ -2483,16 +2507,23 @@ footer {
     #ak-tv-container {
         width: 231px;
         height: 231px;
+        background-color: var(--Near-Black, #0D0D12);
+    }
+
+    #ak-book {
+        background-color: var(--Near-Black, #0D0D12);
     }
 
     #picture-frame {
         width: 265px;
         height: 265px;
+        background-color: var(--Near-Black, #0D0D12);
     }
 
     #radio {
         width: 212px;
         height: 212px;
+        background-color: var(--Near-Black, #0D0D12);
     }
 
     #interview-letter-1978 {
@@ -2638,7 +2669,6 @@ footer {
 }
 
 #basque {
-    border: 2px solid red;
     left: 15%;
     top: 42%;
 }
