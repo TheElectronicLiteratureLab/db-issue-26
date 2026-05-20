@@ -2356,8 +2356,14 @@ footer {
     justify-content: space-between;
 }
 
+/* make social links turn blue on hover ? */
+#social-media>img:hover {
+    color: #42A6FC;
+}
+
 #social-media>a>img {
     width: 24px;
+
 }
 
 
