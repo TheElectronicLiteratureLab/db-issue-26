@@ -1066,7 +1066,6 @@ p {
 }
 
 #ak-tv-container {
-    border: 2px solid red;
     z-index: 0;
     position: absolute;
     top: 40%;
@@ -1080,7 +1079,6 @@ p {
 
 #ak-tv-container video {
     z-index: 0;
-    border: 2px solid blue;
     width: 170%;
     height: 170%;
     object-fit: contain;
@@ -1198,8 +1196,8 @@ p {
 }
 
 #photo2 {
-    top: 33%;
-    right: 23%;
+    top: 70%;
+    right: 12%;
 }
 
 #photo3 {
@@ -1213,7 +1211,7 @@ p {
 }
 
 #photo5 {
-    top: 3%;
+    top: 1%;
     right: 18%;
 }
 
@@ -1252,7 +1250,7 @@ p {
 }
 
 #photo5 img {
-    transform: rotate(90deg) rotate(6deg) scale(0.85);
+    transform: rotate(90deg) rotate(-6deg) scale(0.75);
 }
 
 #photo6 img {
@@ -2367,6 +2365,19 @@ footer {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    #born-digital-body {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #born-digital-body svg {
+        display: block;
+        height: 100vh;
+        width: calc(100vh * 16 / 9);
+        flex-shrink: 0;
     }
 }
 

@@ -4,7 +4,7 @@ gsap.registerPlugin(MotionPathPlugin);
 const GROUPS = [
     { id: 'vessel',                                             cx: 1151.19, cy: 323.81 },
     { id: 'slot_waste',                                         cx:  960,    cy: 245.12 },
-    { id: 'wanderer',                                           cx:  711.43, cy: 321.2  },
+    { id: 'wanderer',                                           cx:  745,    cy: 298    },
     { id: 'amber_row',                                          cx:  618.98, cy: 483.76 },
     { id: 'my_toxic_trait_is_I_believe_the_good_is_inevitable', cx:  625.65, cy: 667.53 },
     { id: 'human_in_the_loop',                                  cx:  742.85, cy: 833    },
