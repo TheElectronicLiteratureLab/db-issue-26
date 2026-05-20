@@ -1051,7 +1051,7 @@ p {
     position: relative;
     width: 100%;
     flex: 1;
-    min-height: 0;
+    height: 100vh;
     overflow-x: auto;
     overflow-y: hidden;
 }
@@ -2343,6 +2343,11 @@ footer {
     left: auto;
     transform: none;
     background: transparent;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border: 2px solid coral;
 }
 
 #social-media {
