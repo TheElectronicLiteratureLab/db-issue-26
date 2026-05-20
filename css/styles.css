@@ -2133,77 +2133,34 @@ footer {
 }
 
 #statelessnessGlobe {
-    /* Scale the globe to fit viewport height exactly, but never wider than needed */
-    height: 100vh;
+    /* Scale globe to fill viewport width, maintaining 1728:1117 aspect ratio */
     width: 100vw;
+    height: auto;
     /* maintain 1728:1117 aspect ratio */
     flex-shrink: 0;
 
-    background-image: url("../img/stateless-globe.png");
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-
     position: relative;
-    /* pins still need this */
+    /* SVG viewBox maintains aspect ratio */
+
+    margin-top: auto;
+}
+
+#globe {
+    width: 100%;
 }
 
 .region {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-    transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 1;
+}
+
+.region:hover path {
+    opacity: 0.8;
 }
 
 .region svg {
     width: clamp(16px, 2vw, 32px);
     height: auto;
-}
-
-.region-pin {
-    position: relative;
-    z-index: 2;
-}
-
-.region-pin-wrapper {
-    position: relative;
-    width: clamp(16px, 2vw, 32px);
-    /* height matches the default pin's aspect ratio: 32×92 ≈ 1:2.875 */
-    height: calc(clamp(16px, 2vw, 32px) * 2.875);
-}
-
-.region-pin-default {
-    /* display: block; */
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.3s ease;
-}
-
-.region-pin-hover {
-    /* position: absolute;
-    top: 50%;
-    left: 50%; */
-    /* scale up to compensate: actual pin is ~43/406 of the viewBox width */
-    /* width: calc(clamp(16px, 2vw, 32px) * (406 / 43)); */
-    height: auto;
-    /* transform: translate(-50%, -46%); */
-    /* -46% instead of -50% to align pin top */
-    opacity: 0;
-    pointer-events: none;
-    overflow: visible;
-    transition: opacity 0.3s ease;
-}
-
-.region:hover .region-pin-default {
-    opacity: 0;
-}
-
-.region:hover .region-pin-hover {
-    opacity: 1;
 }
 
 .region h3 {
@@ -2328,69 +2285,6 @@ footer {
         top: 50%;
         transform: translate(-50%, -50%);
     }
-}
-
-#basque {
-    border: 2px solid red;
-    left: 15%;
-    top: 42%;
-}
-
-#roma {
-    left: 34%;
-    top: 35%;
-}
-
-#kurds {
-    left: 48%;
-    top: 48%;
-}
-
-#palestinians {
-    left: 12%;
-    top: 63%;
-}
-
-#burkinabe {
-    display: none;
-    left: 12%;
-    top: 80%;
-}
-
-#bidoon {
-    display: none;
-    left: 32%;
-    top: 60%;
-}
-
-#biharis {
-    left: 40%;
-    top: 85%;
-}
-
-#maasai {
-    left: 65%;
-    top: 90%;
-}
-
-#tibetans {
-    left: 69%;
-    top: 68%;
-}
-
-#rohingya {
-    left: 80%;
-    top: 78%;
-}
-
-#uyghurs {
-    left: 85%;
-    top: 55%;
-}
-
-#hmong {
-    left: 93%;
-    top: 65%;
 }
 
 .statelessness-folio {

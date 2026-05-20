@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="statelessness" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1728 1117">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#radial-gradient);
+      }
+
+      .st1 {
+        fill: #42a6fc;
+      }
+
+      .st2 {
+        fill: #42a6fc;
+        font-family: Michroma-Regular, Michroma;
+        font-size: 28px;
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="73.7" cy="750" fx="73.7" fy="750" r="541.8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f1f24"/>
+      <stop offset="1" stop-color="#0d0d12"/>
+    </radialGradient>
+  </defs>
+  <path id="statelessnessGlobe" class="st0" d="M0,1117h1728v-572.5c-226-100.2-529.9-161.5-864-161.5S226,444.3,0,544.5v572.5Z"/>
+  <g id="basque">
+    <path id="main-pin" class="st1" d="M193.7,488.6c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM209.7,488.6h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(124.3 443.3)"><tspan x="0" y="0">BASQUE</tspan></text>
+  </g>
+  <g id="roma">
+    <path id="main-pin1" data-name="main-pin" class="st1" d="M520.3,408.5c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM536.3,408.5h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(473.3 363.1)"><tspan x="0" y="0">ROMA</tspan></text>
+  </g>
+  <g id="palestinians">
+    <path id="main-pin2" data-name="main-pin" class="st1" d="M177.7,762.7c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM193.7,762.7h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(44.7 717.4)"><tspan x="0" y="0">PALESTINIANS</tspan></text>
+  </g>
+  <g id="burkinabe">
+    <path id="main-pin3" data-name="main-pin" class="st1" d="M196.7,970.9c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM212.7,970.9h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(94.4 925.6)"><tspan x="0" y="0">BURKINABE</tspan></text>
+  </g>
+  <g id="bidoon">
+    <path id="main-pin4" data-name="main-pin" class="st1" d="M479.4,707c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM495.4,707h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(416.7 661.6)"><tspan x="0" y="0">BIDOON</tspan></text>
+  </g>
+  <g id="biharis">
+    <path id="main-pin5" data-name="main-pin" class="st1" d="M598.4,984.2c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM614.4,984.2h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(533.4 938.8)"><tspan x="0" y="0">BIHARIS</tspan></text>
+  </g>
+  <g id="kurds">
+    <path id="main-pin6" data-name="main-pin" class="st1" d="M809.6,569.3c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM825.6,569.3h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(753.3 524)"><tspan x="0" y="0">KURDS</tspan></text>
+  </g>
+  <g id="maasai">
+    <path id="main-pin7" data-name="main-pin" class="st1" d="M1059.2,1017.4c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM1075.2,1017.4h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(992.8 972)"><tspan x="0" y="0">MAASAI</tspan></text>
+  </g>
+  <g id="tibetans">
+    <path id="main-pin8" data-name="main-pin" class="st1" d="M1121.2,765.4c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM1137.2,765.4h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(1035 720.1)"><tspan x="0" y="0">TIBETANS</tspan></text>
+  </g>
+  <g id="rohingya">
+    <path id="main-pin9" data-name="main-pin" class="st1" d="M1304,891.3c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM1320,891.3h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(1211.7 845.9)"><tspan x="0" y="0">ROHINGYA</tspan></text>
+  </g>
+  <g id="uyghurs">
+    <path id="main-pin10" data-name="main-pin" class="st1" d="M1409.4,627.3c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM1425.4,627.3h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(1322.8 582)"><tspan x="0" y="0">UYGHURS</tspan></text>
+  </g>
+  <g id="hmong">
+    <path id="main-pin11" data-name="main-pin" class="st1" d="M1582.7,736.1c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM1598.7,736.1h-3v93h6v-93h-3Z"/>
+    <text class="st2" transform="translate(1519.2 690.7)"><tspan x="0" y="0">HMONG</tspan></text>
+  </g>
+</svg>
