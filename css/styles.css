@@ -548,6 +548,10 @@ body {
     filter: drop-shadow(0 0 8px #f5f5f7);
 }
 
+#born-digital-body circle {
+    filter: drop-shadow(2px 2px 24px rgba(221, 225, 197, 0.30));
+}
+
 .floatingNav {
     display: flex;
     flex-direction: row;
@@ -2968,7 +2972,8 @@ footer {
 
 @media (max-width: 767px) {
     #globe-scroll {
-        justify-content: flex-start; /* let it scroll naturally */
+        justify-content: flex-start;
+        /* let it scroll naturally */
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -3027,23 +3032,16 @@ footer {
     #ak-tv-container {
         width: 172px;
         height: 172px;
-        background-color: var(--Near-Black, #0D0D12);
-    }
-
-    #ak-book {
-        background-color: var(--Near-Black, #0D0D12);
     }
 
     #picture-frame {
         width: 265px;
         height: 265px;
-        background-color: var(--Near-Black, #0D0D12);
     }
 
     #radio {
         width: 212px;
         height: 212px;
-        background-color: var(--Near-Black, #0D0D12);
     }
 
     #interview-letter-1978 {
@@ -3194,6 +3192,12 @@ footer {
 
     #issue-landing-body #main-container {
         flex-direction: column;
+    }
+
+    #main-container>a {
+        border: 2px solid red;
+        height: auto;
+        justify-content: space-between;
     }
 
     #issue-landing-body #main-container a span {

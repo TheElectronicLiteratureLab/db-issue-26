@@ -106,10 +106,18 @@ function runIntro() {
 
 const section = document.getElementById('born-digital-body');
 if (section) {
+    const fromBornDigital = document.referrer.includes('born-digital/');
+    let initialDelayUsed = false;
+
     const io = new IntersectionObserver(
         (entries) => {
             if (entries[0].isIntersecting) {
-                runIntro();
+                if (fromBornDigital && !initialDelayUsed) {
+                    initialDelayUsed = true;
+                    setTimeout(runIntro, 4800);
+                } else {
+                    runIntro();
+                }
             } else {
                 resetGroups();
             }
