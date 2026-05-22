@@ -18,3 +18,7 @@ function closeMenu() {
 hamburgerMenu.addEventListener('click', openMenu);
 closeBtn.addEventListener('click', closeMenu);
 menuOverlay.addEventListener('click', closeMenu);
+
+menuModal.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});

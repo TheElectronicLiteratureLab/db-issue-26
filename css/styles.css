@@ -159,8 +159,6 @@ header {
             rgba(13, 13, 18, 0.98) 0%,
             rgba(25, 25, 35, 0.98) 100%);
 
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-
     box-shadow:
         0 0 60px rgba(65, 166, 252, 0.18),
         0 0 140px rgba(130, 110, 178, 0.12);
@@ -831,7 +829,7 @@ p {
 .artist-section {
     display: flex;
     flex-direction: row;
-    gap: 92px;
+    gap: 64px;
     margin-bottom: 92px;
 }
 
@@ -878,7 +876,6 @@ p {
     .artist-section {
         flex-direction: column-reverse;
         align-items: center;
-        gap: 24px;
         margin-bottom: 32px;
     }
 
@@ -3554,7 +3551,7 @@ footer.footer-in-flow {
         font-size: 7vw;
     }
 
-    .statelessness-folio {
+    .statelessness-folio.statement-page {
         padding: 8em 0.25em 8em 0.25em !important;
     }
 
