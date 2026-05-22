@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="statelessness" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1728 974">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-family: Michroma-Regular, Michroma;
+        font-size: 28px;
+      }
+
+      .st0, .st1 {
+        isolation: isolate;
+      }
+
+      .st0, .st2 {
+        fill: #42a6fc;
+      }
+
+      .st3 {
+        fill: url(#radial-gradient);
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="864" cy="607" fx="864" fy="478.2" r="663.8" gradientTransform="translate(0 -27.1) scale(1 1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f1f24"/>
+      <stop offset=".1" stop-color="#1a1a1f"/>
+      <stop offset=".5" stop-color="#101015"/>
+      <stop offset=".9" stop-color="#0d0d12"/>
+    </radialGradient>
+  </defs>
+  <image width="1329" height="780" transform="translate(232 -150)" xlink:href="stateless-globe3-01-1.png"/>
+  <image width="849" height="746" transform="translate(472 -133)" xlink:href="stateless-globe3-01-2.png"/>
+  <path id="statelessnessGlobe" class="st3" d="M0,974h1728V401.5c-226-100.2-529.9-161.5-864-161.5S226,301.3,0,401.5v572.5Z"/>
+  <g id="basque">
+    <path id="main-pin" class="st2" d="M193.7,345.6c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM209.7,345.6h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(124.3 300.3)"><tspan x="0" y="0">BASQUE</tspan></text>
+    </g>
+  </g>
+  <g id="roma">
+    <path id="main-pin1" class="st2" d="M520.3,265.5c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM536.3,265.5h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(473.3 220.1)"><tspan x="0" y="0">ROMA</tspan></text>
+    </g>
+  </g>
+  <g id="palestinians">
+    <path id="main-pin2" class="st2" d="M177.7,619.7c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM193.7,619.7h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(44.7 574.4)"><tspan x="0" y="0">PALESTINIANS</tspan></text>
+    </g>
+  </g>
+  <g id="burkinabe">
+    <path id="main-pin3" class="st2" d="M196.7,827.9c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM212.7,827.9h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(94.4 782.6)"><tspan x="0" y="0">BURKINABE</tspan></text>
+    </g>
+  </g>
+  <g id="bidoon">
+    <path id="main-pin4" class="st2" d="M479.4,564c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM495.4,564h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(416.7 518.6)"><tspan x="0" y="0">BIDOON</tspan></text>
+    </g>
+  </g>
+  <g id="biharis">
+    <path id="main-pin5" class="st2" d="M598.4,841.2c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM614.4,841.2h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(533.4 795.8)"><tspan x="0" y="0">BIHARIS</tspan></text>
+    </g>
+  </g>
+  <g id="kurds">
+    <path id="main-pin6" class="st2" d="M809.6,426.3c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM825.6,426.3h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(753.3 381)"><tspan x="0" y="0">KURDS</tspan></text>
+    </g>
+  </g>
+  <g id="maasai">
+    <path id="main-pin7" class="st2" d="M1059.2,874.4c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM1075.2,874.4h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(992.8 829)"><tspan x="0" y="0">MAASAI</tspan></text>
+    </g>
+  </g>
+  <g id="tibetans">
+    <path id="main-pin8" class="st2" d="M1121.2,622.4c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM1137.2,622.4h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(1035 577.1)"><tspan x="0" y="0">TIBETANS</tspan></text>
+    </g>
+  </g>
+  <g id="rohingya">
+    <path id="main-pin9" class="st2" d="M1304,748.3c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM1320,748.3h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(1211.7 702.9)"><tspan x="0" y="0">ROHINGYA</tspan></text>
+    </g>
+  </g>
+  <g id="uyghurs">
+    <path id="main-pin10" class="st2" d="M1409.4,484.3c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM1425.4,484.3h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(1322.8 439)"><tspan x="0" y="0">UYGHURS</tspan></text>
+    </g>
+  </g>
+  <g id="hmong">
+    <path id="main-pin11" class="st2" d="M1582.7,593.1c0,8.8,7.2,16,16,16s16-7.2,16-16-7.2-16-16-16-16,7.2-16,16ZM1598.7,593.1h-3v93h6v-93h-3Z"/>
+    <g class="st1">
+      <text class="st0" transform="translate(1519.2 547.7)"><tspan x="0" y="0">HMONG</tspan></text>
+    </g>
+  </g>
+  <image width="2261" height="757" transform="translate(-270 -68)" xlink:href="stateless-globe3-01-3.png"/>
+</svg>

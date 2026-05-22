@@ -2912,8 +2912,27 @@ footer {
     width: 320px;
 }
 
+.statelessModal a h3,
+.statelessModal a h4 {
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        letter-spacing 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.statelessModal a:hover h3,
+.statelessModal a:hover h4 {
+    color: rgb(66, 166, 252);
+
+    transform: translateX(10px);
+
+    letter-spacing: 1px;
+}
+
 .statelessModal h2 {
     margin-top: 32px;
+    color: #42A6FC;
 }
 
 .statelessModal p {
