@@ -1,3 +1,5 @@
+/* Custom scrollbar styles for webkit and Firefox browsers */
+
 /* Webkit (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
     width: 5px;

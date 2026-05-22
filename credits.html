@@ -32,9 +32,10 @@
             </svg>
         </a>
 
-        <a href="index.html"><img src="img/db-logo.svg" class="masthead-logo"></a>
+        <a href="index.html"><img src="img/db-logo.svg" class="masthead-logo" alt="Drunken Boat logo"></a>
 
         <nav>
+            <!-- Hamburger menu button -->
             <section class="hamburger-menu">
                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
                     <g clip-path="url(#clip0_1829_2051)">
@@ -48,7 +49,9 @@
                 </svg>
             </section>
 
+            <!-- Nav modal -->
             <section class="menu-modal">
+                <!-- Modal close button -->
                 <div class="close-btn-container">
                     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M37.75 6.25H6.25V37.75H37.75V6.25Z" stroke="#F5F5F7" />
@@ -62,6 +65,7 @@
                 <a href="ramanujan.html">A.K. Ramanujan</a>
                 <a href="issue-statement.html">Issue Statement</a>
 
+                <!-- Additional links (About, Submissions, etc.) -->
                 <div id="additional-links">
                     <a href="about.html">About</a>
 
@@ -73,21 +77,26 @@
 
                     <a href="https://drunkenboat.com/#latest-issues" target="_blank">Archives</a>
 
-                    <a id="donate-btn" href="https://www.paypal.com/donate/?hosted_button_id=2MB68C7NVXTQY" target="_blank">Donate&#9829;</a>
+                    <a id="donate-btn" href="https://www.paypal.com/donate/?hosted_button_id=2MB68C7NVXTQY" target="_blank">Donate<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:middle;margin-left:3px;">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg></a>
                 </div>
             </section>
         </nav>
     </header>
 
+    <!-- Main content -->
     <main>
+        <!-- Page title -->
         <div class="statelessness-header">
-            <h1>Issue Credits</h1>
+            <h1 class="main-heading">Issue Credits</h1>
         </div>
 
+        <!-- Editor bios -->
         <section class="credit-box">
 
             <div class="credit-bio">
-                <img src="img/credit-photos/ravi-shankar.jpg" alt="Portrait of Ravi Shanker, Editor-in-chief">
+                <div class="credit-photo" role="img" aria-label="Portrait of Ravi Shankar, Editor-in-chief"></div>
                 <div>
                     <h2>Editor-in-chief</h2>
                     <h3>Ravi Shankar</h3>
@@ -103,7 +112,7 @@
             </div>
 
             <div class="credit-bio">
-                <img src="img/credit-photos/lili-newberry.jpg" alt="Portrait of Lili Newberry, Managing Editor">
+                <div class="credit-photo" role="img" aria-label="Portrait of Lili Newberry, Managing Editor"></div>
                 <div>
                     <h2>Managing Editor</h2>
                     <h3>Lili Newberry</h3>
@@ -118,7 +127,7 @@
             </div>
 
             <div class="credit-bio">
-                <img src="img/credit-photos/daria-sommers.jpg" alt="Portrait of Daria Sommers, Nonfiction Editor">
+                <div class="credit-photo" role="img" aria-label="Portrait of Daria Sommers, Nonfiction Editor"></div>
                 <div>
                     <h2>Nonfiction Editor</h2>
                     <h3>Daria Sommers</h3>
@@ -137,7 +146,7 @@
             </div>
 
             <div class="credit-bio">
-                <img src="img/credit-photos/john-fried.jpg" alt="Portrait of John Fried, Fiction Editor">
+                <div class="credit-photo" role="img" aria-label="Portrait of John Fried, Fiction Editor"></div>
                 <div>
                     <h2>Fiction Editor</h2>
                     <h3>John Fried</h3>
@@ -153,7 +162,7 @@
             </div>
 
             <div class="credit-bio">
-                <img src="img/credit-photos/raga-chilakamarri.jpg" alt="Portrait of Raga Chilakamarri, Assistant Editor">
+                <div class="credit-photo" role="img" aria-label="Portrait of Raga Chilakamarri, Assistant Editor"></div>
                 <div>
                     <h2>Assistant Editor</h2>
                     <h3>Raga Chilakamarri</h3>
@@ -170,7 +179,7 @@
             </div>
 
             <div class="credit-bio">
-                <img src="img/credit-photos/yagnya-misra.jpg" alt="Portrait of Yagnya Misra, Assistant Editor">
+                <div class="credit-photo" role="img" aria-label="Portrait of Yagnya Misra, Assistant Editor"></div>
                 <div>
                     <h2>Assistant Editor</h2>
                     <h3>Yagnya Misra</h3>
@@ -182,11 +191,20 @@
                     </p>
                 </div>
             </div>
+        </section>
 
-
+        <h2 class="main-heading">Supported by</h2>
+        <section class="credit-box">
+            <section id="credits-icons">
+                <img src="img/ell-stacked-lockup.png" alt="ELL logo">
+                <img src="img/tufts-university-logo.svg" alt="Tufts University logo">
+                <img src="img/next-icon.png" alt="The NEXT logo">
+            </section>
+            <p id="credit-note">Web design and development by Marilyn Gable and Von Miller, led by Holly Slocum - Electronic Literature Lab</p>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>&#169; 2026 Drunken Boat | in association with ELL</p>
 

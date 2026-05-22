@@ -14,7 +14,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/scrollbar.css">
 
     <!-- Preload splash video -->
     <link rel="preload" as="video" href="vid/drunken-boat-logo-monochrome.mp4">
@@ -38,6 +37,7 @@
         <a href="index.html"><img src="img/db-logo.svg" class="masthead-logo" alt="Drunken Boat logo"></a>
 
         <nav>
+            <!-- Hamburger menu button -->
             <section class="hamburger-menu">
                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
                     <g clip-path="url(#clip0_1829_2051)">
@@ -51,7 +51,9 @@
                 </svg>
             </section>
 
+            <!-- Nav modal -->
             <section class="menu-modal">
+                <!-- Modal close button -->
                 <div class="close-btn-container">
                     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M37.75 6.25H6.25V37.75H37.75V6.25Z" stroke="#F5F5F7" />
@@ -64,10 +66,12 @@
                 <a href="born-digital.html">Born-Digital</a>
                 <a href="ramanujan.html">A.K. Ramanujan</a>
                 <a href="issue-statement.html">Issue Statement</a>
-                <a href="ramanujan-statement.html">Ramanujan Statement</a>
 
+                <!-- Additional links (About, Submissions, etc.) -->
                 <div id="additional-links">
-                    <a href="https://drunkenboat.com/#home-about-us" target="_blank">About</a>
+                    <a href="about.html">About</a>
+
+                    <a href="credits.html">Credits</a>
 
                     <a href="https://drunkenboat.submittable.com/submit" target="_blank">Submissions</a>
 
@@ -75,7 +79,9 @@
 
                     <a href="https://drunkenboat.com/#latest-issues" target="_blank">Archives</a>
 
-                    <a id="donate-btn" href="https://www.paypal.com/donate/?hosted_button_id=2MB68C7NVXTQY" target="_blank">Donate&#9829;</a>
+                    <a id="donate-btn" href="https://www.paypal.com/donate/?hosted_button_id=2MB68C7NVXTQY" target="_blank">Donate<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:middle;margin-left:3px;">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg></a>
                 </div>
             </section>
         </nav>
@@ -581,7 +587,7 @@
                     <circle class="cls-2" cx="1151.19" cy="323.81" r="61.68" />
 
                     <g clip-path="url(#vessel-clip)">
-                        <foreignObject x="1089.51" y="262.13" width="123.36" height="123.36">
+                        <foreignObject x="1089.51" y="262.13" width="123.36" height="123.36" style="overflow:hidden;border-radius:50%;">
                             <video xmlns="http://www.w3.org/1999/xhtml" src="vid/vessel.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
                             </video>
                         </foreignObject>
@@ -601,7 +607,7 @@
                     <circle class="cls-2" cx="960" cy="245.12" r="61.68" />
 
                     <g clip-path="url(#slot-waste-clip)">
-                        <foreignObject x="898.32" y="183.44" width="123.36" height="123.36">
+                        <foreignObject x="898.32" y="183.44" width="123.36" height="123.36" style="overflow:hidden;border-radius:50%;">
                             <video xmlns="http://www.w3.org/1999/xhtml" src="vid/slot-waste-clip.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
                             </video>
                         </foreignObject>
@@ -631,7 +637,7 @@
                     <circle class="cls-2" cx="618.98" cy="483.76" r="61.68" />
 
                     <g clip-path="url(#amber-row-clip)">
-                        <foreignObject x="557.3" y="422.08" width="123.36" height="123.36">
+                        <foreignObject x="557.3" y="422.08" width="123.36" height="123.36" style="overflow:hidden;border-radius:50%;">
                             <video xmlns="http://www.w3.org/1999/xhtml" src="vid/carvello-amber-row.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
                             </video>
                         </foreignObject>
@@ -682,7 +688,7 @@
                     <circle class="cls-2" cx="960" cy="893.8" r="61.68" />
 
                     <g clip-path="url(#count-zero-clip)">
-                        <foreignObject x="898.32" y="832.12" width="123.36" height="123.36">
+                        <foreignObject x="898.32" y="832.12" width="123.36" height="123.36" style="overflow:hidden;border-radius:50%;">
                             <video xmlns="http://www.w3.org/1999/xhtml" src="vid/burr-count-zero-thumb.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
                             </video>
                         </foreignObject>
@@ -732,14 +738,13 @@
 
         <!-- Section Footer -->
         <footer>
-            <p>&#169; 2026 Drunken Boat | in association with ELL</p>
 
             <section id="social-media">
                 <a href="https://www.facebook.com/DrunkenBoatPress" target="_blank"><img src="img/social-icons/facebook.svg" alt="facebook icon"></a>
 
                 <a href="https://www.instagram.com/drunkenboat1999?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank"><img src="img/social-icons/instagram.svg" alt="instagram icon"></a>
 
-                <a href="https://x.com/drunkenboat1999?t=uza3BLfDmOpLa1UQ9pVwbA&s=08" target="_blank"><img src="img/social-icons/twitter.svg" alt="twitter icon"></a>
+                <a href=""><img src="img/social-icons/twitter.svg" alt="twitter icon"></a>
 
                 <a href="https://www.linkedin.com/company/drunken-boat-international-journal-of-the-arts/about/" target="_blank"><img src="img/social-icons/linkedin.svg" alt="linkedin icon"></a>
             </section>
@@ -767,97 +772,97 @@
                         <img src="img/ak/passport.webp" alt="">
                     </section>
                     <section class="ak-item" id="ak-letters" onclick="openModal('modal-ak-letters')" style="cursor:pointer">
-                        <img src="img/ak/ak-letter-1.webp" alt="">
-                        <img src="img/ak/ak-letter-2.webp" alt="">
-                        <img src="img/ak/ak-letter-3.webp" alt="">
-                        <img src="img/ak/ak-letter-4.webp" alt="">
-                        <img src="img/ak/ak-letter-5.webp" alt="">
-                        <img src="img/ak/ak-letter-6.webp" alt="">
-                        <img src="img/ak/ak-letter-7.webp" alt="">
-                        <img src="img/ak/ak-letter-8.webp" alt="">
-                        <img src="img/ak/ak-letter-9.webp" alt="">
-                        <img src="img/ak/ak-letter-10.webp" alt="">
-                        <img src="img/ak/ak-letter-11.webp" alt="">
-                        <img src="img/ak/ak-letter-12.webp" alt="">
-                        <img src="img/ak/ak-letter-13.webp" alt="">
-                        <img src="img/ak/ak-letter-14.webp" alt="">
-                        <img src="img/ak/ak-letter-15.webp" alt="">
-                        <img src="img/ak/ak-letter-16.webp" alt="">
+                        <img src="img/ak/ak-letter-1.webp" alt="AK letter 1">
+                        <img src="img/ak/ak-letter-2.webp" alt="AK letter 2">
+                        <img src="img/ak/ak-letter-3.webp" alt="AK letter 3">
+                        <img src="img/ak/ak-letter-4.webp" alt="AK letter 4">
+                        <img src="img/ak/ak-letter-5.webp" alt="AK letter 5">
+                        <img src="img/ak/ak-letter-6.webp" alt="AK letter 6">
+                        <img src="img/ak/ak-letter-7.webp" alt="AK letter 7">
+                        <img src="img/ak/ak-letter-8.webp" alt="AK letter 8">
+                        <img src="img/ak/ak-letter-9.webp" alt="AK letter 9">
+                        <img src="img/ak/ak-letter-10.webp" alt="AK letter 10">
+                        <img src="img/ak/ak-letter-11.webp" alt="AK letter 11">
+                        <img src="img/ak/ak-letter-12.webp" alt="AK letter 12">
+                        <img src="img/ak/ak-letter-13.webp" alt="AK letter 13">
+                        <img src="img/ak/ak-letter-14.webp" alt="AK letter 14">
+                        <img src="img/ak/ak-letter-15.webp" alt="AK letter 15">
+                        <img src="img/ak/ak-letter-16.webp" alt="AK letter 16">
                     </section>
                     <section class="ak-item" id="photo1" onclick="openModal('modal-photo1')" style="cursor:pointer">
-                        <img src="img/ak/photo1.webp" alt="">
+                        <img src="img/ak/photo1.webp" alt="AK photo 1">
                     </section>
                     <section class="ak-item" id="photo2" onclick="openModal('modal-photo2')" style="cursor:pointer">
-                        <img src="img/ak/photo2.webp" alt="">
+                        <img src="img/ak/photo2.webp" alt="AK photo 2">
                     </section>
                     <section class="ak-item" id="photo3" onclick="openModal('modal-photo3')" style="cursor:pointer">
-                        <img src="img/ak/photo3.webp" alt="">
+                        <img src="img/ak/photo3.webp" alt="AK photo 3">
                     </section>
                     <section class="ak-item" id="photo4" onclick="openModal('modal-photo4')" style="cursor:pointer">
-                        <img src="img/ak/photo4.webp" alt="">
+                        <img src="img/ak/photo4.webp" alt="AK photo 4">
                     </section>
                     <section class="ak-item" id="photo5" onclick="openModal('modal-photo5')" style="cursor:pointer">
-                        <img src="img/ak/photo5.webp" alt="">
+                        <img src="img/ak/photo5.webp" alt="AK photo 5">
                     </section>
                     <section class="ak-item" id="ak-tv-container" onclick="openModal('modal-ak-tv')" style="cursor:pointer">
                         <video src="vid/ak/ak-tv.webm" muted autoplay loop></video>
                     </section>
                     <section class="ak-item" id="photo6" onclick="openModal('modal-photo6')" style="cursor:pointer">
-                        <img src="img/ak/photo6.webp" alt="">
+                        <img src="img/ak/photo6.webp" alt="AK photo 6">
                     </section>
                     <section class="ak-item" id="dr-murty" onclick="openModal('modal-dr-murty')" style="cursor:pointer">
-                        <img src="img/ak/murty-1.webp" alt="">
-                        <img src="img/ak/murty-2.webp" alt="">
+                        <img src="img/ak/murty-1.webp" alt="AK dr. murty 1">
+                        <img src="img/ak/murty-2.webp" alt="AK dr. murty 2">
                     </section>
                     <section class="ak-item" id="picture-frame" onclick="openModal('modal-picture-frame')" style="cursor:pointer">
                         <video src="vid/ak/item10-ak-picture.mp4" autoplay muted loop></video>
                     </section>
                     <section class="ak-item" id="stallworthy" onclick="openModal('modal-stallworthy')" style="cursor:pointer">
-                        <img src="img/ak/stallworthy.webp" alt="">
+                        <img src="img/ak/stallworthy.webp" alt="AK stallworthy">
                     </section>
                     <section class="ak-item" id="acacia-tree" onclick="openModal('modal-acacia-tree')" style="cursor:pointer">
-                        <img src="img/ak/acacia-tree.webp" alt="">
+                        <img src="img/ak/acacia-tree.webp" alt="AK acacia tree">
                     </section>
                     <section class="ak-item" id="ephemera" onclick="openModal('modal-ephemera')" style="cursor:pointer">
-                        <img src="img/ak/ephemera.webp" alt="">
+                        <img src="img/ak/ephemera.webp" alt="AK ephemera">
                     </section>
                     <section class="ak-item" id="ephemera2" onclick="openModal('modal-ephemera2')" style="cursor:pointer">
-                        <img src="img/ak/ephemera2.webp" alt="">
+                        <img src="img/ak/ephemera2.webp" alt="AK ephemera 2">
                     </section>
                     <section class="ak-item" id="ephemera3" onclick="openModal('modal-ephemera3')" style="cursor:pointer">
-                        <img src="img/ak/ephemera3.webp" alt="">
+                        <img src="img/ak/ephemera3.webp" alt="AK ephemera 3">
                     </section>
                     <section class="ak-item" id="ephemera5" onclick="openModal('modal-ephemera5')" style="cursor:pointer">
-                        <img src="img/ak/ephemera5.webp" alt="">
+                        <img src="img/ak/ephemera5.webp" alt="AK ephemera 5">
                     </section>
                     <section class="ak-item" id="ephemera6" onclick="openModal('modal-ephemera6')" style="cursor:pointer">
-                        <img src="img/ak/ephemera6.webp" alt="">
+                        <img src="img/ak/ephemera6.webp" alt="AK ephemera 6">
                     </section>
                     <section class="ak-item" id="ephemera-safe-unsafe" onclick="openModal('modal-ephemera-safe-unsafe')" style="cursor:pointer">
-                        <img src="img/ak/ephemera-safe-unsafe.webp" alt="">
+                        <img src="img/ak/ephemera-safe-unsafe.webp" alt="AK ephemera safe/unsafe">
                     </section>
                     <section class="ak-item" id="radio" onclick="openModal('modal-radio')" style="cursor:pointer">
                         <video src="vid/ak/item17-vintage-radio-floating.mp4" autoplay muted loop></video>
                     </section>
                     <section class="ak-item" id="interview-letter-1978" onclick="openModal('modal-interview-letter-1978')" style="cursor:pointer">
-                        <img src="img/ak/interviewletter1978-1.webp" alt="">
-                        <img src="img/ak/interviewletter1978-2.webp" alt="">
-                        <img src="img/ak/interviewletter1978-3.webp" alt="">
-                        <img src="img/ak/interviewletter1978-4.webp" alt="">
+                        <img src="img/ak/interviewletter1978-1.webp" alt="AK interview letter 1978 1">
+                        <img src="img/ak/interviewletter1978-2.webp" alt="AK interview letter 1978 2">
+                        <img src="img/ak/interviewletter1978-3.webp" alt="AK interview letter 1978 3">
+                        <img src="img/ak/interviewletter1978-4.webp" alt="AK interview letter 1978 4">
                     </section>
                     <section class="ak-item" id="poem-self-portrait" onclick="openModal('modal-poem-self-portrait')" style="cursor:pointer">
-                        <img src="img/ak/poem-self-portrait.webp" alt="">
+                        <img src="img/ak/poem-self-portrait.webp" alt="AK poem self-portrait">
                     </section>
                     <section class="ak-item" id="red-earth" onclick="openModal('modal-red-earth')" style="cursor:pointer">
-                        <img src="img/ak/red-earth.webp" alt="">
+                        <img src="img/ak/red-earth.webp" alt="AK red earth">
                     </section>
 
                     <section class="ak-item" id="translation" onclick="openModal('modal-translation')" style="cursor:pointer">
-                        <img src="img/ak/translation.webp" alt="">
+                        <img src="img/ak/translation.webp" alt="AK translation">
                     </section>
                     <!-- additional media starts here -->
                     <section class="ak-item" id="doodles-1" onclick="openModal('modal-doodles-1')" style="cursor:pointer">
-                        <img src="img/ak/doodles-and-list-of-tamil-short-stories.webp" alt="">
+                        <img src="img/ak/doodles-and-list-of-tamil-short-stories.webp" alt="AK doodles and list of Tamil short stories">
                     </section>
 
                     <a href="pdf/when-mirrors-are-windows-ebook.pdf" target="_blank" aria-label="When Mirrors Are Windows eBook">
@@ -868,38 +873,38 @@
 
                     <a href="pdf/ramanujan-two-essays.pdf" target="_blank" aria-label="Ramanujan Two Essays">
                         <section class="ak-item" id="ak-essays">
-                            <img src="img/ak/essays-thumb.webp" alt="">
+                            <img src="img/ak/essays-thumb.webp" alt="essays thumbnail">
                         </section>
                     </a>
 
                     <section class="ak-item" id="biography-note" onclick="openModal('modal-biography-note')" style="cursor:pointer">
-                        <img src="img/ak/akr-biographical-note-and-select-bibliography-1.webp" alt="">
-                        <img src="img/ak/akr-biographical-note-and-select-bibliography-2.webp" alt="">
-                        <img src="img/ak/akr-biographical-note-and-select-bibliography-3.webp" alt="">
-                        <img src="img/ak/akr-biographical-note-and-select-bibliography-4.webp" alt="">
+                        <img src="img/ak/akr-biographical-note-and-select-bibliography-1.webp" alt="AK biographical note and selected bibliography 1">
+                        <img src="img/ak/akr-biographical-note-and-select-bibliography-2.webp" alt="AK biographical note and selected bibliography 2">
+                        <img src="img/ak/akr-biographical-note-and-select-bibliography-3.webp" alt="AK biographical note and selected bibliography 3">
+                        <img src="img/ak/akr-biographical-note-and-select-bibliography-4.webp" alt="AK biographical note and selected bibliography 4">
                     </section>
 
                     <section class="ak-item" id="doodles-2" onclick="openModal('modal-doodles-2')" style="cursor:pointer">
-                        <img src="img/ak/doodles-and-poetry-drafts.webp" alt="">
+                        <img src="img/ak/doodles-and-poetry-drafts.webp" alt="AK doodles and poetry drafts">
                     </section>
                     <section class="ak-item" id="first-visa" onclick="openModal('modal-first-visa')" style="cursor:pointer">
-                        <img src="img/ak/first-us-visa-1959.webp" alt="">
+                        <img src="img/ak/first-us-visa-1959.webp" alt="AK first US visa 1959">
                     </section>
                     <section class="ak-item" id="foreign-country" onclick="openModal('modal-foreign-country')" style="cursor:pointer">
-                        <img src="img/ak/foreign-country.webp" alt="">
+                        <img src="img/ak/foreign-country.webp" alt="AK foreign country">
                     </section>
                     <section class="ak-item" id="of-mothers" onclick="openModal('modal-of-mothers')" style="cursor:pointer">
-                        <img src="img/ak/of-mothers-among-other-things.webp" alt="">
+                        <img src="img/ak/of-mothers-among-other-things.webp" alt="AK of mothers among other things">
                     </section>
                     <section class="ak-item" id="striders" onclick="openModal('modal-striders')" style="cursor:pointer">
-                        <img src="img/ak/the-striders.webp" alt="">
+                        <img src="img/ak/the-striders.webp" alt="AK the striders">
                     </section>
                     <section class="ak-item" id="truants" onclick="openModal('modal-truants')" style="cursor:pointer">
-                        <img src="img/ak/truants.webp" alt="">
+                        <img src="img/ak/truants.webp" alt="AK truants">
                     </section>
                     <section class="ak-item" id="mysore" onclick="openModal('modal-mysore')" style="cursor:pointer">
-                        <img src="img/ak/university-of-mysore-1.webp" alt="">
-                        <img src="img/ak/university-of-mysore-2.webp" alt="">
+                        <img src="img/ak/university-of-mysore-1.webp" alt="AK university of Mysore 1">
+                        <img src="img/ak/university-of-mysore-2.webp" alt="AK university of Mysore 2">
                     </section>
                 </div>
             </section>
@@ -933,10 +938,10 @@
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-face flip-card-front">
-                                <img src="img/ak/akr1-front.webp" alt="">
+                                <img src="img/ak/akr1-front.webp" alt="AK flowering tree front">
                             </div>
                             <div class="flip-card-face flip-card-back">
-                                <img src="img/ak/akr2-back.webp" alt="">
+                                <img src="img/ak/akr2-back.webp" alt="AK flowering tree back">
                             </div>
                         </div>
                     </div>
@@ -957,7 +962,7 @@
                     </svg>
                 </button>
                 <h2>A.K. Ramanujan - Late 1980s</h2>
-                <img src="img/ak/ak-photo-thumb.webp" alt="" class="modal-img">
+                <img src="img/ak/ak-photo-thumb.webp" alt="AK photo thumbnail" class="modal-img">
             </div>
 
             <div id="modal-ak-letters" class="akModal">
@@ -970,22 +975,22 @@
                 </button>
                 <h2>Ramanujan's Letters</h2>
                 <div class="ak-scroll-container">
-                    <img src="img/ak/ak-letter-1.webp" alt="">
-                    <img src="img/ak/ak-letter-2.webp" alt="">
-                    <img src="img/ak/ak-letter-3.webp" alt="">
-                    <img src="img/ak/ak-letter-4.webp" alt="">
-                    <img src="img/ak/ak-letter-5.webp" alt="">
-                    <img src="img/ak/ak-letter-6.webp" alt="">
-                    <img src="img/ak/ak-letter-7.webp" alt="">
-                    <img src="img/ak/ak-letter-8.webp" alt="">
-                    <img src="img/ak/ak-letter-9.webp" alt="">
-                    <img src="img/ak/ak-letter-10.webp" alt="">
-                    <img src="img/ak/ak-letter-11.webp" alt="">
-                    <img src="img/ak/ak-letter-12.webp" alt="">
-                    <img src="img/ak/ak-letter-13.webp" alt="">
-                    <img src="img/ak/ak-letter-14.webp" alt="">
-                    <img src="img/ak/ak-letter-15.webp" alt="">
-                    <img src="img/ak/ak-letter-16.webp" alt="">
+                    <img src="img/ak/ak-letter-1.webp" alt="AK letter 1">
+                    <img src="img/ak/ak-letter-2.webp" alt="AK letter 2">
+                    <img src="img/ak/ak-letter-3.webp" alt="AK letter 3">
+                    <img src="img/ak/ak-letter-4.webp" alt="AK letter 4">
+                    <img src="img/ak/ak-letter-5.webp" alt="AK letter 5">
+                    <img src="img/ak/ak-letter-6.webp" alt="AK letter 6">
+                    <img src="img/ak/ak-letter-7.webp" alt="AK letter 7">
+                    <img src="img/ak/ak-letter-8.webp" alt="AK letter 8">
+                    <img src="img/ak/ak-letter-9.webp" alt="AK letter 9">
+                    <img src="img/ak/ak-letter-10.webp" alt="AK letter 10">
+                    <img src="img/ak/ak-letter-11.webp" alt="AK letter 11">
+                    <img src="img/ak/ak-letter-12.webp" alt="AK letter 12">
+                    <img src="img/ak/ak-letter-13.webp" alt="AK letter 13">
+                    <img src="img/ak/ak-letter-14.webp" alt="AK letter 14">
+                    <img src="img/ak/ak-letter-15.webp" alt="AK letter 15">
+                    <img src="img/ak/ak-letter-16.webp" alt="AK letter 16">
                 </div>
             </div>
 
@@ -999,8 +1004,8 @@
                 </button>
                 <h2>Letter to Dr. Murty</h2>
                 <div class="ak-scroll-container">
-                    <img src="img/ak/murty-1.webp" alt="">
-                    <img src="img/ak/murty-2.webp" alt="">
+                    <img src="img/ak/murty-1.webp" alt="Dr. Murty letter 1">
+                    <img src="img/ak/murty-2.webp" alt="Dr. Murty letter 2">
                 </div>
             </div>
 
@@ -1026,10 +1031,10 @@
                 </button>
                 <h2>1978 Interview Letter</h2>
                 <div class="ak-scroll-container">
-                    <img src="img/ak/interviewletter1978-1.webp" alt="">
-                    <img src="img/ak/interviewletter1978-2.webp" alt="">
-                    <img src="img/ak/interviewletter1978-3.webp" alt="">
-                    <img src="img/ak/interviewletter1978-4.webp" alt="">
+                    <img src="img/ak/interviewletter1978-1.webp" alt="1978 Interview Letter 1">
+                    <img src="img/ak/interviewletter1978-2.webp" alt="1978 Interview Letter 2">
+                    <img src="img/ak/interviewletter1978-3.webp" alt="1978 Interview Letter 3">
+                    <img src="img/ak/interviewletter1978-4.webp" alt="1978 Interview Letter 4">
                 </div>
             </div>
 
@@ -1142,7 +1147,7 @@
                     </svg>
                 </button>
                 <h2>Ephemera - Red Earth</h2>
-                <img src="img/ak/red-earth.webp" alt="" class="modal-img">
+                <img src="img/ak/red-earth.webp" alt="Red earth" class="modal-img">
             </div>
 
             <div id="modal-radio" class="akModal">
@@ -1213,7 +1218,7 @@
                     </svg>
                 </button>
                 <h2>Doodles and Poetry Drafts</h2>
-                <img src="img/ak/doodles-and-poetry-drafts.webp" alt="" class="modal-img">
+                <img src="img/ak/doodles-and-poetry-drafts.webp" alt="Doodles and Poetry Drafts" class="modal-img">
             </div>
 
             <div id="modal-first-visa" class="akModal">
@@ -1225,7 +1230,7 @@
                     </svg>
                 </button>
                 <h2>First US Visa - 1959</h2>
-                <img src="img/ak/first-us-visa-1959.webp" alt="" class="modal-img">
+                <img src="img/ak/first-us-visa-1959.webp" alt="First US Visa - 1959" class="modal-img">
             </div>
 
             <div id="modal-foreign-country" class="akModal">
@@ -1237,7 +1242,7 @@
                     </svg>
                 </button>
                 <h2>Foreign Country</h2>
-                <img src="img/ak/foreign-country.webp" alt="" class="modal-img">
+                <img src="img/ak/foreign-country.webp" alt="Foreign Country" class="modal-img">
             </div>
 
             <div id="modal-of-mothers" class="akModal">
@@ -1249,7 +1254,7 @@
                     </svg>
                 </button>
                 <h2>Of Mothers, Among Other Things</h2>
-                <img src="img/ak/of-mothers-among-other-things.webp" alt="" class="modal-img">
+                <img src="img/ak/of-mothers-among-other-things.webp" alt="Of Mothers, Among Other Things" class="modal-img">
             </div>
 
             <div id="modal-striders" class="akModal">
@@ -1261,7 +1266,7 @@
                     </svg>
                 </button>
                 <h2>The Striders</h2>
-                <img src="img/ak/the-striders.webp" alt="" class="modal-img">
+                <img src="img/ak/the-striders.webp" alt="The Striders" class="modal-img">
             </div>
 
             <div id="modal-truants" class="akModal">
@@ -1273,7 +1278,7 @@
                     </svg>
                 </button>
                 <h2>Truants</h2>
-                <img src="img/ak/truants.webp" alt="" class="modal-img">
+                <img src="img/ak/truants.webp" alt="Truants" class="modal-img">
             </div>
 
             <div id="modal-passport" class="akModal">
@@ -1285,7 +1290,7 @@
                     </svg>
                 </button>
                 <h2>Passport</h2>
-                <img src="img/ak/passport.webp" alt="" class="modal-img">
+                <img src="img/ak/passport.webp" alt="Passport" class="modal-img">
             </div>
 
             <div id="modal-photo1" class="akModal">
@@ -1297,7 +1302,7 @@
                     </svg>
                 </button>
                 <h2>A.K. Ramanujan</h2>
-                <img src="img/ak/photo1.webp" alt="" class="modal-img">
+                <img src="img/ak/photo1.webp" alt="A.K. Ramanujan" class="modal-img">
             </div>
 
             <div id="modal-photo2" class="akModal">
@@ -1309,7 +1314,7 @@
                     </svg>
                 </button>
                 <h2>A.K. Ramanujan</h2>
-                <img src="img/ak/photo2.webp" alt="" class="modal-img">
+                <img src="img/ak/photo2.webp" alt="A.K. Ramanujan" class="modal-img">
             </div>
 
             <div id="modal-photo3" class="akModal">
@@ -1321,7 +1326,7 @@
                     </svg>
                 </button>
                 <h2>A.K. Ramanujan</h2>
-                <img src="img/ak/photo3.webp" alt="" class="modal-img">
+                <img src="img/ak/photo3.webp" alt="A.K. Ramanujan" class="modal-img">
             </div>
 
             <div id="modal-photo4" class="akModal">
@@ -1333,7 +1338,7 @@
                     </svg>
                 </button>
                 <h2>A.K. Ramanujan</h2>
-                <img src="img/ak/photo4.webp" alt="" class="modal-img">
+                <img src="img/ak/photo4.webp" alt="A.K. Ramanujan" class="modal-img">
             </div>
 
             <div id="modal-photo5" class="akModal">
@@ -1345,7 +1350,7 @@
                     </svg>
                 </button>
                 <h2>A.K. Ramanujan</h2>
-                <img src="img/ak/photo5.webp" alt="" class="modal-img" style="transform: rotate(90deg)">
+                <img src="img/ak/photo5.webp" alt="A.K. Ramanujan" class="modal-img" style="transform: rotate(90deg)">
             </div>
 
             <div id="modal-photo6" class="akModal">
@@ -1357,7 +1362,7 @@
                     </svg>
                 </button>
                 <h2>A.K. Ramanujan</h2>
-                <img src="img/ak/photo6.webp" alt="" class="modal-img" style="transform: rotate(90deg)">
+                <img src="img/ak/photo6.webp" alt="A.K. Ramanujan" class="modal-img" style="transform: rotate(90deg)">
             </div>
 
             <div id="modal-mysore" class="akModal">
@@ -1370,8 +1375,8 @@
                 </button>
                 <h2>University of Mysore</h2>
                 <div class="ak-scroll-container">
-                    <img src="img/ak/university-of-mysore-1.webp" alt="">
-                    <img src="img/ak/university-of-mysore-2.webp" alt="">
+                    <img src="img/ak/university-of-mysore-1.webp" alt="University of Mysore 1">
+                    <img src="img/ak/university-of-mysore-2.webp" alt="University of Mysore 2">
                 </div>
             </div>
 
@@ -1385,10 +1390,10 @@
                 </button>
                 <h2>Biographical Note &amp; Select Bibliography</h2>
                 <div class="ak-scroll-container">
-                    <img src="img/ak/akr-biographical-note-and-select-bibliography-1.webp" alt="">
-                    <img src="img/ak/akr-biographical-note-and-select-bibliography-2.webp" alt="">
-                    <img src="img/ak/akr-biographical-note-and-select-bibliography-3.webp" alt="">
-                    <img src="img/ak/akr-biographical-note-and-select-bibliography-4.webp" alt="">
+                    <img src="img/ak/akr-biographical-note-and-select-bibliography-1.webp" alt="Biographical Note & Select Bibliography 1">
+                    <img src="img/ak/akr-biographical-note-and-select-bibliography-2.webp" alt="Biographical Note & Select Bibliography 2">
+                    <img src="img/ak/akr-biographical-note-and-select-bibliography-3.webp" alt="Biographical Note & Select Bibliography 3">
+                    <img src="img/ak/akr-biographical-note-and-select-bibliography-4.webp" alt="Biographical Note & Select Bibliography 4">
                 </div>
             </div>
         </div>
