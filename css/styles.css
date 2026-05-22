@@ -255,6 +255,24 @@ header {
     width: 100%;
 }
 
+/* Contextual statement sub-links */
+.menu-modal a.menu-statement-link {
+    font-size: clamp(12px, 1.2vw, 15px);
+    color: #42A6FC;
+    padding-left: 1em;
+    border-left: 2px solid rgba(66, 166, 252, 0.4);
+    margin-top: -12px;
+}
+
+.menu-modal a.menu-statement-link:hover {
+    color: #F5F5F7;
+    border-left-color: rgba(130, 110, 178, 0.7);
+}
+
+.menu-modal a.menu-statement-link::after {
+    background: linear-gradient(90deg, #826EB2, #42A6FC);
+}
+
 /* Nav modal close button */
 .close-btn-container {
     position: absolute;
