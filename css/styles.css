@@ -3509,6 +3509,10 @@ footer {
         font-size: 7vw;
     }
 
+    .statelessness-folio {
+        padding: 8em 0.25em 8em 0.25em !important;
+    }
+
 }
 
 .prism-bg {
