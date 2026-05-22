@@ -2472,7 +2472,7 @@ footer {
     gap: 16px;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 998;
     text-align: center;
     color: #F5F5F7;
     font-family: "IBM Plex Sans";
@@ -3513,6 +3513,10 @@ footer {
         padding: 8em 0.25em 8em 0.25em !important;
     }
 
+    .menu-modal {
+        overflow-y: scroll;
+    }
+
 }
 
 .prism-bg {
@@ -3563,4 +3567,9 @@ footer {
 
 .i {
     font-style: italic;
+}
+
+#donate-btn svg {
+    width: 1em;
+    height: auto;
 }
