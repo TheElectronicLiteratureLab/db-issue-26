@@ -170,16 +170,6 @@ class PageTransition {
     }
 
     onSectionEnter(sectionId) {
-        const ramanujanStatementLink = document.getElementById('menu-ramanujan-statement');
-        if (ramanujanStatementLink) {
-            ramanujanStatementLink.style.display = sectionId === 'ramanujan-body' ? '' : 'none';
-        }
-
-        const statelessnessStatementLink = document.getElementById('menu-statelessness-statement');
-        if (statelessnessStatementLink) {
-            statelessnessStatementLink.style.display = sectionId === 'statelessness-body' ? '' : 'none';
-        }
-
         if (sectionId === 'born-digital-body') {
             const el = document.getElementById('born-digital-body');
             if (el) el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;

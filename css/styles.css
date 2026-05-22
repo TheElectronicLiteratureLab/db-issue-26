@@ -2515,6 +2515,14 @@ footer {
     padding-bottom: 16px;
 }
 
+/* Footer sits at the bottom of the page scroll container on artist pages */
+footer.footer-in-flow {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+}
+
 #social-media {
     width: 148px;
     display: flex;
