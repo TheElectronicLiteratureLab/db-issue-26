@@ -1458,14 +1458,14 @@ p {
     position: absolute;
     top: 40%;
     left: 77%;
-    width: 350px;
-    height: 350px;
+    width: 262px;
+    height: 262px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#ak-tv-container video {
+#ak-tv-container img {
     z-index: 0;
     width: 170%;
     height: 170%;
@@ -1485,7 +1485,7 @@ p {
     overflow: hidden;
 }
 
-#picture-frame video {
+#picture-frame img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -1503,7 +1503,7 @@ p {
     overflow: hidden;
 }
 
-#radio video {
+#radio img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -1984,7 +1984,7 @@ p {
     left: 0;
 }
 
-#ak-book video {
+#ak-book img {
     width: 90%;
     object-fit: contain;
 }
@@ -2994,8 +2994,8 @@ footer {
     }
 
     #ak-tv-container {
-        width: 231px;
-        height: 231px;
+        width: 172px;
+        height: 172px;
         background-color: var(--Near-Black, #0D0D12);
     }
 
