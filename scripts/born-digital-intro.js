@@ -2,16 +2,16 @@ gsap.registerPlugin(MotionPathPlugin);
 
 // cx/cy: circle center in SVG user units (viewBox 0 0 1920 1080)
 const GROUPS = [
-    { id: 'vessel',                                             cx: 1151.19, cy: 323.81 },
-    { id: 'slot_waste',                                         cx:  960,    cy: 245.12 },
-    { id: 'wanderer',                                           cx:  745,    cy: 298    },
-    { id: 'amber_row',                                          cx:  618.98, cy: 483.76 },
-    { id: 'my_toxic_trait_is_I_believe_the_good_is_inevitable', cx:  625.65, cy: 667.53 },
-    { id: 'human_in_the_loop',                                  cx:  742.85, cy: 833    },
-    { id: 'count_zero_three',                                   cx:  960,    cy: 893.8  },
-    { id: 'underwear_shopping_spree',                           cx: 1203.97, cy: 830.4  },
-    { id: 'a_living_poem',                                      cx: 1350.15, cy: 667.57 },
-    { id: 'sketches',                                           cx: 1455.17, cy: 478.55 },
+    { id: 'vessel', cx: 1151.19, cy: 323.81 },
+    { id: 'slot_waste', cx: 960, cy: 245.12 },
+    { id: 'wanderer', cx: 745, cy: 298 },
+    { id: 'amber_row', cx: 618.98, cy: 483.76 },
+    { id: 'my_toxic_trait_is_I_believe_the_good_is_inevitable', cx: 625.65, cy: 667.53 },
+    { id: 'human_in_the_loop', cx: 742.85, cy: 833 },
+    { id: 'count_zero_three', cx: 960, cy: 893.8 },
+    { id: 'underwear_shopping_spree', cx: 1203.97, cy: 830.4 },
+    { id: 'a_living_poem', cx: 1350.15, cy: 667.57 },
+    { id: 'sketches', cx: 1455.17, cy: 478.55 },
 ];
 
 gsap.set(GROUPS.map(g => '#' + g.id), { opacity: 0 });
