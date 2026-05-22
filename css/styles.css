@@ -2967,6 +2967,18 @@ footer {
 }
 
 @media (max-width: 767px) {
+    #globe-scroll {
+        justify-content: flex-start; /* let it scroll naturally */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #statelessnessGlobe {
+        width: 180vw;
+        height: auto;
+        flex-shrink: 0;
+    }
+
     .statelessModal {
         width: min(90vw, 24rem);
         left: 50%;
