@@ -466,10 +466,34 @@ header {
     text-align: center;
 }
 
+@media (max-width: 960px) {
+    #credits-icons {
+        gap: 24px;
+    }
+
+    #credits-icons img {
+        width: 80px;
+    }
+}
+
 @media (max-width: 767px) {
     #credits-icons {
         flex-direction: column;
         gap: 32px;
+    }
+
+    #credits-icons img {
+        width: 120px;
+    }
+
+    .main-heading {
+        font-size: 24px !important;
+        margin: 1.25em !important;
+    }
+
+    .credit-box,
+    .about-box {
+        padding: 32px 24px;
     }
 }
 
@@ -3618,7 +3642,7 @@ footer.footer-in-flow {
 
 .book-entry {
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 80px 120px 1fr;
     gap: 32px;
     align-items: start;
     padding: 36px 0;
@@ -3692,13 +3716,22 @@ footer.footer-in-flow {
     color: #42A6FC;
 }
 
+.book-cover {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
 @media (max-width: 600px) {
     .book-entry {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        grid-template-columns: 90px 1fr;
+        grid-template-rows: auto auto;
+        gap: 8px 16px;
     }
 
     .book-year {
+        grid-column: 1 / -1;
         padding-top: 0;
     }
 }
