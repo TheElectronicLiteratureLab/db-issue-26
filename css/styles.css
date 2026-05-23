@@ -3511,10 +3511,14 @@ footer.footer-in-flow {
 .statelessness-header {
     width: 100%;
     margin: auto;
-
+    padding-top: 32px;
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+.statelessness-header h4 {
+    color: #42A6FC;
 }
 
 /* Statement pages */
