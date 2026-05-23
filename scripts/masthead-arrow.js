@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mapping = {
         'issue-landing-body': 'hide',
-        'statelessness-body': 'up',
-        'born-digital-body': 'right',
-        'ramanujan-body': 'left'
+        'statelessness': 'up',
+        'born-digital': 'right',
+        'ak-ramanujan': 'left'
     };
 
     const ids = Object.keys(mapping).map(id => document.getElementById(id)).filter(Boolean);

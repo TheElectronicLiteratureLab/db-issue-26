@@ -31,7 +31,7 @@
             });
         });
 
-        var section = document.getElementById('ramanujan-body');
+        var section = document.getElementById('ak-ramanujan');
         if (!section) return;
 
         var observer = new IntersectionObserver(function (entries) {

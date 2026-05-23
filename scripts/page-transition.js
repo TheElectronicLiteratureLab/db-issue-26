@@ -12,9 +12,9 @@ class PageTransition {
         this.currentSection = 'issue-landing-body';
         this.sections = [
             'issue-landing-body',
-            'statelessness-body',
-            'born-digital-body',
-            'ramanujan-body',
+            'statelessness',
+            'born-digital',
+            'ak-ramanujan',
         ];
         this.isTransitioning = false;
         this.init();
@@ -23,9 +23,9 @@ class PageTransition {
     // Spatial coordinates (in viewport units) for each section
     static POSITIONS = {
         'issue-landing-body': { x: 0, y: 0 },
-        'born-digital-body': { x: -1, y: 0 },
-        'statelessness-body': { x: 0, y: 1 },
-        'ramanujan-body': { x: 1, y: 0 },
+        'born-digital': { x: -1, y: 0 },
+        'statelessness': { x: 0, y: 1 },
+        'ak-ramanujan': { x: 1, y: 0 },
     };
 
     init() {
@@ -67,9 +67,9 @@ class PageTransition {
     getTargetSection(href) {
         const map = {
             'index.html': 'issue-landing-body',
-            'statelessness.html': 'statelessness-body',
-            'born-digital.html': 'born-digital-body',
-            'ramanujan.html': 'ramanujan-body',
+            'statelessness.html': 'statelessness',
+            'born-digital.html': 'born-digital',
+            'ramanujan.html': 'ak-ramanujan',
         };
         return map[href.split('/').pop()] ?? null;
     }
@@ -170,12 +170,12 @@ class PageTransition {
     }
 
     onSectionEnter(sectionId) {
-        if (sectionId === 'born-digital-body') {
-            const el = document.getElementById('born-digital-body');
+        if (sectionId === 'born-digital') {
+            const el = document.getElementById('born-digital');
             if (el) el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
         }
 
-        if (sectionId === 'ramanujan-body') {
+        if (sectionId === 'ak-ramanujan') {
             const hint = document.getElementById('ak-scroll-hint');
             const container = document.getElementById('ak-horizontal-scroll-container');
             if (hint && container) {
@@ -184,7 +184,7 @@ class PageTransition {
             }
         }
 
-        if (sectionId === 'statelessness-body') {
+        if (sectionId === 'statelessness') {
             const globe = document.getElementById('statelessnessGlobe');
             if (globe) gsap.set(globe, { clearProps: 'all' });
         }

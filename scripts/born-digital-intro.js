@@ -104,7 +104,7 @@ function runIntro() {
     });
 }
 
-const section = document.getElementById('born-digital-body');
+const section = document.getElementById('born-digital');
 if (section) {
     const fromBornDigital = document.referrer.includes('born-digital/');
     let initialDelayUsed = false;

@@ -14,7 +14,7 @@
     }
 
     function init() {
-        var body = document.getElementById('ramanujan-body');
+        var body = document.getElementById('ak-ramanujan');
         if (!body) return;
 
         var canvas = document.createElement('canvas');

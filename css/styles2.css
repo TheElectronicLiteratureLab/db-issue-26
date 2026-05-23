@@ -236,24 +236,24 @@ body {
     z-index: -1;
 }
 
-#born-digital-body {
+#born-digital {
     height: 100vh;
     overflow: hidden;
 }
 
-#born-digital-body svg {
+#born-digital svg {
     overflow: visible;
 }
 
-#born-digital-body svg>g:not(#spiral) {
+#born-digital svg>g:not(#spiral) {
     cursor: pointer;
 }
 
-#born-digital-body svg>g:not(#spiral) text {
+#born-digital svg>g:not(#spiral) text {
     transition: filter 0.35s ease, font-size 0.35s ease;
 }
 
-#born-digital-body svg>g:not(#spiral):hover text {
+#born-digital svg>g:not(#spiral):hover text {
     font-size: 21px;
     filter: drop-shadow(0 0 8px #f5f5f7);
 }
@@ -790,7 +790,7 @@ p {
 
 /* AK Ramanujan Styles */
 
-#ramanujan-body {
+#ak-ramanujan {
     position: relative;
     height: 100vh;
     display: flex;
@@ -801,8 +801,8 @@ p {
         var(--Near-Black, #0D0D12);
 }
 
-#ramanujan-body::before,
-#ramanujan-body::after {
+#ak-ramanujan::before,
+#ak-ramanujan::after {
     content: '';
     position: absolute;
     left: 28%;
@@ -811,7 +811,7 @@ p {
     z-index: 0;
 }
 
-#ramanujan-body::before {
+#ak-ramanujan::before {
     top: 0;
     height: 60%;
     background:
@@ -821,7 +821,7 @@ p {
     animation: ak-aurora-a 28s ease-in-out infinite alternate;
 }
 
-#ramanujan-body::after {
+#ak-ramanujan::after {
     top: 28%;
     height: 75%;
     background:
@@ -2239,7 +2239,7 @@ footer {
 
 /* Statelessness styles */
 
-#statelessness-body header {
+#statelessness header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2247,7 +2247,7 @@ footer {
     padding: 4em;
 }
 
-#statelessness-body {
+#statelessness {
     background: linear-gradient(180deg, #0D0D12 0%, #04164F 100%);
     position: relative;
 
@@ -2474,13 +2474,13 @@ footer {
         transform: translate(-50%, -50%);
     }
 
-    #born-digital-body {
+    #born-digital {
         overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
     }
 
-    #born-digital-body svg {
+    #born-digital svg {
         display: block;
         height: 100vh;
         width: calc(100vh * 16 / 9);
