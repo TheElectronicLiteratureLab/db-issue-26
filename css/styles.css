@@ -579,7 +579,6 @@ body {
 .floatingNav {
     display: flex;
     flex-direction: row;
-    border: 2px solid red;
     align-items: center;
 }
 
@@ -3233,7 +3232,6 @@ footer.footer-in-flow {
     }
 
     #main-container>a {
-        border: 2px solid red;
         height: auto;
         justify-content: space-between;
     }
