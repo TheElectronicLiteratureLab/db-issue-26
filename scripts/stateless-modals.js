@@ -9,7 +9,9 @@ const modalMap = {
     'palestinians': 'smodal-palestinians',
     'tibetans': 'smodal-tibetans',
     'biharis': 'smodal-bihari',
-    'maasai': 'smodal-maasai'
+    'maasai': 'smodal-maasai',
+    'burkinabe': 'smodal-burkinabe',
+    'bidoon': 'smodal-bidoon',
 };
 
 function resetRegions() {
