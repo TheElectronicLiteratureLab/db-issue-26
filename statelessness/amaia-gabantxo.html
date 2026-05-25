@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/db-favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/scrollbar.css">
+
+    <!-- SEO and Page Information -->
+    <title>Amaia Gabantxo</title>
+    <meta name="description" content="Amaia Gabantxo — writer, translator of Basque literature, flamenco singer, and soundscape artist. Featured in Drunken Boat Issue 26.">
+</head>
+
+<body class="statelessness-folio">
+    <canvas id="orb-bg"></canvas>
+    <canvas id="cursor-trail"></canvas>
+    <!-- Masthead -->
+    <header class="topbar">
+
+        <!-- Back arrow -->
+        <a href="../index.html#statelessness-body">
+            <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26 2.88275L23.439 0L0 22.75L23.439 45.5L26 42.6172L5.5315 22.75L26 2.88275Z" fill="#F5F5F7" />
+            </svg>
+        </a>
+
+        <a href="../index.html"><img src="../img/db-logo.svg" class="masthead-logo"></a>
+
+        <nav>
+            <section class="hamburger-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                    <g clip-path="url(#clip0_1829_2051)">
+                        <path d="M8 13.3334H56V16H8V13.3334ZM8 34.6667H56V32H8V34.6667ZM8 53.3334H56V50.6667H8V53.3334Z" fill="white" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1829_2051">
+                            <rect width="64" height="64" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </section>
+
+            <section class="menu-modal">
+                <div class="close-btn-container">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M37.75 6.25H6.25V37.75H37.75V6.25Z" stroke="#F5F5F7" />
+                        <path d="M13.75 13.75L30.25 30.25" stroke="#F5F5F7" />
+                        <path d="M30.25 13.75L13.75 30.25" stroke="#F5F5F7" />
+                    </svg>
+                </div>
+                <a href="../index.html">Issue 26 Landing</a>
+                <a href="../statelessness.html">Statelessness</a>
+                <a href="../born-digital.html">Born-Digital</a>
+                <a href="../ramanujan.html">A.K. Ramanujan</a>
+                <a href="../issue-statement.html">Issue Statement</a>
+                <a href="../statelessness-statement.html">Statelessness Introduction</a>
+
+                <div id="additional-links">
+                    <a href="https://drunkenboat.com/#home-about-us" target="_blank">About</a>
+
+                    <a href="https://drunkenboat.submittable.com/submit" target="_blank">Submissions</a>
+
+                    <a href="https://drunkenboat.com/#home-contact-us" target="_blank">Contact</a>
+
+                    <a href="https://drunkenboat.com/#latest-issues" target="_blank">Archives</a>
+
+                    <a id="donate-btn" href="https://www.paypal.com/donate/?hosted_button_id=2MB68C7NVXTQY" target="_blank">Donate&#9829;</a>
+                </div>
+            </section>
+        </nav>
+    </header>
+
+    <main>
+        <div class="statelessness-header">
+            <h4>Roma Art</h4>
+            <h1>Amaia Gabantxo</h1>
+        </div>
+
+        <div class="poem-container">
+
+            <section class="poem-slider">
+                <div class="poem-content">
+                    <div class="poem-header">
+                        <h2>Txori Erresinula / The Nightingale</h2>
+                        <div>
+                            <button class="autoplayBtn view-piece-btn"><span class="autoplayLabel">Autoscroll</span>
+                                <svg class="autoplayIcon" width="20" height="20" viewBox="0 0 20 23" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C10.6904 0 11.25 0.572087 11.25 1.27778V18.6374L17.8662 11.8743C18.3543 11.3753 19.1458 11.3753 19.6339 11.8743C20.122 12.3733 20.122 13.1823 19.6339 13.6813L10.8839 22.6258C10.3958 23.1247 9.60427 23.1247 9.11614 22.6258L0.366113 13.6813C-0.122038 13.1823 -0.122038 12.3733 0.366113 11.8743C0.854276 11.3753 1.64573 11.3753 2.13389 11.8743L8.75001 18.6374V1.27778C8.75001 0.572087 9.30964 0 10 0Z" />
+                                </svg>
+                            </button>
+                            <button class="audioBtn view-piece-btn"><span class="audioLabel">Listen Now</span>
+                                <span class="audioIcon">
+                                    <svg class="audioMuted" width="24" height="20" viewBox="0 0 24 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22.5093 14.0907L19.5595 11.1147L16.6097 14.0907L15.1189 12.5867L18.0687 9.6L15.1189 6.624L16.6097 5.12L19.5595 8.096L22.5093 5.12L24 6.624L21.0502 9.6L24 12.576L22.5093 14.0907ZM0 9.6V13.8667H5.28634L11.63 19.2V0L5.28634 5.33333H0V9.6Z" />
+                                    </svg>
+                                    <svg class="audioWave" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 8C22.864 8 26 11.136 26 15C26 18.864 22.864 22 19 22M19 10.8C21.31 10.8 23.2 12.69 23.2 15C23.2 17.31 21.31 19.2 19 19.2" stroke="currentColor" fill="none" />
+                                        <path d="M4 18.8667V14.6V10.3333H9.28636L15.63 5V24.2L9.28636 18.8667H4Z" fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <audio src="../audio/statelessness/erromintxela.mp3"></audio>
+
+                            <button class="translateBtn view-piece-btn">Translate</button>
+                        </div>
+                    </div>
+                    <p class="poem-scroll">the nightingale sings all summer<br>
+                        when fields are filled with food<br>
+                        come winter it keeps out of sight<br>
+                        unless it is unwell or in need<br>
+                        tell me it'll be here every summer,<br>
+                        though, and I'll be content.<br><br>
+                        nightingale bird, king among birds<br>
+                        how much better than all the other birds you sing<br>
+                        and how you fool us all<br>
+                        how you confound the world<br>
+                        because we can't see you<br>
+                        but we hear your voice.<br><br>
+                        how beautiful your song ringing in the forest<br>
+                        I hear it now crisscrossing the night<br>
+                        come now, my love<br>
+                        come here and listen<br>
+                        they say that if you listen<br>
+                        It bewitches</p>
+                </div>
+                <div class="poem-content">
+                    <div class="poem-header">
+                        <h2>Seguidilla from Bizet's Carmen</h2>
+                        <div>
+                            <button class="autoplayBtn view-piece-btn"><span class="autoplayLabel">Autoscroll</span>
+                                <svg class="autoplayIcon" width="20" height="20" viewBox="0 0 20 23" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C10.6904 0 11.25 0.572087 11.25 1.27778V18.6374L17.8662 11.8743C18.3543 11.3753 19.1458 11.3753 19.6339 11.8743C20.122 12.3733 20.122 13.1823 19.6339 13.6813L10.8839 22.6258C10.3958 23.1247 9.60427 23.1247 9.11614 22.6258L0.366113 13.6813C-0.122038 13.1823 -0.122038 12.3733 0.366113 11.8743C0.854276 11.3753 1.64573 11.3753 2.13389 11.8743L8.75001 18.6374V1.27778C8.75001 0.572087 9.30964 0 10 0Z" />
+                                </svg>
+                            </button>
+                            <button class="audioBtn view-piece-btn"><span class="audioLabel">Listen Now</span>
+                                <span class="audioIcon">
+                                    <svg class="audioMuted" width="24" height="20" viewBox="0 0 24 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22.5093 14.0907L19.5595 11.1147L16.6097 14.0907L15.1189 12.5867L18.0687 9.6L15.1189 6.624L16.6097 5.12L19.5595 8.096L22.5093 5.12L24 6.624L21.0502 9.6L24 12.576L22.5093 14.0907ZM0 9.6V13.8667H5.28634L11.63 19.2V0L5.28634 5.33333H0V9.6Z" />
+                                    </svg>
+                                    <svg class="audioWave" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 8C22.864 8 26 11.136 26 15C26 18.864 22.864 22 19 22M19 10.8C21.31 10.8 23.2 12.69 23.2 15C23.2 17.31 21.31 19.2 19 19.2" stroke="currentColor" fill="none" />
+                                        <path d="M4 18.8667V14.6V10.3333H9.28636L15.63 5V24.2L9.28636 18.8667H4Z" fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <audio src="../audio/statelessness/erromintxela.mp3"></audio>
+
+                            <button class="translateBtn view-piece-btn">Translate</button>
+                        </div>
+                    </div>
+                    <p class="poem-scroll"><em>as sung by Emma Calvé in 1902, recorded in London with Landon Ronald on piano</em><br><br>
+                        <em>(seguidilla is the beat of despair and spite)</em><br><br>
+                        near Seville's city walls<br>
+                        at my friend Lillas Pastia's<br>
+                        I'll dance a seguidilla<br>
+                        and drink manzanilla<br>
+                        I'll go to my friend Lilla Pastia's yes,<br>
+                        because being alone is boring…<br>
+                        real pleasures are for two<br>
+                        so keep me company…<br>
+                        or I'll take my lover, my lover!<br><br>
+                        to hell with him,<br>
+                        I kicked him out yesterday<br>
+                        my poor heart is very consolable, you know,<br>
+                        my heart is free as air…
+                    </p>
+                </div>
+                <div class="poem-content">
+                    <div class="poem-header">
+                        <h2>Tiento</h2>
+                        <div>
+                            <button class="autoplayBtn view-piece-btn"><span class="autoplayLabel">Autoscroll</span>
+                                <svg class="autoplayIcon" width="20" height="20" viewBox="0 0 20 23" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C10.6904 0 11.25 0.572087 11.25 1.27778V18.6374L17.8662 11.8743C18.3543 11.3753 19.1458 11.3753 19.6339 11.8743C20.122 12.3733 20.122 13.1823 19.6339 13.6813L10.8839 22.6258C10.3958 23.1247 9.60427 23.1247 9.11614 22.6258L0.366113 13.6813C-0.122038 13.1823 -0.122038 12.3733 0.366113 11.8743C0.854276 11.3753 1.64573 11.3753 2.13389 11.8743L8.75001 18.6374V1.27778C8.75001 0.572087 9.30964 0 10 0Z" />
+                                </svg>
+                            </button>
+                            <button class="audioBtn view-piece-btn"><span class="audioLabel">Listen Now</span>
+                                <span class="audioIcon">
+                                    <svg class="audioMuted" width="24" height="20" viewBox="0 0 24 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22.5093 14.0907L19.5595 11.1147L16.6097 14.0907L15.1189 12.5867L18.0687 9.6L15.1189 6.624L16.6097 5.12L19.5595 8.096L22.5093 5.12L24 6.624L21.0502 9.6L24 12.576L22.5093 14.0907ZM0 9.6V13.8667H5.28634L11.63 19.2V0L5.28634 5.33333H0V9.6Z" />
+                                    </svg>
+                                    <svg class="audioWave" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 8C22.864 8 26 11.136 26 15C26 18.864 22.864 22 19 22M19 10.8C21.31 10.8 23.2 12.69 23.2 15C23.2 17.31 21.31 19.2 19 19.2" stroke="currentColor" fill="none" />
+                                        <path d="M4 18.8667V14.6V10.3333H9.28636L15.63 5V24.2L9.28636 18.8667H4Z" fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <audio src="../audio/statelessness/erromintxela.mp3"></audio>
+
+                            <button class="translateBtn view-piece-btn">Translate</button>
+                        </div>
+                    </div>
+                    <p class="poem-scroll"><em>(the beat of introspection, mourning, lamentation)</em><br><br>
+                        free, I want to be free<br>
+                        free, I want to be free<br>
+                        like a bird singing<br>
+                        cousin, with the dawn<br>
+                        free, I want to be free<br>
+                        free, I want to be free<br>
+                        let me live my fate, cousin,<br>
+                        I love it so</p>
+                </div>
+                <div class="poem-content">
+                    <div class="poem-header">
+                        <h2>Soleá Por Bulería</h2>
+                        <div>
+                            <button class="autoplayBtn view-piece-btn"><span class="autoplayLabel">Autoscroll</span>
+                                <svg class="autoplayIcon" width="20" height="20" viewBox="0 0 20 23" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C10.6904 0 11.25 0.572087 11.25 1.27778V18.6374L17.8662 11.8743C18.3543 11.3753 19.1458 11.3753 19.6339 11.8743C20.122 12.3733 20.122 13.1823 19.6339 13.6813L10.8839 22.6258C10.3958 23.1247 9.60427 23.1247 9.11614 22.6258L0.366113 13.6813C-0.122038 13.1823 -0.122038 12.3733 0.366113 11.8743C0.854276 11.3753 1.64573 11.3753 2.13389 11.8743L8.75001 18.6374V1.27778C8.75001 0.572087 9.30964 0 10 0Z" />
+                                </svg>
+                            </button>
+                            <button class="audioBtn view-piece-btn"><span class="audioLabel">Listen Now</span>
+                                <span class="audioIcon">
+                                    <svg class="audioMuted" width="24" height="20" viewBox="0 0 24 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22.5093 14.0907L19.5595 11.1147L16.6097 14.0907L15.1189 12.5867L18.0687 9.6L15.1189 6.624L16.6097 5.12L19.5595 8.096L22.5093 5.12L24 6.624L21.0502 9.6L24 12.576L22.5093 14.0907ZM0 9.6V13.8667H5.28634L11.63 19.2V0L5.28634 5.33333H0V9.6Z" />
+                                    </svg>
+                                    <svg class="audioWave" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 8C22.864 8 26 11.136 26 15C26 18.864 22.864 22 19 22M19 10.8C21.31 10.8 23.2 12.69 23.2 15C23.2 17.31 21.31 19.2 19 19.2" stroke="currentColor" fill="none" />
+                                        <path d="M4 18.8667V14.6V10.3333H9.28636L15.63 5V24.2L9.28636 18.8667H4Z" fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <audio src="../audio/statelessness/erromintxela.mp3"></audio>
+
+                            <button class="translateBtn view-piece-btn">Translate</button>
+                        </div>
+                    </div>
+                    <p class="poem-scroll"><em>(a combination of the beats soleá — the beat of loneliness — and bulería — the beat of
+                            mockery, laughter, of saying… fuck it. This beat combination signifies overcoming, or
+                            getting over something)</em><br><br>
+                        So many times I've sang to you<br>
+                        in the river's mirror<br>
+                        from my heart to the water<br>
+                        and from the water… nowhere<br>
+                        the current takes it<br>
+                        from my heart to the water<br>
+                        and from the water… nowhere</p>
+                </div>
+                <div class="poem-content">
+                    <div class="poem-header">
+                        <h2>Bulería Fin De Fiesta</h2>
+                        <div>
+                            <button class="autoplayBtn view-piece-btn"><span class="autoplayLabel">Autoscroll</span>
+                                <svg class="autoplayIcon" width="20" height="20" viewBox="0 0 20 23" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C10.6904 0 11.25 0.572087 11.25 1.27778V18.6374L17.8662 11.8743C18.3543 11.3753 19.1458 11.3753 19.6339 11.8743C20.122 12.3733 20.122 13.1823 19.6339 13.6813L10.8839 22.6258C10.3958 23.1247 9.60427 23.1247 9.11614 22.6258L0.366113 13.6813C-0.122038 13.1823 -0.122038 12.3733 0.366113 11.8743C0.854276 11.3753 1.64573 11.3753 2.13389 11.8743L8.75001 18.6374V1.27778C8.75001 0.572087 9.30964 0 10 0Z" />
+                                </svg>
+                            </button>
+                            <button class="audioBtn view-piece-btn"><span class="audioLabel">Listen Now</span>
+                                <span class="audioIcon">
+                                    <svg class="audioMuted" width="24" height="20" viewBox="0 0 24 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22.5093 14.0907L19.5595 11.1147L16.6097 14.0907L15.1189 12.5867L18.0687 9.6L15.1189 6.624L16.6097 5.12L19.5595 8.096L22.5093 5.12L24 6.624L21.0502 9.6L24 12.576L22.5093 14.0907ZM0 9.6V13.8667H5.28634L11.63 19.2V0L5.28634 5.33333H0V9.6Z" />
+                                    </svg>
+                                    <svg class="audioWave" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 8C22.864 8 26 11.136 26 15C26 18.864 22.864 22 19 22M19 10.8C21.31 10.8 23.2 12.69 23.2 15C23.2 17.31 21.31 19.2 19 19.2" stroke="currentColor" fill="none" />
+                                        <path d="M4 18.8667V14.6V10.3333H9.28636L15.63 5V24.2L9.28636 18.8667H4Z" fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <audio src="../audio/statelessness/erromintxela.mp3"></audio>
+
+                            <button class="translateBtn view-piece-btn">Translate</button>
+                        </div>
+                    </div>
+                    <p class="poem-scroll"><em>(a closing beat usually played to end a song; it's fast, furious, fun and mocking. The space
+                            where flamenco performers say their last here you have it, watch my brilliance and die
+                            happy, lesser human)</em><br><br>
+                        Look, really look, and look<br>
+                        Look, really look, and walk on<br>
+                        Look, really look, and look<br>
+                        Look, really look, and walk on<br>
+                        Look, really look, and look<br>
+                        Look, really look, and walk on<br>
+                        Look, really look, and look<br>
+                        Look, really look, and walk on…</p>
+                </div>
+                <div class="poem-content">
+                    <div class="poem-header">
+                        <h2>The Song of Life</h2>
+                        <div>
+                            <button class="autoplayBtn view-piece-btn"><span class="autoplayLabel">Autoscroll</span>
+                                <svg class="autoplayIcon" width="20" height="20" viewBox="0 0 20 23" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C10.6904 0 11.25 0.572087 11.25 1.27778V18.6374L17.8662 11.8743C18.3543 11.3753 19.1458 11.3753 19.6339 11.8743C20.122 12.3733 20.122 13.1823 19.6339 13.6813L10.8839 22.6258C10.3958 23.1247 9.60427 23.1247 9.11614 22.6258L0.366113 13.6813C-0.122038 13.1823 -0.122038 12.3733 0.366113 11.8743C0.854276 11.3753 1.64573 11.3753 2.13389 11.8743L8.75001 18.6374V1.27778C8.75001 0.572087 9.30964 0 10 0Z" />
+                                </svg>
+                            </button>
+                            <button class="audioBtn view-piece-btn"><span class="audioLabel">Listen Now</span>
+                                <span class="audioIcon">
+                                    <svg class="audioMuted" width="24" height="20" viewBox="0 0 24 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22.5093 14.0907L19.5595 11.1147L16.6097 14.0907L15.1189 12.5867L18.0687 9.6L15.1189 6.624L16.6097 5.12L19.5595 8.096L22.5093 5.12L24 6.624L21.0502 9.6L24 12.576L22.5093 14.0907ZM0 9.6V13.8667H5.28634L11.63 19.2V0L5.28634 5.33333H0V9.6Z" />
+                                    </svg>
+                                    <svg class="audioWave" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 8C22.864 8 26 11.136 26 15C26 18.864 22.864 22 19 22M19 10.8C21.31 10.8 23.2 12.69 23.2 15C23.2 17.31 21.31 19.2 19 19.2" stroke="currentColor" fill="none" />
+                                        <path d="M4 18.8667V14.6V10.3333H9.28636L15.63 5V24.2L9.28636 18.8667H4Z" fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <audio src="../audio/statelessness/erromintxela.mp3"></audio>
+
+                            <button class="translateBtn view-piece-btn">Translate</button>
+                        </div>
+                    </div>
+                    <p class="poem-scroll"><em>A Very Old Tale in Euskara and Caló</em><br><br>
+                        It was 2009 and I was living in Norwich, in the East of England. A fine city they call it, and
+                        it's true. Magnificent cathedral, lots of trees, canals, medieval streets. My house was within
+                        the old city walls and I could see the cathedral spire from my window, in fact, every time I
+                        lifted my eyes from the computer screen and whatever literary translation I was working on. My
+                        house was one street up from Julian of Norwich's cell — she was the mystic anchoress who wrote
+                        <em>Revelations of Divine Love</em>, the first book to be written in English by a woman. I felt
+                        strengthened by the proximity. At that time, I was translating an academic tome: <em>Basque
+                            Literary History</em>. New chapters kept being added, monthly, endlessly it seemed. I had
+                        been translating the book for a year. I worried the job would never end and I would never be
+                        able to return to my PhD.<br><br>
+                        Two thirds of the way in, in a chapter entitled "Translated Basque Literature," the author Lopez
+                        Gaseni was elaborating on the literature of the enlightenment, works that had been translated at
+                        that time — fables mostly, into different dialects of Basque — and how religious texts continued
+                        of course to be translated alongside the more profane ones. He explained that the Gipuzkoan
+                        doctor Juan Jose Oteiza was the author of the first Basque translation of St Luke's gospel
+                        (<em>San Lucasen ebanjelioa</em>), and that this translation had been commissioned by George
+                        Borrow, an agent of the Bible Society in England.<br><br>
+                        The name leaped at me.<br><br>
+                        George Borrow, I thought. George Borrow. I had a visual memory of cycling past a sign on an empty
+                        building: George Borrow Road. It was a very long road, inhabited mostly by rows of boarded
+                        houses — asbestos roofing, I had guessed as I cycled. And another memory, of walking noisily and
+                        self-consciously on flamenco shoes on that very name engraved on green stone right outside St
+                        Gregory's Church, in Norwich's city center, on my way to a gig. Who was George Borrow, this
+                        English man who had commissioned the translation of St Luke's gospel into Basque, and why was
+                        his name all over Norwich?<br><br>
+                        Wikipedia replied shortly after.<br><br>
+                        He was a Norfolk man, and indeed had been a pupil at the Norwich Grammar School.<br><br>
+                        I looked at the cathedral spire, thinking <em>you were one of them</em>. This exclusive school
+                        still nests within the Cathedral grounds. Shortly after moving to Norwich in 1999 to do an MA in
+                        Literary Translation, on my first visit to the cathedral, I had caught sight of the Grammar
+                        School boys in their starched choristers' splendor fluttering down the cathedral cloister in
+                        hushed silence, drawing a nervous, uneven line behind a stern sacristan on their way to a sung
+                        mass. It was a beautiful sight. I fell in love with the cloister that autumn evening as I
+                        thought it must have hosted hundreds of these choirboys over the centuries (the cathedral dates
+                        back to the 11th century).<br><br>
+                        At that moment I had no doubt George Borrow must have been a choirboy, and a pretty good one at
+                        that, because as Wikipedia explained he had an enormous gift for languages, and this tends to
+                        come together with a musical ear. The Wikipedia entry didn't mention his role in translating the
+                        Bible into Basque or his musical ability, but I suddenly had a complete sense of the man. I knew
+                        I knew him, despite his being long dead, inexplicable as this might sound. I knew I would know
+                        more of him, and he was somehow, already, very important to me.<br><br>
+                        <strong>Note I: how not to be a literary translator</strong><br><br>
+                        Perhaps, first of all, don't translate out of your mother tongue into your third language.<br><br>
+                        Then, ensure that your mother tongue has a literary tradition rich enough for you to draw from,
+                        so you can be gainfully employed for the foreseeable future.<br><br>
+                        Finally, and having irredeemably ignored both of the above points to the detriment of your
+                        pecuniary status, consider that Flamenco singing is not a wise career choice to supplement the
+                        meager earnings provided by translating Basque literature into English. While not mutually
+                        exclusive, the combination of this unlikely union embodies a conceptual anachronism that makes
+                        for a hard life.<br><br>
+                        And yet, we can only be who we are called to be.<br><br>
+                        <strong>Note II: on flamenco</strong><br><br>
+                        Flamenco is the most beautiful music in the world. Nothing does what flamenco does. Flamenco is
+                        the strongest life force. Flamenco is wisdom, philosophy, meditation, a means to find a place in
+                        the world.<br><br>
+                        Flamenco beats map every emotion and each beat unfurls that emotion with precision and
+                        resolution, to pin it, to resolve it.<br><br>
+                        Flamenco has considered everything, has an answer to every question, and a question to every
+                        answer.<br><br>
+                        Flamenco lyrics exist in a universe of galaxies, and each galaxy is a couplet, a verse, a line,
+                        with a star at its core — a truth — and flamenco singers wave chains of galaxies that they throw
+                        back into that universe of lyrics. They may even throw some of their own lyrics into that
+                        universe for other singers to sing down the ages. Because, as an old flamenco said, <em>el
+                            flamenco es de todos</em>. Flamenco belongs to everyone.<br><br>
+                        <em>Sino</em> means fate in Caló, the language of the Romani of Spain.<br><br>
+                        Flamenco is sino. It chooses you and, if it does, all you can do is surrender.<br><br>
+                        As I read George Borrow's Wikipedia entry — heart beating fast — I saw he travelled the world as
+                        an agent of the Bible Society. Must be a bit like a spy I thought, an agent for the <em>Bible
+                            Society</em>. He went from country to country, learning languages as if they were trinket
+                        souvenirs he could purchase for a penny, getting the gospels translated into German, Russian,
+                        Manchu, Portuguese, Gaelic, Rumanian, Spanish, Basque… as he roamed. I had a sense of a man (the
+                        restless choirboy) who had found a means of doing what he was called to do. Travel, learn
+                        languages, write about other cultures. His wasn't the life of someone who was particularly
+                        religiously inclined, I thought. He was nomadic, hungry for <em>the other</em>, for everything
+                        he hadn't inside of him.<br><br>
+                        In Basque mythology the Goddess Mayi feeds off <em>eza</em>, what isn't, <em>The no</em>,
+                        literally, and it's like this that she grows ever more powerful, through everything that isn't,
+                        <em>eza</em>: the inexplicable, the mysterious, the things people deny, the void, things
+                        unknown, lies, secrets, hidden things. Modern religions prescribe a God that fills us — with
+                        light, with love, with fear — and yet, considering he was an agent of the Bible Society, Borrow
+                        seemed to be someone who was still searching for something. A double-agent, if you will.
+                        Uncertain of his alliances. I was hosting these thoughts, heart still beating fast, knowing that
+                        something else was coming. And then I saw it. In 1841, he published <em>The Zincali: an account
+                            of the Gypsies of Spain. With an Original Collection of their Songs and Poetry</em>.<br><br>
+                        Flamenco lyrics.<br><br>
+                        It's not possible to conjure into words the explosion in my brain and my heart at that moment. We
+                        all thread upon the same loop I thought. I am Borrow. He was me. Basque. Flamenco.<br><br>
+                        <strong>Note III: on other points of convergence between Euskara and Caló</strong><br><br>
+                        It's not just the adventurous spirit, musicianship and statelessness that binds the Basque and
+                        the Romani people. Few people know of the existence of Erromintxela, the Basque-Caló language
+                        spoken in the French and Spanish sides of the Basque Country by Basque-Romani people since the
+                        15th century and still used today by around one thousand speakers. Yet another gravely
+                        endangered language at risk of extinction. Why must all the best aspects of existence become
+                        endangered? Honey bees. Beluga whales. I mention them because they sing beautiful songs too,
+                        like the Basques and the Romani. Why do humans keep choosing to embrace crap while erasing
+                        wondrous things?<br><br>
+                        And on the subject of song: Bizet's Carmen, of course, the most coveted opera role for any mezzo
+                        of taste and ambition. In Prospect Merimee's 1846 short novel, which Bizet based his opera on,
+                        Carmen is a Basque Romani, as she reveals in an exchange with one of the main narrators.<br><br>
+                        "Us Basques," Carmen says, "have very recognizable accents, don't we? Very different from the
+                        Spaniards' own. None among them could ever learn to pronounce <em>bai jauna</em>." [yes, sir].
+                        Carmen immediately knew I was from the [Basque] provinces. You must know, monsieur, that the
+                        Bohemians, despite being from nowhere and travelling everywhere, can speak all languages and are
+                        equally at home in Portugal, France, the [Basque] provinces, Catalonia or elsewhere; they can
+                        even understand the Moors and the English. Carmen spoke Euskara very well. <em>Laguna ene
+                            bihotzarena</em> — Dear friend of my heart — she had said suddenly, <em>euskalduna al
+                            zara?</em> Are you a Basque?<br><br>
+                        Our tongue, monsieur… it is so rare to hear it spoken abroad… we can become quite overcome with
+                        emotion.<br><br>
+                        "I am from Elizondo myself," I answered in Euskara, profoundly moved by hearing her speak my
+                        language.<br><br>
+                        "Oh, I'm from Etxalar," she said (a village four hours away from my own). "Some Bohemians brought
+                        me to Seville. I'm working at the factory to save up money to return to Navarre to my poor, sick
+                        mother's side…<br><br>
+                        So Carmen speaks euskara and sings a Seguidilla, a flamenco beat. It'd seem I'm not such an
+                        anachronism after all. This cosmic pattern has been in existence for a while.<br><br>
+                        <strong>Note IV: on the margins (of being)</strong><br><br>
+                        One thing flamenco has taught me is the value of contradiction. It is valid to hold opposite
+                        thoughts in one's mind at the same time. It is right to embrace contradiction. My life is a
+                        contradiction. I've taught Basque literature and creative writing in prestigious universities. I
+                        translate Basque literature into English. I've published dozens of books. I sing flamenco,
+                        sometimes in dives, for next to nothing. The <em>flamencos</em> distrust my academic nature,
+                        think I am not <em>flamenca</em> enough. The academics can't quite understand why I sing
+                        flamenco — clearly I am not academic enough.<br><br>
+                        But in recent years it has dawned on me that I find more true wisdom and knowledge in the
+                        repository of flamenco song, the sung history of the Romani people of Spain, than in any
+                        academic diatribe. These songs, these beats, are a code, a philosophy of being. A way of reading
+                        the world and overcoming <em>not being</em> — or rather, not being allowed to be. Perhaps
+                        because, as a Basque, I know that feeling too well too. It's also encoded in my DNA. That's why
+                        flamenco grabbed me. Because my people know that endurance is sung, not written.<br><br>
+                        I am the Basque literary translator of the universe, I used to say, only half jokingly (there
+                        aren't that many of us — three or four). A super hero of a minorized culture. I am, and I want
+                        to be. It is my birthright, I am duty-bound, by my ancestors, by the landscape that surrounded
+                        me as I grew up, by this old strange language I first spoke. By the defiance that is Euskara's
+                        existence in my body and mind.<br><br>
+                        And then flamenco chose me. An art form sung in my second language, Spanish. I am a Basque
+                        flamenco singer literary translator who writes in English.<br><br>
+                        And that's my <em>sino</em>. I wouldn't know how to be anything else.<br><br>
+                        <strong>Note V: on <em>Euskara</em>, the Basque language</strong><br><br>
+                        <em>Euskara</em> is the most beautiful language in the world; it is no wonder the Basques have
+                        been so stubborn about keeping it. Nothing sounds like it, expresses like it.<br><br>
+                        I don't know of a language with a neater internal logic. It's great for poetry making.<br><br>
+                        Basque is so old it was spoken before Latin and Greek, and it is still here. English might well
+                        be king these days, but… Basque is a long distance runner. It survived even though it was purely
+                        orally transmitted until medieval times (the first book was written in 1545 — and followed by
+                        not much else until the 20th century).<br><br>
+                        The etymology of the word for heart is two-sounds, <em>bihotza</em>. Darling, <em>laztana</em>,
+                        is the person you love to hold, to lull, to caress. At the root of the verb to be,
+                        <em>izan</em>, sits the word for no: <em>ez</em>. Because our Goddess feeds off the no: eza. To
+                        be in Basque is to weave reality out of denial. We were built for this.<br><br>
+                        Sitting on a natural frontier, straddling two dominant countries and cultures (Spanish and
+                        French) and coming at the world from a language that is radically different to all others in
+                        existence, this small community at the heart of Europe has had to deal with all sorts of
+                        attempts at colonization throughout the ages. Although it's unfashionable, I don't completely
+                        dismiss the idea of linguistic determinism and believe that <em>Euskara</em> has affected the
+                        Basques' way of thinking and approaching the world, and this is inscribed in the culture, even
+                        though it mostly manifests in Spanish and French nowadays. In Basque, reality pans from the
+                        general to the concrete. You pan in. First you see the mountain, then the tree, then the branch,
+                        finally the bird on the branch. In English you pan out; you see the bird on the branch on the
+                        tree on the mountain. And just like the Basque language can take multiple variants of word order
+                        and maintain meaning, the Basque people are adept at rearranging themselves and keeping alive a
+                        strong flame of self. We are practical people because we think of the greater picture first. We
+                        are wanderers and explorers because our language demands that we look at the grand design.<br><br>
+                        Taking all of the above into account, the survival of Basque might be related to the fact that
+                        the Basques like to sing, and have made a competitive sport of improvised verse singing:
+                        <em>bertsolaritza</em>. Word-boxing matches similar to poetry slams, always played one-on-one,
+                        but with more restrictions.<br><br>
+                        <em>Bertsolaritza</em> competitions are the only poetry events that I know of that are attended
+                        by 15,000 people, and watched live on TV by another 250,000.<br><br>
+                        We have this old saying in Euskara: <em>kantatzen duen herria ez da inoiz hilko</em>. A country
+                        that sings can never die.<br><br>
+                        Life has a way of following the paths of fiction, and the Christmas after writing this text,
+                        shortly after I landed in Bilbao after my flight from Chicago, while I was still jet-lagged, my
+                        mother handed me what looked like a book wrapped in cloth. I asked her what it was as I
+                        unwrapped this home-made parcel. She said she had found it among the boxes she collected from
+                        her mother's house when it was sold 15 years before. She'd come across it again recently in one
+                        of her organizational sprees and realized it might be of interest to me; an old book in Basque
+                        is a rarity. It had belonged to my grandmother's father: it was the Basque translation of the
+                        gospel of St Luke, a 1898 edition. There was a little holy card of the angel St Gabriel inside.
+                        It was so strange to hold this book in my hands and realize that my great-grandfather had been
+                        able to read Basque at a time most people wouldn't have, that something at that moment was being
+                        passed down the line.<br><br>
+                        I was also amused to hold this volume in my hands, George Borrow's pet project from 1838, and to
+                        imagine him dumbfounded and frustrated — <em>but what is the Basque?</em> — staring at this
+                        manuscript he kept in his pocket for two years, undecided about its publishable nature, showing
+                        it to every strange scholar versed in this devil's tongue to check if it really was an all right
+                        translation. He couldn't really trust those very ignorant Basques who know nothing about the
+                        philosophy of language after all. What with that, and their ignoble lack of deference to the
+                        Englishman's superiority.<br><br>
+                        And here we are, George, one hundred and eighty years of words and history later. Here we are,
+                        still showing little deference and stealing your text Romani-style to show you up, and
+                        <em>having transformed it by my dexterous scissors, impose it again for a high price…</em><br><br>
+                        Because who tells a people's story, George? Who marks their worth, their right to own the ground
+                        beneath their feet, and to speak its name with its truest <em>bihotza</em>?<br><br>
+                        <em>Me da mal fario tanta parla</em>, as they say in Caló — I'm getting a bad vibe from too, too
+                        many words.<br><br>
+                        Let's return to the song — so we may never die.
+                    </p>
+                </div>
+            </section>
+
+            <section class="table-of-contents">
+                <h3>CONTENTS</h3>
+                <div><span>01</span><button class="poemBtn"> Txori Erresinula / The Nightingale</button></div>
+                <div><span>02</span><button class="poemBtn"> Seguidilla</button></div>
+                <div><span>03</span><button class="poemBtn"> Tiento</button></div>
+                <div><span>04</span><button class="poemBtn"> Soleá Por Bulería</button></div>
+                <div><span>05</span><button class="poemBtn"> Bulería Fin De Fiesta</button></div>
+                <div><span>06</span><button class="poemBtn"> The Song of Life</button></div>
+            </section>
+
+        </div>
+
+        <div class="artist-bio">
+            <img src="../img/statelessness-artist-photos/amaia-gabantxo.jpg" alt="Amaia Gabantxo">
+            <div>
+                <h2>ABOUT THE ARTIST</h2>
+                <p>Amaia Gabantxo is a writer and a prolific translator of Basque literature, as well as a
+                    flamenco singer and, more recently, a soundscape artist and sound therapist. She studied
+                    literature and translation in Ireland and the UK and has taught literature, languages and
+                    creative writing at several universities in the UK and the USA. She now lives in the Basque
+                    Country, by the sea, where she continues to write, sing and weave sounds.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&#169; 2026 Drunken Boat | in association with ELL</p>
+
+        <section id="social-media">
+            <a href="https://www.facebook.com/DrunkenBoatPress" target="_blank"><img src="../img/social-icons/facebook.svg" alt="facebook icon"></a>
+
+            <a href="https://www.instagram.com/drunkenboat1999?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank"><img src="../img/social-icons/instagram.svg" alt="instagram icon"></a>
+
+            <a href=""><img src="../img/social-icons/twitter.svg" alt="twitter icon"></a>
+
+            <a href="https://www.linkedin.com/company/drunken-boat-international-journal-of-the-arts/about/" target="_blank"><img src="../img/social-icons/linkedin.svg" alt="linkedin icon"></a>
+        </section>
+    </footer>
+
+    <script src="../scripts/poem.js"></script>
+    <script src="../scripts/slider.js"></script>
+    <script src="../scripts/orb-particles.js"></script>
+    <script src="../scripts/cursor-trail.js"></script>
+    <script src="../scripts/mobile-menu.js"></script>
+
+</body>
+
+</html>
