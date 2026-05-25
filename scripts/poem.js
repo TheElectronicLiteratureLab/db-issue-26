@@ -60,16 +60,20 @@ function resetAudioButtons() {
 
 audioButtons.forEach((button) => {
     const poem = button.closest('.poem-content');
-    const audio = poem.querySelector('audio');
 
-    audio.addEventListener('ended', () => {
-        setAudioButtonState(button, false);
-        if (currentlyPlaying === audio) {
-            currentlyPlaying = null;
-        }
+    // Handle ended for both audio elements
+    poem.querySelectorAll('audio').forEach(audio => {
+        audio.addEventListener('ended', () => {
+            if (currentlyPlaying === audio) {
+                setAudioButtonState(button, false);
+                currentlyPlaying = null;
+            }
+        });
     });
 
     button.addEventListener('click', () => {
+        const audio = getActiveAudio(poem); // <-- dynamic lookup
+
         if (currentlyPlaying === audio) {
             if (!audio.paused) {
                 audio.pause();
@@ -196,6 +200,19 @@ translateButtons.forEach(button => {
         const translatedHeadingElement = translated.querySelector('h2');
         if (!originalHeading || !translatedHeadingElement) return;
 
+        // Stop audio before switching language ↓
+        const audio = poem.querySelector('audio[data-lang="en"]') || poem.querySelector('audio');
+        const translatedAudio = poem.querySelector('audio[data-lang="translated"]');
+        // translatedAudio will just be null if it doesn't exist, and the forEach guard handles it
+        [audio, translatedAudio].forEach(a => {
+            if (a && currentlyPlaying === a) {
+                a.pause();
+                a.currentTime = 0;
+                currentlyPlaying = null;
+                resetAudioButtons();
+            }
+        });
+
         if (!poem.dataset.originalHeading) {
             poem.dataset.originalHeading = originalHeading.textContent.trim();
         }
@@ -229,3 +246,12 @@ scrollContainers.forEach(scrollContainer => {
     scrollContainer.addEventListener('scroll', () => updateScrollBlur(scrollContainer));
     updateScrollBlur(scrollContainer);
 });
+
+function getActiveAudio(poem) {
+    const isTranslated = poem.classList.contains('translation-active');
+    const translatedAudio = poem.querySelector('audio[data-lang="translated"]');
+
+    return (isTranslated && translatedAudio)
+        ? translatedAudio
+        : poem.querySelector('audio[data-lang="en"]');
+}
