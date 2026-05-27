@@ -2732,10 +2732,22 @@ footer.footer-in-flow {
 
 /* Scrollable poem text area with fade-in top gradient */
 .poem-scroll {
-    position: relative;
-    height: 300px;
-    overflow-y: scroll;
-    padding-top: 2em;
+  height: 350px;
+  padding-top: 2em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.poem-scroll * {
+  box-sizing: border-box;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .poem-scroll em {
@@ -3345,6 +3357,11 @@ footer.footer-in-flow {
         height: 240px;
     }
 
+.poem-scroll img {
+    width: auto;
+    max-width: 100%;  /* change from 240px to 100% on mobile */
+    height: auto;
+}
     .poem-header div {
         width: 100%;
 
