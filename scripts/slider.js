@@ -218,3 +218,66 @@ const carousel = (elCarousel) => {
 
 // Init all carousels
 els(".carousel").forEach(carousel);
+
+
+// Lightbox for carousel images and videos
+const lightboxOverlay = document.createElement('div');
+lightboxOverlay.className = 'lightbox-overlay';
+lightboxOverlay.innerHTML = `
+    <button class="lightbox-close" aria-label="Close">&#x2715;</button>
+    <img class="lightbox-img" src="" alt="" style="display:none;">
+    <video class="lightbox-video" controls style="display:none; max-width:95vw; max-height:90vh;"></video>
+`;
+document.body.appendChild(lightboxOverlay);
+
+const lightboxImg = lightboxOverlay.querySelector('.lightbox-img');
+const lightboxVideo = lightboxOverlay.querySelector('.lightbox-video');
+const lightboxClose = lightboxOverlay.querySelector('.lightbox-close');
+
+function openLightbox(type, src, alt) {
+    if (type === 'video') {
+        lightboxImg.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = src;
+        lightboxVideo.play();
+    } else {
+        lightboxVideo.style.display = 'none';
+        lightboxImg.style.display = 'block';
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+    }
+    lightboxOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightboxOverlay.classList.remove('active');
+    lightboxVideo.pause();
+    lightboxVideo.src = '';
+    document.body.style.overflow = '';
+}
+
+lightboxOverlay.addEventListener('click', closeLightbox);
+lightboxClose.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLightbox();
+});
+lightboxVideo.addEventListener('click', (e) => e.stopPropagation()); // don't close when tapping video controls
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+});
+
+// Target images and videos inside carousel slides
+document.querySelectorAll('.carousel-slide img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => openLightbox('image', img.src, img.alt));
+});
+
+document.querySelectorAll('.carousel-slide video').forEach(video => {
+    video.style.cursor = 'zoom-in';
+    video.addEventListener('click', (e) => {
+        e.preventDefault(); // prevent default video controls from firing
+        openLightbox('video', video.querySelector('source')?.src || video.src, '');
+    });
+});
