@@ -412,7 +412,7 @@ header {
 .main-heading {
     font-size: 38px !important;
     text-align: center !important;
-    margin: 2em !important;
+    margin-bottom: 2em !important;
 }
 
 .credit-box {
@@ -538,6 +538,11 @@ header {
     background-image: url('../img/credit-photos/yagnya-misra.jpg');
 }
 
+.credit-bio:nth-child(7) .credit-photo {
+    background-image: url('../img/credit-photos/vassilis-manoussakis.jpeg');
+    background-position: center;
+}
+
 .credit-bio div:not(.credit-photo) {
     width: auto;
     margin: 0;
@@ -576,7 +581,12 @@ body {
 
 #born-digital {
     height: 100vh;
-    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#born-digital::-webkit-scrollbar {
+    display: none;
 }
 
 #born-digital svg {
@@ -1290,6 +1300,57 @@ p {
 
     50% {
         transform: translateY(-50%) translateX(7px);
+    }
+}
+
+/* Mobile scroll hints for statelessness and born-digital */
+.section-scroll-hint {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .section-scroll-hint {
+        display: block;
+        position: fixed;
+        top: 50%;
+        z-index: 1001;
+        opacity: 0.55;
+        pointer-events: none;
+        transition: opacity 0.5s ease;
+    }
+
+    .section-scroll-hint.hidden {
+        opacity: 0;
+    }
+
+    .hint-left {
+        left: 18px;
+        animation: hint-nudge-left 1.6s ease-in-out infinite;
+    }
+
+    .hint-right {
+        right: 18px;
+        animation: hint-nudge-right 1.6s ease-in-out infinite;
+    }
+}
+
+@keyframes hint-nudge-right {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-50%) translateX(7px);
+    }
+}
+
+@keyframes hint-nudge-left {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-50%) translateX(-7px);
     }
 }
 
@@ -2717,22 +2778,22 @@ footer.footer-in-flow {
 
 /* Scrollable poem text area with fade-in top gradient */
 .poem-scroll {
-  height: 350px;
-  padding-top: 2em;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
-  box-sizing: border-box;
-  word-break: break-word;
-  overflow-wrap: break-word;
+    height: 350px;
+    padding-top: 2em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .poem-scroll * {
-  box-sizing: border-box;
-  max-width: 100%;
-  word-break: break-word;
-  overflow-wrap: break-word;
+    box-sizing: border-box;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .poem-scroll em {
@@ -2878,6 +2939,13 @@ footer.footer-in-flow {
 
     position: relative;
     z-index: 2;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#globe-scroll::-webkit-scrollbar {
+    display: none;
 }
 
 #globe-scroll:active {
@@ -3034,6 +3102,10 @@ footer.footer-in-flow {
 .statelessModal h2 {
     margin-top: 32px;
     color: #42A6FC;
+    text-shadow:
+        0 0 10px #42A6FC,
+        0 0 25px #42A6FC,
+        0 0 50px rgba(66, 166, 252, 0.5);
 }
 
 .statelessModal p {
@@ -3110,6 +3182,13 @@ footer.footer-in-flow {
         height: 100vh;
         width: calc(100vh * 16 / 9);
         flex-shrink: 0;
+    }
+
+    #born-digital .section-scroll-hint svg {
+        display: inline;
+        width: 14px;
+        height: 24px;
+        flex-shrink: unset;
     }
 
     /* AK Ramanujan scale items to ~65% for mobile */
@@ -3353,7 +3432,8 @@ footer.footer-in-flow {
 
     .poem-scroll img {
         width: auto;
-        max-width: 100%;  /* change from 240px to 100% on mobile */
+        max-width: 100%;
+        /* change from 240px to 100% on mobile */
         height: auto;
     }
 
@@ -3578,6 +3658,17 @@ footer.footer-in-flow {
 
 .statelessness-header h4 {
     color: #42A6FC;
+    text-shadow:
+        0 0 10px #42A6FC,
+        0 0 25px #42A6FC,
+        0 0 50px rgba(66, 166, 252, 0.5);
+}
+
+.statement-h4 {
+    text-shadow:
+        0 0 10px #42A6FC,
+        0 0 25px #42A6FC,
+        0 0 50px rgba(66, 166, 252, 0.5);
 }
 
 /* Statement pages */
@@ -3609,6 +3700,28 @@ footer.footer-in-flow {
 
 .statement-box p {
     margin-bottom: 1.5em;
+    color: #A1A1AA;
+}
+
+.statement-box a,
+.statement-box a:link,
+.statement-box a:visited,
+.statement-box a:hover,
+.statement-box a:active {
+    color: #A1A1AA;
+    text-decoration: underline;
+}
+
+.statement-box hr {
+    border: none;
+    height: 1px;
+    background: #42A6FC;
+    box-shadow:
+        0 0 3px rgba(255, 255, 255, 0.8),
+        0 0 8px #42A6FC,
+        0 0 10px rgba(66, 166, 252, 1);
+    margin: 2.5em 0;
+    width: 100%;
 }
 
 .statement-box p.statement-credit {
