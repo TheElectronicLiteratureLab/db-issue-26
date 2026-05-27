@@ -2893,6 +2893,15 @@ footer.footer-in-flow {
     z-index: 1;
 }
 
+#statelessness-svg .region:hover text {
+    fill: #F5F5F7;
+    filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 12px #42A6FC);
+}
+
+#statelessness-svg .region text {
+    transition: fill 0.25s ease, filter 0.25s ease;
+}
+
 #globe {
     width: 100%;
 }
