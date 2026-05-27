@@ -2887,16 +2887,11 @@ footer.footer-in-flow {
     cursor: grabbing;
 }
 
-#statelessnessGlobe {
-    /* Scale globe to fill viewport width, maintaining 1728:1117 aspect ratio */
+#statelessness-svg {
     width: 100vw;
     height: auto;
-    /* maintain 1728:1117 aspect ratio */
     flex-shrink: 0;
-
     position: relative;
-    /* SVG viewBox maintains aspect ratio */
-
     align-self: flex-end;
     z-index: 1;
 }
@@ -2918,7 +2913,7 @@ footer.footer-in-flow {
     transition: filter 0.25s ease, fill 0.25s ease, opacity 0.25s ease;
 }
 
-.region:hover path {
+#statelessness-svg .region:hover path {
     fill: #F5F5F7;
     filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 10px #42A6FC) drop-shadow(0 0 22px #42A6FC);
 }
@@ -3067,17 +3062,28 @@ footer.footer-in-flow {
 }
 
 @media (max-width: 767px) {
-    #globe-scroll {
-        justify-content: flex-start;
-        /* let it scroll naturally */
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+    #statelessness {
+        background: #0D0D12;
+        justify-content: flex-end;
+        padding-bottom: 12vh;
     }
 
-    #statelessnessGlobe {
+    #statelessness .prism-bg {
+        display: none;
+    }
+
+    #globe-scroll {
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex: 0 0 auto;
+    }
+
+    #statelessness-svg {
         width: 180vw;
         height: auto;
         flex-shrink: 0;
+        align-self: flex-end;
     }
 
     .statelessModal {
