@@ -589,6 +589,14 @@ header {
     background-position: center;
 }
 
+.credit-bio:nth-child(8) .credit-photo {
+    background-image: url('../img/credit-photos/guillermo-rodriguez-martin.jpg');
+}
+
+.credit-bio:nth-child(9) .credit-photo {
+    background-image: url('../img/credit-photos/krishna-ramanujan.jpg');
+}
+
 .credit-bio div:not(.credit-photo) {
     width: auto;
     margin: 0;
