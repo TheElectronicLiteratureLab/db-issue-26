@@ -481,16 +481,25 @@ header {
     width: 85%;
     margin: auto;
     margin-bottom: 1.5em;
+    color: #A1A1AA;
 }
 
 .about-box a {
-    color: #f5f5f7;
+    color: #A1A1AA;
     text-decoration: underline;
     transition: color 0.2s ease;
 }
 
 .about-box a:hover {
     color: #42A6FC;
+}
+
+.about-box hr {
+    border: none;
+    height: 1px;
+    background: #42A6FC;
+    margin: 2.5em auto;
+    width: 85%;
 }
 
 #credits-icons {
