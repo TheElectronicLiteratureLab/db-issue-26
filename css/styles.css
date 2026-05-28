@@ -2525,9 +2525,21 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 70%;
-    margin-top: 0.5em;
-    padding-left: 0.25em;
+
+    position: relative;
+
+    height: auto;
+
+    overflow: hidden;
+
+    width: 80%;
+    max-width: 1000px;
+    padding: 52px 72px;
+    margin: 0 auto 7em;
+    margin-top: 7em;
+    background: linear-gradient(to bottom right, #0D0D12 0%, #1F1F24 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D0D12 0%, #1F1F24 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D0D12 0%, #1F1F24 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D0D12 0%, #1F1F24 50%) top right / 50% 50% no-repeat;
+    box-shadow: 0 0 60px 12px rgba(221, 225, 197, 0.15);
+    
 }
 
 /* Poem display box inside carousel */
@@ -2552,6 +2564,11 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     margin: 0 auto 7em;
     background: linear-gradient(to bottom right, #0D0D12 0%, #1F1F24 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D0D12 0%, #1F1F24 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D0D12 0%, #1F1F24 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D0D12 0%, #1F1F24 50%) top right / 50% 50% no-repeat;
     box-shadow: 0 0 60px 12px rgba(221, 225, 197, 0.15);
+}
+
+.artist-statement {
+    opacity: 1;
+    transition: opacity 0.35s ease;
 }
 
 .carousel-navigation {

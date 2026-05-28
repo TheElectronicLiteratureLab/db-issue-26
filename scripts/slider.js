@@ -3,6 +3,10 @@ const el = (sel, par) => (par || document).querySelector(sel);
 const els = (sel, par) => (par || document).querySelectorAll(sel);
 const elNew = (tag, prop) => Object.assign(document.createElement(tag), prop);
 
+// Caption:
+const statement = document.querySelector('.artist-statement p');
+const statementContainer = document.querySelector('.artist-statement');
+
 // Helper:
 const mod = (n, m) => (n % m + m) % m;
 
@@ -20,6 +24,33 @@ const carousel = (elCarousel) => {
     let c = 0;
 
     if (tot < 2) return;
+
+    let currentCaptionIndex = -1;
+
+    const updateCaption = () => {
+
+        const currentIndex = mod(c, tot);
+
+        // Prevent duplicate updates
+        if (currentIndex === currentCaptionIndex) return;
+
+        currentCaptionIndex = currentIndex;
+
+        const currentSlide = elsSlides[currentIndex];
+
+        const caption = currentSlide.dataset.caption || "";
+
+        statementContainer.style.opacity = 0;
+
+        setTimeout(() => {
+
+            statement.innerHTML = caption;
+
+            statementContainer.style.opacity = 1;
+
+        }, 200);
+
+    };
 
     // Accessibility setup
     const carouselLabel = elCarousel.dataset.carouselLabel || "Carousel";
@@ -47,6 +78,8 @@ const carousel = (elCarousel) => {
     // Methods
     const anim = (ms = animation) => {
         const cMod = mod(c, tot);
+
+        updateCaption();
 
         // Screen reader update
         live.textContent = `Slide ${cMod + 1} of ${tot}`;
