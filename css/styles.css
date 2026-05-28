@@ -3986,9 +3986,6 @@ footer.footer-in-flow {
 }
 
 .statement-box p.statement-credit {
-    margin-top: 3em;
-    padding-top: 1.5em;
-    border-top: 1px solid rgba(245, 245, 247, 0.15);
     color: rgba(245, 245, 247, 0.6);
     font-size: 15px;
 }
