@@ -4,27 +4,6 @@ const poems = document.querySelectorAll('.poem-content');
 // show first poem by default
 poems[0].classList.add('active');
 
-poemButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-
-        // remove active from all poems
-        poems.forEach(poem => poem.classList.remove('active'));
-
-        // add active to the clicked one
-        poems[index].classList.add('active');
-    });
-});
-
-poemButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-
-        poems.forEach(poem => poem.classList.remove('active'));
-        poemButtons.forEach(btn => btn.classList.remove('active'));
-
-        poems[index].classList.add('active');
-        button.classList.add('active');
-    });
-});
 
 // Audio functionality 
 
@@ -100,14 +79,14 @@ audioButtons.forEach((button) => {
 poemButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
 
-        // stop audio when switching poems
+        // stop audio and autoplay when switching poems
         if (currentlyPlaying) {
             currentlyPlaying.pause();
             currentlyPlaying.currentTime = 0;
             currentlyPlaying = null;
-
             resetAudioButtons();
         }
+        stopAutoplay();
 
         poems.forEach(poem => poem.classList.remove('active'));
         poemButtons.forEach(btn => btn.classList.remove('active'));
@@ -177,12 +156,6 @@ autoplayButtons.forEach(button => {
                 stopAutoplay();
             }
         }, 80); // interval speed (higher = slower)
-    });
-});
-
-poemButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        stopAutoplay();
     });
 });
 
