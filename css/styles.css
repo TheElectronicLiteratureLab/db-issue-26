@@ -3810,6 +3810,12 @@ footer.footer-in-flow {
         height: 44px;
     }
 
+    .carousel-prev svg,
+    .carousel-next svg {
+        width: 10px;
+        height: auto;
+    }
+
     .carousel-prev {
         left: 6px;
     }
