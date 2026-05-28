@@ -3385,11 +3385,18 @@ footer.footer-in-flow {
 
     #issue-landing-body #main-container {
         flex-direction: column;
+        gap: 0;
+        padding: 80px 0 80px 0; /* top clears the topbar, bottom clears the footer */
+        justify-content: center;
+        height: 100%;
+        box-sizing: border-box;
     }
 
     #main-container>a {
         height: auto;
         justify-content: space-between;
+        flex: 1;
+        max-height: 33.33%;
     }
 
     #issue-landing-body #main-container a span {
