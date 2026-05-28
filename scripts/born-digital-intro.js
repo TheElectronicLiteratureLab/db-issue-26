@@ -107,6 +107,7 @@ function runIntro() {
 const section = document.getElementById('born-digital');
 if (section) {
     const fromBornDigital = document.referrer.includes('born-digital/');
+    const isFirstVisit = !localStorage.getItem('db26-loaded');
     let initialDelayUsed = false;
 
     function runIntroWhenReady() {
@@ -120,7 +121,7 @@ if (section) {
     const io = new IntersectionObserver(
         (entries) => {
             if (entries[0].isIntersecting) {
-                if (fromBornDigital && !initialDelayUsed) {
+                if (fromBornDigital && isFirstVisit && !initialDelayUsed) {
                     initialDelayUsed = true;
                     setTimeout(runIntro, 4800);
                 } else {
