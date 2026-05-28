@@ -99,7 +99,13 @@ header {
 
 .hamburger-menu svg {
     align-items: center;
-    width: 70%;
+    width: 38px;
+    height: 38px;
+}
+
+.topbar > a:first-child svg {
+    height: 30px;
+    width: auto;
 }
 
 .hamburger-menu.hidden {
@@ -806,6 +812,16 @@ p {
     .topbar svg {
         width: 70%;
         height: 70%;
+    }
+
+    .hamburger-menu svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .topbar > a:first-child svg {
+        height: 24px;
+        width: auto;
     }
 }
 
