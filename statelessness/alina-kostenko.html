@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/db-favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/scrollbar.css">
+
+    <!-- SEO and Page Information -->
+    <title>Alina Kostenko</title>
+    <meta name="description" content="Alina Kostenko — Dublin-based Roma poet and cultural facilitator. Featured in Drunken Boat Issue 26.">
+</head>
+
+<body class="statelessness-folio">
+    <canvas id="orb-bg"></canvas>
+    <canvas id="cursor-trail"></canvas>
+    <!-- Masthead -->
+    <header class="topbar">
+
+        <!-- Back arrow -->
+        <a href="../index.html#statelessness">
+            <svg width="26" height="46" viewBox="0 0 26 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26 2.88275L23.439 0L0 22.75L23.439 45.5L26 42.6172L5.5315 22.75L26 2.88275Z" fill="#F5F5F7" />
+            </svg>
+        </a>
+
+        <a href="../index.html"><img src="../img/db-logo.svg" class="masthead-logo" alt="Drunken Boat logo"></a>
+
+        <nav>
+            <!-- Hamburger menu button -->
+            <section class="hamburger-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                    <g clip-path="url(#clip0_1829_2051)">
+                        <path d="M8 13.3334H56V16H8V13.3334ZM8 34.6667H56V32H8V34.6667ZM8 53.3334H56V50.6667H8V53.3334Z" fill="white" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1829_2051">
+                            <rect width="64" height="64" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </section>
+
+            <!-- Nav modal -->
+            <section class="menu-modal">
+                <!-- Modal close button -->
+                <div class="close-btn-container">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M37.75 6.25H6.25V37.75H37.75V6.25Z" stroke="#F5F5F7" />
+                        <path d="M13.75 13.75L30.25 30.25" stroke="#F5F5F7" />
+                        <path d="M30.25 13.75L13.75 30.25" stroke="#F5F5F7" />
+                    </svg>
+                </div>
+                <a href="../index.html">Issue 26 Landing</a>
+                <a href="../index.html#born-digital">Born-Digital</a>
+                <a href="../born-digital-statement.html" class="menu-statement-link">Born-Digital: Introduction</a>
+                <a href="../index.html#statelessness">Statelessness</a>
+                <a href="../statelessness-statement.html" class="menu-statement-link">Statelessness: Introduction</a>
+                <a href="../index.html#ak-ramanujan">A.K. Ramanujan</a>
+                <a href="../ramanujan-statement.html" class="menu-statement-link">A.K. Ramanujan: Introduction</a>
+                <a href="../issue-statement.html">Issue Statement</a>
+
+                <!-- Additional links (About, Submissions, etc.) -->
+                <div id="additional-links">
+                    <a href="https://drunkenboat.com/#home-about-us" target="_blank">About</a>
+
+                    <a href="https://drunkenboat.submittable.com/submit" target="_blank">Submissions</a>
+
+                    <a href="../contact.html">Contact</a>
+
+                    <a href="https://drunkenboat.com/#latest-issues" target="_blank">Archives</a>
+
+                    <a href="../books.html">Books</a>
+
+                    <a id="donate-btn" href="https://www.paypal.com/donate/?hosted_button_id=2MB68C7NVXTQY" target="_blank">Donate<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:middle;margin-left:3px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></a>
+                </div>
+            </section>
+
+            <!-- Nav modal dimmed backdrop -->
+            <div class="menu-overlay"></div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <!-- Piece title and category -->
+        <div class="statelessness-header">
+            <h4>Roma Art</h4>
+            <h1>Alina Kostenko</h1>
+        </div>
+
+        <div class="poem-container">
+
+            <section class="poem-slider">
+                <div class="poem-content">
+                    <div class="poem-header">
+                        <h2>Google Camp Alley Number Twenty-Eight Now Five</h2>
+                        <div>
+                            <button class="autoplayBtn view-piece-btn"><span class="autoplayLabel">Autoscroll</span>
+                                <svg class="autoplayIcon" width="20" height="20" viewBox="0 0 20 23" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C10.6904 0 11.25 0.572087 11.25 1.27778V18.6374L17.8662 11.8743C18.3543 11.3753 19.1458 11.3753 19.6339 11.8743C20.122 12.3733 20.122 13.1823 19.6339 13.6813L10.8839 22.6258C10.3958 23.1247 9.60427 23.1247 9.11614 22.6258L0.366113 13.6813C-0.122038 13.1823 -0.122038 12.3733 0.366113 11.8743C0.854276 11.3753 1.64573 11.3753 2.13389 11.8743L8.75001 18.6374V1.27778C8.75001 0.572087 9.30964 0 10 0Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="poem-scroll">She was the last angel before I was born. This could be a poem for her— instead, I mastered concealing— Gods circled around her slowly, gently separating her from the crowd; granted her with cherub-like cheeks, olive eyes, a splendid mind, and almost no height. Imagination, that made her childhood — my childhood. I hardly got to meet her. She became engulfed by Voices. <em>Wings of darkness</em>, I called them. They pecked at her reality. Her memory— still intact. One night, as she lay on the grass, staring at the sky, at the abyss of her loss, as if on the mountain, as if the bush were on fire, as if an angel<br>
+                        <span style="display:block; padding-left:2em;">began</span>
+                        <span style="display:block; padding-left:6em;">its</span>
+                        <span style="display:block; padding-left:10em;">descent.</span>
+                        As a first sign, a window cracked. Then another— a frog leaped from the doorknob.<br>
+                        My mother's inferno thus began.<br><br>
+                        I am now her age when we lost our first home—<br><br>
+                        occasionally, I type our old address into Google Maps and walk the streets. The air is still dusty, thick, heavy, sweaty— it's funny how technology and memory can become one. I see the newly asphalted road, with trimmed hedges but when I was growing up, there was only mud, even the harshest of suns wouldn't dry. We built a house at the very edge of the town, on one side of the junction of two national roads. On the other side, there was this famed camp, where only thistles grew and where travelling gypsies would set up camp, caravans stopping to rest their horses, dogs tied to the back of the wagons, pots and pans rattling on the sides. They came from up the mountain, colorful, noisy and wealthy, selling lumber. With time and with the change of regime, they stopped coming, and the field, stretched out into the distance, remained empty. In summer we'd roam it freely, barefoot, hungry kids, to find this particular type of grass called <em>susay</em>, a delicacy for dad, leaping all the way up past the former sugar factory, past the now dried little river, and into our gipsy village, where my grandparents lived.<br><br>
+                        I zoom slightly out of the map—<br><br>
+                        to the town sign, where we would poke the bee's nests. I climb atop it, and stare out into the horizon, all the way until the train tracks, until my eyes hurt from this much blue. I can still hear the four AM commuter train's horn. I land into the disparaged meat processing plant, across the other side, towards the city, which has a large orchard where we can slip through a hole in the fence and steal unripen plums, cherries or quinces— it's sad how I still quiver at their bitterness. I turn a little bit back to where we spread our blankets and read our future in coffee grinds and rub our faces with cucumber peels, to whiten our skin, to where mom planted tomatoes. I see dad tinkering on the roof, the neighbor with the cow who stops by for coffee, the one that cooks all day, and comes by to share, the other one who brings us big, juicy grapes from the farm. My dollhouse. At the junction, someone built a tire repair shop, then a car wash, a hotel and a restaurant. I grew up alongside them, in that wilderness. It took a long while until we got electricity and running water. When we lost the first house, the hotel owner knocked it down to make space for a parking lot and we built another house just up the road. A provisory one: number five. That's when the signs started appearing.<br><br>
+                        Today, I ran out of the library—<br><br>
+                        a poet made me cry, a woman hugged me, another woman stared deeply into my soul. A man replied, one answered the phone, another wrote <em>hi</em>. A train came on time, I got in, no delays, no mistakes. A bird landed on my balcony and stayed, and kept me company, a big task crossed off my list. I joined in the dance happening around me. I have never been nostalgic about home, and I nearly never remembered it fondly. For years, all I could conjure up when the word <em>home</em> came about was - mud, darkness, hunger, fear and hate. My doctors said to paint— a blue butterfly, a minotaur, a white feather, a healing hand, a warrior sword. A miner's hat. A canary. A cave of wonders. To write letter to my home: my fault in my exile was established. My voice is starting to take shape. My voice is the voice of a magpie. I met my friend for a coffee, called my oldest friend, called my sister. I'm happy, and I have nobody to share it with. I am lucky to align my stars, but nobody to thank.<br><br>
+                        Google, find my home—<br><br>
+                        so I can sit under again our acacia tree, to tell mom about this Irish poet lady, how I heard her read poem about her mom and how it absolutely broke me and I ran out of the library then a woman hugged me and another pierced my soul. About the man who, finally, replied. I tell her that my life is like a summer's day reading of our fortunes in the acacia shade— is slowly coming true. I tell her that, occasionally, I too feel separated from the crowd, with signs creeping up on me, too. Maybe, just maybe, it will work itself out, as long as I keep moving forward. As long as I remember Camp Alley, I suppose, too. <em>Ma trasha, mamo</em>, I hear the leaves whispering, just like my mom told me, before I was born<br><br>
+                        —before my house grew wings, I mean—</p>
+                </div>
+                <div class="poem-content">
+                    <div class="poem-header">
+                        <h2>Finding Home</h2>
+                        <div>
+                            <button class="autoplayBtn view-piece-btn"><span class="autoplayLabel">Autoscroll</span>
+                                <svg class="autoplayIcon" width="20" height="20" viewBox="0 0 20 23" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C10.6904 0 11.25 0.572087 11.25 1.27778V18.6374L17.8662 11.8743C18.3543 11.3753 19.1458 11.3753 19.6339 11.8743C20.122 12.3733 20.122 13.1823 19.6339 13.6813L10.8839 22.6258C10.3958 23.1247 9.60427 23.1247 9.11614 22.6258L0.366113 13.6813C-0.122038 13.1823 -0.122038 12.3733 0.366113 11.8743C0.854276 11.3753 1.64573 11.3753 2.13389 11.8743L8.75001 18.6374V1.27778C8.75001 0.572087 9.30964 0 10 0Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="poem-scroll"><strong>Season one</strong><br>
+                        Himself whistling sweet Molly Malone. I remember bawling my eyes out at the Irish Embassy in Bucharest, unable to explain to the lamppost skinny boy watching me, why. Unable to utter any words but The Frames. The Frames. the frames. All I did, that year. <em>Don't feel too sorry for yourself. Make paper your home.</em> Then I sent him a postcard, then a picture of me, bare-legged, smiling on a yacht. Then nothing. My green-eyed mother came to me in my dream, she said— <em>come daughter, you belong</em> here. He does not. Then I forgot.<br><br>
+                        <strong>Season two</strong><br>
+                        Nothing compares to me. This is mine. Drip, drip, drip — this is my land. It was never about my skin colour, or my stand. It was about my following the sounds the water made, when splashed against the rocks, against my face. A pluviophile—I too am inundated daily, inhabited by seagulls, forests and Hunger. I'm Ireland's daughter, ha! ha! ha! If you wanted to find me, I'm camped by the water!<br><br>
+                        <strong>Season three</strong><br>
+                        I'm home, mother. The home of the memories from my dreams, where rooftops scream and children scream, and freshly cut grass, blooming spring, and sea and sumptuous redbrick houses are symmetrically aligned against the perfect April sky. It's my birthday again, mother, the day I am alive. Two trees — one white, one green, like me and my gypsy twin. Two robins, like two hand holding teens.<br><br>
+                        <strong>Season four, obviously</strong><br>
+                        I hate having so much beauty, I hate having so much beauty. So much beauty, everywhere. I'm reminded so, so harshly that I'm dreaming. That I'm no one. That I'll never have what's fair. I hate burnt orange dancing leaves in autumn wind. Without a care, clothed in ivy, divine light that's falling gently on the gravestones, peeking shyly. Unbothered by Irish weather, chatty people buying houses, nearly happy, everywhere.<br><br>
+                        <strong>Last season</strong><br>
+                        This winter, I'll not go hungry. The blue-eyed poet lady, she saw me, with her deep, watery gaze she pierced right through layers and layers of dirty skin, and layers and layers of failures and sins, right through to where my poetry spews, daily. With her fabulous antlers, this mother deer, used to guiding her fawns to the water, she came and said— <em>hi, let's meet for a coffee, soon</em>, and I kneeled, and I said— <em>I'd be delighted</em>, while I fact. I'm elated. To be seen. To be adopted.<br><br>
+                        Alive, alive O'! Alive, alive O'!<br><br>
+                        <em>(First Published in Unapologetic Magazine, Issue 4, Dublin 2025)</em></p>
+                </div>
+            </section>
+
+            <section class="table-of-contents">
+                <h3>CONTENTS</h3>
+                <div><span>01</span><button class="poemBtn"> Google Camp Alley Number Twenty-Eight Now Five</button></div>
+                <div><span>02</span><button class="poemBtn"> Finding Home</button></div>
+            </section>
+
+        </div>
+
+        <div class="artist-bio">
+            <img src="../img/statelessness-artist-photos/alina-kostenko.jpg" alt="Alina Kostenko">
+            <div>
+                <h2>ABOUT THE ARTIST</h2>
+                <p>Alina Kostenko is a Dublin-based Roma poet and cultural facilitator whose work explores memory, family and the fine line between mythmaking and storytelling. She is a recipient of the Dun Laoghaire Rathdown Mentorship Grant and showcased her poetry during the One Island Many Voices program, supported by Dublin UNESCO City of Literature and Linen Hall. Her poetry has been published in <em>Unapologetic Magazine</em> and the <em>Dubeloving Anthology</em>. She is a graduate of The Stinging Fly 2025 Summer School for Creative Non-Fiction and is actively working on her first poetry collection.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-in-flow">
+        <p>&#169; 2026 Drunken Boat | in association with ELL</p>
+
+        <section id="social-media">
+            <a href="https://www.facebook.com/DrunkenBoatPress" target="_blank"><img src="../img/social-icons/facebook.svg" alt="facebook icon"></a>
+
+            <a href="https://www.instagram.com/drunkenboat1999?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank"><img src="../img/social-icons/instagram.svg" alt="instagram icon"></a>
+
+            <a href="https://x.com/drunkenboat1999?t=uza3BLfDmOpLa1UQ9pVwbA&s=08" target="_blank"><img src="../img/social-icons/twitter.svg" alt="twitter icon"></a>
+
+            <a href="https://www.linkedin.com/company/drunken-boat-international-journal-of-the-arts/about/" target="_blank"><img src="../img/social-icons/linkedin.svg" alt="linkedin icon"></a>
+        </section>
+    </footer>
+
+    <script src="../scripts/poem.js"></script>
+    <script src="../scripts/slider.js"></script>
+    <script src="../scripts/orb-particles.js"></script>
+    <script src="../scripts/cursor-trail.js"></script>
+    <script src="../scripts/mobile-menu.js"></script>
+
+</body>
+
+</html>
