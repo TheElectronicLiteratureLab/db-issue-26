@@ -136,6 +136,13 @@ class PageTransition {
             zIndex: 100,
         });
 
+        // Pre-center born-digital's horizontal scroll before sliding in so the
+        // spiral is already in its correct position throughout the animation and
+        // the post-transition scroll-centering in onSectionEnter causes no jump.
+        if (sectionId === 'born-digital') {
+            nextEl.scrollLeft = (nextEl.scrollWidth - nextEl.clientWidth) / 2;
+        }
+
         // Fix current section so it can slide out cleanly
         gsap.set(currentEl, {
             position: 'fixed',
