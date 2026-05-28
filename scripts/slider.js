@@ -298,7 +298,7 @@ lightboxClose.addEventListener('click', (e) => {
 lightboxVideo.addEventListener('click', (e) => e.stopPropagation()); // don't close when tapping video controls
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) closeLightbox();
 });
 
 // Target images and videos inside carousel slides

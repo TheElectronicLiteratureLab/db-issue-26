@@ -1,13 +1,3 @@
-const container = document.getElementById('globe-scroll');
-
-container.scrollLeft =
-    (container.scrollWidth - container.clientWidth) / 2;
-
-const globeScroll = document.getElementById('globe-scroll');
-if (globeScroll && window.innerWidth <= 767) {
-    globeScroll.scrollLeft = (globeScroll.scrollWidth - globeScroll.clientWidth) / 2;
-}
-
 function centerGlobe() {
     const globeScroll = document.getElementById('globe-scroll');
     if (globeScroll && window.innerWidth <= 767) {
@@ -15,5 +5,5 @@ function centerGlobe() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', centerGlobe);
+centerGlobe();
 window.addEventListener('resize', centerGlobe);

@@ -110,9 +110,9 @@ if (section) {
     const isFirstVisit = !localStorage.getItem('db26-loaded');
     let initialDelayUsed = false;
 
-    function runIntroWhenReady() {
-        if (window.pageTransition?.isTransitioning) {
-            setTimeout(runIntroWhenReady, 50);
+    function runIntroWhenReady(attempts = 0) {
+        if (window.pageTransition?.isTransitioning && attempts < 60) {
+            setTimeout(() => runIntroWhenReady(attempts + 1), 50);
         } else {
             runIntro();
         }

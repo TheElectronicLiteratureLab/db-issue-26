@@ -72,23 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
-    update(); // run on load
-
-    // fallback: on load, set based on scroll position
-    const checkInitial = () => {
-        for (const id of Object.keys(mapping)) {
-            const el = document.getElementById(id);
-            if (!el) continue;
-            const rect = el.getBoundingClientRect();
-            const visible = rect.top < window.innerHeight * 0.5 && rect.bottom > window.innerHeight * 0.5;
-            if (visible) {
-                setArrow(mapping[id]);
-                return;
-            }
-        }
-    };
-
-    checkInitial();
-    window.addEventListener('resize', checkInitial);
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(update, 150);
+    });
+    update();
 });

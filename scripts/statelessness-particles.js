@@ -120,45 +120,33 @@
 
         const pulse = p.alpha + Math.sin(time * 0.6 + p.phase) * 0.025;
 
-        ctx.filter = `blur(${p.blur}px)`;
-
-        const gradient = ctx.createLinearGradient(
-            -p.length / 2,
-            0,
-            p.length / 2,
-            0
-        );
-
+        const gradient = ctx.createLinearGradient(-p.length / 2, 0, p.length / 2, 0);
         gradient.addColorStop(0, `rgba(${p.color},0)`);
         gradient.addColorStop(0.2, `rgba(${p.color},${pulse * 0.35})`);
         gradient.addColorStop(0.5, `rgba(${p.color},${pulse})`);
         gradient.addColorStop(0.8, `rgba(${p.color},${pulse * 0.35})`);
         gradient.addColorStop(1, `rgba(${p.color},0)`);
 
-        ctx.beginPath();
+        ctx.shadowBlur = p.blur;
+        ctx.shadowColor = `rgba(${p.color},${pulse})`;
 
+        ctx.beginPath();
         ctx.moveTo(-p.length / 2, 0);
         ctx.lineTo(0, -p.width / 2);
         ctx.lineTo(p.length / 2, 0);
         ctx.lineTo(0, p.width / 2);
         ctx.closePath();
-
         ctx.fillStyle = gradient;
         ctx.fill();
 
         // sharp inner beam
-        ctx.filter = 'blur(8px)';
-
-        const innerGradient = ctx.createLinearGradient(
-            -p.length / 2,
-            0,
-            p.length / 2,
-            0
-        );
-
+        const innerGradient = ctx.createLinearGradient(-p.length / 2, 0, p.length / 2, 0);
         innerGradient.addColorStop(0, `rgba(${p.color},0)`);
         innerGradient.addColorStop(0.5, `rgba(255,255,255,${pulse * 1.8})`);
         innerGradient.addColorStop(1, `rgba(${p.color},0)`);
+
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = `rgba(255,255,255,${pulse})`;
 
         ctx.beginPath();
         ctx.moveTo(-p.length / 2, 0);
@@ -166,7 +154,6 @@
         ctx.lineTo(p.length / 2, 0);
         ctx.lineTo(0, p.width / 5);
         ctx.closePath();
-
         ctx.fillStyle = innerGradient;
         ctx.fill();
 

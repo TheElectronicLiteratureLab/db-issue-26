@@ -16,7 +16,11 @@
         ctx.lineJoin = 'round';
     }
     resize();
-    window.addEventListener('resize', resize);
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resize, 150);
+    });
 
     let mouse = { x: -999, y: -999 };
     let smooth = { x: -999, y: -999 };

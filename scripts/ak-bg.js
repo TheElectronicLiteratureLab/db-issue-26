@@ -17,6 +17,8 @@
         var body = document.getElementById('ak-ramanujan');
         if (!body) return;
 
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
         var canvas = document.createElement('canvas');
         canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;';
         body.insertBefore(canvas, body.firstChild);
@@ -24,6 +26,7 @@
         var ctx = canvas.getContext('2d');
         var particles = [];
         var W, H;
+        var rafId = null;
 
         function resize() {
             W = canvas.width = body.offsetWidth;
@@ -84,10 +87,24 @@
 
             ctx.globalAlpha = 1;
             ctx.shadowBlur = 0;
-            requestAnimationFrame(tick);
+            rafId = requestAnimationFrame(tick);
         }
 
-        requestAnimationFrame(tick);
+        function start() {
+            if (!rafId) rafId = requestAnimationFrame(tick);
+        }
+
+        function stop() {
+            if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        }
+
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) stop(); else start();
+        });
+
+        new IntersectionObserver(function (entries) {
+            entries[0].isIntersecting ? start() : stop();
+        }, { threshold: 0.01 }).observe(body);
     }
 
     if (document.readyState === 'loading') {

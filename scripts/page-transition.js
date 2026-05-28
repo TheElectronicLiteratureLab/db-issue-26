@@ -59,7 +59,7 @@ class PageTransition {
             if (this.sections.includes(hash)) {
                 this._poppingState = true;
                 this.transitionTo(hash);
-                this._poppingState = false;
+                // _poppingState is reset inside transitionTo's onComplete
             }
         });
     }
@@ -115,6 +115,7 @@ class PageTransition {
             if (!this._poppingState) {
                 window.history.pushState({ section: sectionId }, '', `#${sectionId}`);
             }
+            this._poppingState = false;
             this.onSectionEnter(sectionId);
             return;
         }
@@ -168,6 +169,7 @@ class PageTransition {
                 if (!this._poppingState) {
                     window.history.pushState({ section: sectionId }, '', `#${sectionId}`);
                 }
+                this._poppingState = false;
 
                 this.onSectionEnter(sectionId);
             },
