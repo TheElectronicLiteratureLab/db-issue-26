@@ -2956,6 +2956,14 @@ footer.footer-in-flow {
     font-style: italic;
 }
 
+.poem-scroll .appendix-title {
+    font-family: Michroma, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-top: 1.5em;
+}
+
 .poem-scroll img {
     width: auto;
     max-width: 240px;
