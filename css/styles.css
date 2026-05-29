@@ -321,7 +321,7 @@ header {
     box-sizing: border-box;
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 1002;
     top: 0;
     left: 0;
     display: flex;
@@ -3299,7 +3299,7 @@ footer.footer-in-flow {
 #stateless-overlay {
     position: fixed;
     inset: 0;
-    z-index: 1001;
+    z-index: 1003;
     background: rgba(0, 0, 0, 0.75);
     display: flex;
     align-items: center;
@@ -3317,7 +3317,7 @@ footer.footer-in-flow {
     transform: translate(-50%, -50%);
 
     padding: 0 48px 48px 48px;
-    z-index: 1002;
+    z-index: 1004;
     width: min(90vw, 24rem);
     max-height: 90vh;
     height: auto;
@@ -3975,7 +3975,7 @@ footer.footer-in-flow {
     }
 
     .statelessness-folio.statement-page {
-        padding: 74px 148px;
+        padding: 8em 148px;
     }
 
     .menu-modal {
