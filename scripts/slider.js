@@ -36,6 +36,8 @@ const carousel = (elCarousel) => {
 
         currentCaptionIndex = currentIndex;
 
+        if (!statementContainer || !statement) return;
+
         const currentSlide = elsSlides[currentIndex];
 
         const caption = currentSlide.dataset.caption || "";
@@ -44,7 +46,7 @@ const carousel = (elCarousel) => {
 
         setTimeout(() => {
 
-            statement.innerHTML = caption;
+            if (caption) statement.innerHTML = caption;
 
             statementContainer.style.opacity = 1;
 

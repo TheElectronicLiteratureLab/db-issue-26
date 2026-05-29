@@ -1086,12 +1086,13 @@ p {
     background: transparent;
     border: none;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 16px;
-    right: 16px;
+    right: 20px;
     padding: 0;
     line-height: 0;
     display: block;
+    z-index: 1101;
 }
 
 @media (min-width: 768px) {
@@ -2597,7 +2598,7 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 
 .carousel {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     font-size: 2.5vmin;
     margin: 0;
 }
@@ -3420,13 +3421,9 @@ footer.footer-in-flow {
 
 @media (min-width: 768px) {
     #statelessness {
-        background: linear-gradient(180deg, #0D0D12 0%, #04164F 100%);
+        background: #0D0D12;
         justify-content: flex-start;
         padding-bottom: 0;
-    }
-
-    #statelessness .prism-bg {
-        display: block;
     }
 
     #globe-scroll {
@@ -3686,7 +3683,7 @@ footer.footer-in-flow {
     }
 
     .carousel-slide {
-        margin: 0;
+        margin: 92px 0;
     }
 
     .single-image {
@@ -3987,18 +3984,6 @@ footer.footer-in-flow {
 
 }
 
-.prism-bg {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-
-    z-index: 1;
-    pointer-events: none;
-
-    background: #02030a;
-    display: none;
-}
 
 #transition-overlay {
     position: fixed;
