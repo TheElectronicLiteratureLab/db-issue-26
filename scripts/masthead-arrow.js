@@ -1,4 +1,4 @@
-// Update the masthead directional arrow based on which main section is visible
+// Update the masthead directional arrow based on which section is active
 document.addEventListener('DOMContentLoaded', () => {
     const arrowLink = document.querySelector('header > a');
     if (!arrowLink) return;
@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (arrowSvg) {
         arrowSvg.style.transition = 'transform 200ms ease';
         arrowSvg.style.transformOrigin = '50% 50%';
-        arrowSvg.setAttribute('data-orig-transform', arrowSvg.style.transform || '');
     }
 
     const setArrow = (state) => {
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             default:
                 arrowLink.style.visibility = 'hidden';
-                arrowSvg.style.transform = arrowSvg.getAttribute('data-orig-transform') || '';
         }
     };
 
@@ -40,42 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
         'ak-ramanujan': 'left'
     };
 
-    const ids = Object.keys(mapping).map(id => document.getElementById(id)).filter(Boolean);
-    if (ids.length === 0) return;
+    // Set initial state — page-transition.js has already run by this point
+    const initial = window.pageTransition?.getCurrentSection() ?? 'issue-landing-body';
+    setArrow(mapping[initial] ?? 'hide');
 
-    const obs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const state = mapping[entry.target.id];
-                setArrow(state);
-            }
-        });
-    }, { threshold: 0 });
-
-    ids.forEach(el => obs.observe(el));
-
-    const getActiveSection = () => {
-        const mid = window.scrollY + window.innerHeight * 0.5;
-        let active = null;
-        for (const id of Object.keys(mapping)) {
-            const el = document.getElementById(id);
-            if (!el) continue;
-            const top = el.getBoundingClientRect().top + window.scrollY;
-            if (top <= mid) active = id;
-        }
-        return active;
-    };
-
-    const update = () => {
-        const active = getActiveSection();
-        if (active) setArrow(mapping[active]);
-    };
-
-    window.addEventListener('scroll', update, { passive: true });
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(update, 150);
+    // Update on every section transition
+    document.addEventListener('sectionenter', (e) => {
+        const state = mapping[e.detail.sectionId];
+        if (state !== undefined) setArrow(state);
     });
-    update();
 });

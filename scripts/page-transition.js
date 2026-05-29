@@ -197,6 +197,8 @@ class PageTransition {
             const globe = document.getElementById('statelessnessGlobe');
             if (globe) gsap.set(globe, { clearProps: 'all' });
         }
+
+        document.dispatchEvent(new CustomEvent('sectionenter', { detail: { sectionId } }));
     }
 
     goTo(sectionId) { this.transitionTo(sectionId); }
