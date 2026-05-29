@@ -1403,6 +1403,14 @@ p {
     z-index: 1;
 }
 
+#ak-courtesy-note {
+    color: #A1A1AA;
+    font-size: 12px;
+    text-align: center;
+    padding: 1.5em 2em;
+    line-height: 1.7;
+}
+
 #ak-horizontal-scroll-container {
     position: relative;
     width: 100%;
