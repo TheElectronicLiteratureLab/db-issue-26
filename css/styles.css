@@ -621,6 +621,10 @@ header {
     background-image: url('../img/credit-photos/krishna-ramanujan.jpg');
 }
 
+.credit-bio:nth-child(10) .credit-photo {
+    background-image: url('../img/credit-photos/emily-tran.jpg');
+}
+
 .credit-bio div:not(.credit-photo) {
     width: auto;
     margin: 0;
