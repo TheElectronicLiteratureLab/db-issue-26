@@ -100,7 +100,7 @@ header {
     height: 32px;
 }
 
-.topbar > a:first-child svg {
+.topbar>a:first-child svg {
     height: 24px;
     width: auto;
 }
@@ -852,7 +852,7 @@ p {
         height: 38px;
     }
 
-    .topbar > a:first-child svg {
+    .topbar>a:first-child svg {
         height: 30px;
         width: auto;
     }
@@ -2605,6 +2605,8 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     overflow: visible;
     font-size: 2.5vmin;
     margin: 0;
+    width: 100%;
+    overflow: hidden;
 }
 
 .carousel-slider {
@@ -2668,7 +2670,7 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     display: flex;
     align-items: center;
     justify-content: center;
-
+    margin: 22px;
     backdrop-filter: blur(12px);
 }
 
@@ -2687,8 +2689,8 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     transform: translateY(-50%) scale(1.08);
 
     box-shadow:
-        0 0 25px rgba(130, 110, 178, 0.45),
-        0 0 60px rgba(63, 70, 131, 0.25);
+        0 0 12px rgba(130, 110, 178, 0.45),
+        0 0 30px rgba(63, 70, 131, 0.25);
 
     background:
         linear-gradient(180deg,
@@ -2700,14 +2702,6 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 .carousel-prev:active,
 .carousel-next:active {
     transform: translateY(-50%) scale(0.96);
-}
-
-.carousel-prev {
-    left: 6px;
-}
-
-.carousel-next {
-    right: 6px;
 }
 
 .carousel-caption {
@@ -2732,7 +2726,7 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     margin-top: 7em;
     background: linear-gradient(to bottom right, #0D0D12 0%, #1F1F24 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D0D12 0%, #1F1F24 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D0D12 0%, #1F1F24 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D0D12 0%, #1F1F24 50%) top right / 50% 50% no-repeat;
     box-shadow: 0 0 60px 12px rgba(221, 225, 197, 0.15);
-    
+
 }
 
 /* Poem display box inside carousel */
@@ -3465,35 +3459,150 @@ footer.footer-in-flow {
         justify-content: space-between;
     }
 
-    #a-flowering-tree { width: 300px; height: 400px; }
-    #passport { width: 150px; height: 200px; }
-    #ak-letters { width: 250px; height: 350px; }
-    #ak-tv-container { width: 262px; height: 262px; }
-    #picture-frame { width: 400px; height: 400px; }
-    #radio { width: 320px; height: 320px; }
-    #interview-letter-1978 { width: 250px; height: 350px; }
-    #photo1, #photo2, #photo3, #photo4, #photo5, #photo6 { width: 200px; height: 260px; }
-    #dr-murty { width: 250px; height: 350px; }
-    #mysore { width: 200px; height: 300px; }
-    #stallworthy { width: 320px; height: 400px; }
-    #ephemera, #ephemera2, #ephemera3, #ephemera5, #ephemera6, #ephemera-safe-unsafe { width: 200px; height: 260px; }
-    #acacia-tree { width: 200px; height: 200px; }
-    #poem-self-portrait { width: 200px; height: 260px; }
-    #red-earth { width: 200px; height: 260px; }
-    #translation { width: 200px; height: 260px; }
-    #doodles-1 { width: 260px; height: 360px; }
-    #biography-note { width: 220px; height: 310px; }
-    #ak-essays { width: 180px; height: 265px; }
-    #doodles-2 { width: 260px; height: 360px; }
-    #first-visa { width: 200px; height: 260px; }
-    #foreign-country { width: 260px; height: 320px; }
-    #of-mothers { width: 260px; height: 320px; }
-    #striders { width: 260px; height: 320px; }
-    #truants { width: 260px; height: 320px; }
-    #sunday-guardian-live { width: 160px; height: 228px; }
-    #jpw-cover { width: 155px; height: 220px; }
-    #caravan-mag { width: 160px; height: 209px; }
-    #poet-scholar { width: 280px; height: 185px; }
+    #a-flowering-tree {
+        width: 300px;
+        height: 400px;
+    }
+
+    #passport {
+        width: 150px;
+        height: 200px;
+    }
+
+    #ak-letters {
+        width: 250px;
+        height: 350px;
+    }
+
+    #ak-tv-container {
+        width: 262px;
+        height: 262px;
+    }
+
+    #picture-frame {
+        width: 400px;
+        height: 400px;
+    }
+
+    #radio {
+        width: 320px;
+        height: 320px;
+    }
+
+    #interview-letter-1978 {
+        width: 250px;
+        height: 350px;
+    }
+
+    #photo1, #photo2, #photo3, #photo4, #photo5, #photo6 {
+        width: 200px;
+        height: 260px;
+    }
+
+    #dr-murty {
+        width: 250px;
+        height: 350px;
+    }
+
+    #mysore {
+        width: 200px;
+        height: 300px;
+    }
+
+    #stallworthy {
+        width: 320px;
+        height: 400px;
+    }
+
+    #ephemera, #ephemera2, #ephemera3, #ephemera5, #ephemera6, #ephemera-safe-unsafe {
+        width: 200px;
+        height: 260px;
+    }
+
+    #acacia-tree {
+        width: 200px;
+        height: 200px;
+    }
+
+    #poem-self-portrait {
+        width: 200px;
+        height: 260px;
+    }
+
+    #red-earth {
+        width: 200px;
+        height: 260px;
+    }
+
+    #translation {
+        width: 200px;
+        height: 260px;
+    }
+
+    #doodles-1 {
+        width: 260px;
+        height: 360px;
+    }
+
+    #biography-note {
+        width: 220px;
+        height: 310px;
+    }
+
+    #ak-essays {
+        width: 180px;
+        height: 265px;
+    }
+
+    #doodles-2 {
+        width: 260px;
+        height: 360px;
+    }
+
+    #first-visa {
+        width: 200px;
+        height: 260px;
+    }
+
+    #foreign-country {
+        width: 260px;
+        height: 320px;
+    }
+
+    #of-mothers {
+        width: 260px;
+        height: 320px;
+    }
+
+    #striders {
+        width: 260px;
+        height: 320px;
+    }
+
+    #truants {
+        width: 260px;
+        height: 320px;
+    }
+
+    #sunday-guardian-live {
+        width: 160px;
+        height: 228px;
+    }
+
+    #jpw-cover {
+        width: 155px;
+        height: 220px;
+    }
+
+    #caravan-mag {
+        width: 160px;
+        height: 209px;
+    }
+
+    #poet-scholar {
+        width: 280px;
+        height: 185px;
+    }
 
     #ak-scroll-hint {
         position: absolute;
@@ -3556,7 +3665,7 @@ footer.footer-in-flow {
         padding: 0;
     }
 
-    #main-container > a {
+    #main-container>a {
         height: 100%;
         justify-content: center;
         max-height: none;
