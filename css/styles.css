@@ -2647,11 +2647,23 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     font-size: inherit;
 }
 
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    pointer-events: none;
+}
+
 .carousel-prev,
 .carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    pointer-events: auto;
     padding: 1em;
     border: none;
     cursor: pointer;
@@ -2660,7 +2672,6 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     width: 44px;
     border-radius: 1000px;
     background: var(--poem-slider-button-gradient, linear-gradient(180deg, rgba(63, 70, 131, 0.57) 0%, rgba(130, 110, 178, 0.57) 100%));
-    /* animation setup */
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -2670,7 +2681,6 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 22px;
     backdrop-filter: blur(12px);
 }
 
@@ -2686,7 +2696,7 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 /* Hover effect */
 .carousel-prev:hover,
 .carousel-next:hover {
-    transform: translateY(-50%) scale(1.08);
+    transform: scale(1.08);
 
     box-shadow:
         0 0 12px rgba(130, 110, 178, 0.45),
@@ -2701,7 +2711,7 @@ Retrieved 2026-05-11, License - CC BY-SA 4.0
 /* Slight press animation */
 .carousel-prev:active,
 .carousel-next:active {
-    transform: translateY(-50%) scale(0.96);
+    transform: scale(0.96);
 }
 
 .carousel-caption {
@@ -3777,14 +3787,6 @@ footer.footer-in-flow {
         height: auto;
     }
 
-    .carousel-prev {
-        left: calc(5% - 1.7em);
-    }
-
-    .carousel-next {
-        right: calc(5% - 1.7em);
-    }
-
     .carousel-image {
         width: 80%;
         height: 65vh;
@@ -3899,13 +3901,6 @@ footer.footer-in-flow {
         object-fit: cover;
     }
 
-    .carousel-prev {
-        left: 0;
-    }
-
-    .carousel-next {
-        right: 0;
-    }
 
     .carousel-slide img {
         width: 80%;

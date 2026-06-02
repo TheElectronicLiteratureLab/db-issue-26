@@ -241,7 +241,9 @@ const carousel = (elCarousel) => {
 
     // Init UI
     elNavigation.append(...elsBtns);
-    elCarousel.append(elPrev, elNext, elNavigation);
+    const elControls = elNew("div", { className: "carousel-controls" });
+    elControls.append(elPrev, elNext);
+    elCarousel.append(elControls, elNavigation);
 
     // Clone slides for infinite effect
     elCarouselSlider.prepend(elsSlides[tot - 1].cloneNode(true));
